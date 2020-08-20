@@ -1,3 +1,6 @@
+# System files
+*.DS*
+
 # Eclipse
 .metadata
 bin/
