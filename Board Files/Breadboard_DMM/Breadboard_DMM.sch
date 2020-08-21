@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 4
+Sheet 1 6
 Title "Toast-O-Meter"
 Date "2020-08-14"
 Rev "0"
@@ -246,5 +246,11 @@ S 4350 4700 1900 1350
 U 5FDFAE85
 F0 "ADC" 50
 F1 "ADC.sch" 50
+$EndSheet
+$Sheet
+S 1850 4700 1900 1350
+U 5F3FD151
+F0 "MCU" 50
+F1 "MCU.sch" 50
 $EndSheet
 $EndSCHEMATC

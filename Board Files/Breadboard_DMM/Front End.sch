@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -27,7 +27,7 @@ F 3 "~" H 1150 950 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5800 1900 5800 2050
+	5400 1900 5400 2050
 Wire Wire Line
 	7950 2600 7750 2600
 Wire Wire Line
@@ -56,29 +56,29 @@ $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 5F569312
-P 5800 1750
+P 5400 1750
 AR Path="/5F569312" Ref="R?"  Part="1" 
 AR Path="/5F511849/5F569312" Ref="R?"  Part="1" 
-F 0 "R?" H 5868 1796 50  0000 L CNN
-F 1 "10M" H 5868 1705 50  0000 L CNN
-F 2 "" V 5840 1740 50  0001 C CNN
-F 3 "~" H 5800 1750 50  0001 C CNN
-	1    5800 1750
+F 0 "R?" H 5468 1796 50  0000 L CNN
+F 1 "10M" H 5468 1705 50  0000 L CNN
+F 2 "" V 5440 1740 50  0001 C CNN
+F 3 "~" H 5400 1750 50  0001 C CNN
+	1    5400 1750
 	1    0    0    -1  
 $EndComp
-Text Notes 5850 2400 0    50   ~ 0
+Text Notes 5450 2400 0    50   ~ 0
 Resistor ratio gives an \noutput of 4.096V (full scale)\nat ~~ 27V differential
 $Comp
 L Device:R_US R?
 U 1 1 5F569319
-P 5900 3950
+P 5500 3800
 AR Path="/5F569319" Ref="R?"  Part="1" 
 AR Path="/5F511849/5F569319" Ref="R?"  Part="1" 
-F 0 "R?" H 5968 3996 50  0000 L CNN
-F 1 "820k" H 5968 3905 50  0000 L CNN
-F 2 "" V 5940 3940 50  0001 C CNN
-F 3 "~" H 5900 3950 50  0001 C CNN
-	1    5900 3950
+F 0 "R?" H 5568 3846 50  0000 L CNN
+F 1 "820k" H 5568 3755 50  0000 L CNN
+F 2 "" V 5540 3790 50  0001 C CNN
+F 3 "~" H 5500 3800 50  0001 C CNN
+	1    5500 3800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -95,7 +95,7 @@ F 3 "~" H 1150 5250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5900 4100 5900 5150
+	5500 3950 5500 4350
 Wire Wire Line
 	2750 5150 3250 5150
 $Comp
@@ -116,45 +116,45 @@ Wire Wire Line
 Wire Wire Line
 	2950 5350 2950 5450
 Wire Wire Line
-	5900 3800 5900 3350
+	5500 3650 5500 3350
 Wire Wire Line
-	5800 2750 5800 2500
-Connection ~ 5800 2500
+	5400 2750 5400 2500
+Connection ~ 5400 2500
 Wire Wire Line
-	6400 1850 6400 2050
+	6000 1850 6000 2050
 Wire Wire Line
-	6400 2050 5800 2050
+	6000 2050 5400 2050
 Wire Wire Line
-	6500 1050 5800 1050
+	6100 1050 5400 1050
 $Comp
 L power:GND #PWR?
 U 1 1 5F56936E
-P 7200 1400
+P 7050 1400
 AR Path="/5F56936E" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5F56936E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7200 1150 50  0001 C CNN
-F 1 "GND" H 7205 1227 50  0000 C CNN
-F 2 "" H 7200 1400 50  0001 C CNN
-F 3 "" H 7200 1400 50  0001 C CNN
-	1    7200 1400
+F 0 "#PWR?" H 7050 1150 50  0001 C CNN
+F 1 "GND" H 7055 1227 50  0000 C CNN
+F 2 "" H 7050 1400 50  0001 C CNN
+F 3 "" H 7050 1400 50  0001 C CNN
+	1    7050 1400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7200 1400 7200 1250
+	7050 1400 7050 1250
 Wire Wire Line
-	7200 1250 7300 1250
+	7050 1250 7150 1250
 Wire Wire Line
-	6500 1050 7300 1050
-Connection ~ 6500 1050
-Connection ~ 5800 2050
+	6100 1050 7150 1050
+Connection ~ 6100 1050
+Connection ~ 5400 2050
 Wire Wire Line
-	5800 2050 5800 2500
+	5400 2050 5400 2500
 Wire Wire Line
-	5800 1050 5800 1600
+	5400 1050 5400 1600
 Wire Wire Line
-	6500 1050 6500 1250
+	6100 1050 6100 1250
 Wire Wire Line
-	5800 2500 7150 2500
+	5400 2500 7150 2500
 $Comp
 L Amplifier_Operational:LMV358 U?
 U 3 1 5F5AB165
@@ -239,70 +239,68 @@ F 3 "~" H 7450 3050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7900 1150 8100 1150
-Text GLabel 8600 1150 2    50   Input ~ 0
-OHMETER_CURRENT_SOURCE
+	7750 1150 7950 1150
 Wire Wire Line
-	8400 1150 8600 1150
+	8250 1150 8450 1150
 Wire Wire Line
-	5300 1050 5800 1050
-Connection ~ 5800 1050
+	4500 1050 5400 1050
+Connection ~ 5400 1050
 Wire Wire Line
-	4700 950  1350 950 
+	3900 950  1350 950 
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F56937E
-P 5000 1050
+P 4200 1050
 AR Path="/5F56937E" Ref="K?"  Part="2" 
 AR Path="/5F511849/5F56937E" Ref="K?"  Part="2" 
-F 0 "K?" V 4700 1050 50  0000 C CNN
-F 1 "EC2-5NU" V 4800 1050 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5200 950 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5000 1050 50  0001 C CNN
-	2    5000 1050
+F 0 "K?" V 3900 1050 50  0000 C CNN
+F 1 "EC2-5NU" V 4000 1050 50  0000 C CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 4400 950 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 4200 1050 50  0001 C CNN
+	2    4200 1050
 	0    -1   1    0   
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F569360
-P 6400 1550
+P 6000 1550
 AR Path="/5F569360" Ref="K?"  Part="3" 
 AR Path="/5F511849/5F569360" Ref="K?"  Part="3" 
-F 0 "K?" H 6800 1700 50  0000 C CNN
-F 1 "EC2-5NU" H 6800 1600 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 6600 1450 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 6400 1550 50  0001 C CNN
-	3    6400 1550
+F 0 "K?" H 6400 1700 50  0000 C CNN
+F 1 "EC2-5NU" H 6400 1600 50  0000 C CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 6200 1450 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 6000 1550 50  0001 C CNN
+	3    6000 1550
 	1    0    0    -1  
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F56935A
-P 7600 1150
+P 7450 1150
 AR Path="/5F56935A" Ref="K?"  Part="2" 
 AR Path="/5F511849/5F56935A" Ref="K?"  Part="2" 
-F 0 "K?" V 7881 1150 50  0000 C CNN
-F 1 "EC2-5NU" V 7790 1150 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 7800 1050 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7600 1150 50  0001 C CNN
-	2    7600 1150
+F 0 "K?" V 7731 1150 50  0000 C CNN
+F 1 "EC2-5NU" V 7640 1150 50  0000 C CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 7650 1050 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7450 1150 50  0001 C CNN
+	2    7450 1150
 	0    -1   -1   0   
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F56933F
-P 5900 3050
+P 5500 3050
 AR Path="/5F56933F" Ref="K?"  Part="3" 
 AR Path="/5F511849/5F56933F" Ref="K?"  Part="3" 
-F 0 "K?" H 6150 3300 50  0000 C CNN
-F 1 "EC2-5NU" H 6250 3200 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 6100 2950 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5900 3050 50  0001 C CNN
-	3    5900 3050
+F 0 "K?" H 5750 3300 50  0000 C CNN
+F 1 "EC2-5NU" H 5850 3200 50  0000 C CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5700 2950 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5500 3050 50  0001 C CNN
+	3    5500 3050
 	1    0    0    -1  
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F569339
 P 2450 5250
 AR Path="/5F569339" Ref="K?"  Part="2" 
@@ -317,16 +315,16 @@ $EndComp
 $Comp
 L Device:D_Schottky_ALT D?
 U 1 1 5F8C5F2C
-P 8250 1150
-F 0 "D?" H 8250 1367 50  0000 C CNN
-F 1 "BAT46JFILM" H 8250 1276 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 8250 1150 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/bat46.pdf" H 8250 1150 50  0001 C CNN
-	1    8250 1150
+P 8100 1150
+F 0 "D?" H 8100 1367 50  0000 C CNN
+F 1 "BAT46JFILM" H 8100 1276 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 8100 1150 50  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/bat46.pdf" H 8100 1150 50  0001 C CNN
+	1    8100 1150
 	1    0    0    -1  
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 1 1 5F569333
 P 9200 5300
 AR Path="/5F569333" Ref="K?"  Part="1" 
@@ -339,7 +337,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 9200 5300 50 
 	1    0    0    -1  
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 1 1 5F569354
 P 7800 5300
 AR Path="/5F569354" Ref="K?"  Part="1" 
@@ -352,7 +350,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7800 5300 50 
 	1    0    0    -1  
 $EndComp
 $Comp
-L irex_Relay:EC2-5NU_separated K?
+L irex_Relay:EC2-5NU_Split K?
 U 1 1 5F569378
 P 10650 5300
 AR Path="/5F569378" Ref="K?"  Part="1" 
@@ -427,8 +425,6 @@ F 3 "" H 10650 4750 50  0001 C CNN
 	1    10650 4750
 	1    0    0    -1  
 $EndComp
-Text GLabel 9850 4100 0    50   Input ~ 0
-CALIBRATE_RELAY_ON
 $Comp
 L Device:D_ALT D?
 U 1 1 5F8E900D
@@ -555,8 +551,6 @@ F 3 "" H 7800 4750 50  0001 C CNN
 	1    7800 4750
 	1    0    0    -1  
 $EndComp
-Text GLabel 7000 4100 0    50   Input ~ 0
-OHMETER_ON
 Wire Wire Line
 	9850 4100 9950 4100
 Wire Wire Line
@@ -638,7 +632,7 @@ Wire Wire Line
 Wire Wire Line
 	7100 4100 7100 4400
 Wire Wire Line
-	7000 4100 7100 4100
+	7050 4100 7100 4100
 Wire Wire Line
 	7100 4400 8500 4400
 Connection ~ 7100 4400
@@ -696,22 +690,16 @@ Wire Wire Line
 Connection ~ 3250 6700
 Wire Wire Line
 	3250 6700 3250 6600
-Text GLabel 3550 6200 2    50   Output ~ 0
-I_SENSE-
-Text GLabel 3550 6700 2    50   Output ~ 0
-I_SENSE+
 Wire Wire Line
 	7950 2600 8450 2600
 Connection ~ 7950 2600
-Text GLabel 8450 2600 2    50   Output ~ 0
-V+_INPUT_BUFFERED
 Wire Notes Line
-	6350 3600 11225 3600
+	6150 3600 11225 3600
 Wire Notes Line
-	9800 475  9800 3600
+	9750 475  9750 3600
 Text Notes 9800 850  0    118  ~ 24
 Op-amp power\n
-Text Notes 6450 3850 0    118  ~ 24
+Text Notes 6250 3850 0    118  ~ 24
 Relay Coils
 Wire Notes Line
 	1000 6000 4050 6000
@@ -735,365 +723,156 @@ Text Label 1350 950  0    50   ~ 0
 INPUT_V+
 Text Label 1350 6950 0    50   ~ 0
 INPUT_I+
-Connection ~ 1900 5250
-Wire Wire Line
-	1900 5250 2150 5250
-Wire Wire Line
-	1350 5250 1900 5250
-Text Notes 4500 2400 0    118  ~ 24
-Voltmeter \ninput divider
-Wire Notes Line
-	600  1100 4350 1100
-Wire Notes Line
-	4350 1100 4350 4850
-Text Notes 650  1350 0    118  ~ 24
-Calibration Mux
-Wire Notes Line
-	600  4850 600  1100
-Wire Notes Line
-	4350 4850 600  4850
-Wire Wire Line
-	4150 1150 4700 1150
-Text Notes 1150 2500 0    50   ~ 0
-GND
-Text Notes 1150 2200 0    50   ~ 0
-Inputs Shorted
-Wire Wire Line
-	2750 2650 2750 2850
-Connection ~ 2750 2650
-Wire Wire Line
-	2850 2650 2750 2650
-Connection ~ 2750 2850
-Wire Wire Line
-	2750 2550 2750 2650
-Wire Wire Line
-	2850 2550 2750 2550
-Wire Wire Line
-	1900 2450 1900 5250
-Wire Wire Line
-	1900 2450 2850 2450
-Wire Wire Line
-	1600 4050 1600 3900
-$Comp
-L power:GND #PWR?
-U 1 1 5F7BDC67
-P 1600 4050
-AR Path="/5F7BDC67" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F7BDC67" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 1600 3800 50  0001 C CNN
-F 1 "GND" H 1605 3877 50  0000 C CNN
-F 2 "" H 1600 4050 50  0001 C CNN
-F 3 "" H 1600 4050 50  0001 C CNN
-	1    1600 4050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1600 3450 1450 3450
-Connection ~ 1600 3450
-Wire Wire Line
-	1600 3600 1600 3450
-$Comp
-L Device:R_US R?
-U 1 1 5F7BAF8E
-P 1600 3750
-AR Path="/5F7BAF8E" Ref="R?"  Part="1" 
-AR Path="/5F511849/5F7BAF8E" Ref="R?"  Part="1" 
-F 0 "R?" H 1668 3796 50  0000 L CNN
-F 1 "10k" H 1668 3705 50  0000 L CNN
-F 2 "" V 1640 3740 50  0001 C CNN
-F 3 "~" H 1600 3750 50  0001 C CNN
-	1    1600 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4150 3150 4150 3600
-Wire Wire Line
-	4050 3150 4150 3150
-Wire Wire Line
-	2750 3150 2750 3050
-Connection ~ 2750 3150
-Wire Wire Line
-	2750 3150 2850 3150
-Wire Wire Line
-	2750 3050 2750 2950
-Connection ~ 2750 3050
-Wire Wire Line
-	2850 3050 2750 3050
-Wire Wire Line
-	2750 2950 2750 2850
-Connection ~ 2750 2950
-Wire Wire Line
-	2750 2950 2850 2950
-Wire Wire Line
-	2750 2850 2850 2850
-Wire Wire Line
-	2750 3200 2750 3150
-Wire Wire Line
-	2850 3750 2700 3750
-Wire Wire Line
-	3450 4150 3450 4550
-Wire Wire Line
-	2850 3450 1600 3450
-Wire Wire Line
-	4050 2650 4150 2650
-Wire Wire Line
-	2850 3650 2700 3650
-Wire Wire Line
-	3450 1450 3450 1950
-Connection ~ 3450 1450
-Wire Wire Line
-	3750 1450 3450 1450
-Wire Wire Line
-	3750 1500 3750 1450
-Wire Wire Line
-	3750 1850 3750 1800
-Wire Wire Line
-	3450 1350 3450 1450
-Wire Wire Line
-	4150 1150 4150 2650
-$Comp
-L power:GND #PWR?
-U 1 1 5F711144
-P 3750 1850
-AR Path="/5F711144" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F711144" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3750 1600 50  0001 C CNN
-F 1 "GND" H 3755 1677 50  0000 C CNN
-F 2 "" H 3750 1850 50  0001 C CNN
-F 3 "" H 3750 1850 50  0001 C CNN
-	1    3750 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 5F7098E0
-P 3750 1650
-AR Path="/5F7098E0" Ref="C?"  Part="1" 
-AR Path="/5F511849/5F7098E0" Ref="C?"  Part="1" 
-F 0 "C?" H 3850 1700 50  0000 L CNN
-F 1 "1uF" H 3850 1600 50  0000 L CNN
-F 2 "" H 3788 1500 50  0001 C CNN
-F 3 "~" H 3750 1650 50  0001 C CNN
-	1    3750 1650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5VA #PWR?
-U 1 1 5F705CC5
-P 3450 1350
-AR Path="/5F705CC5" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F705CC5" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3450 1200 50  0001 C CNN
-F 1 "+5VA" H 3465 1523 50  0000 C CNN
-F 2 "" H 3450 1350 50  0001 C CNN
-F 3 "" H 3450 1350 50  0001 C CNN
-	1    3450 1350
-	1    0    0    -1  
-$EndComp
-Wire Notes Line style solid
-	800  1950 1750 1950
-Wire Notes Line style solid
-	800  1800 800  2550
-Wire Notes Line style solid
-	1750 1800 800  1800
-Wire Notes Line style solid
-	1750 2550 1750 1800
-Text GLabel 2700 3750 0    50   Input ~ 0
-CALIBRATE_MUX_B
-Text GLabel 2700 3650 0    50   Input ~ 0
-CALIBRATE_MUX_A
-Text GLabel 1450 3450 0    50   Input ~ 0
-CALIBRATE_MUX_INH
-$Comp
-L power:GND #PWR?
-U 1 1 5F6E7FFA
-P 3450 4550
-AR Path="/5F6E7FFA" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F6E7FFA" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3450 4300 50  0001 C CNN
-F 1 "GND" H 3455 4377 50  0000 C CNN
-F 2 "" H 3450 4550 50  0001 C CNN
-F 3 "" H 3450 4550 50  0001 C CNN
-	1    3450 4550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F6E4AF0
-P 4150 3600
-AR Path="/5F6E4AF0" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F6E4AF0" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4150 3350 50  0001 C CNN
-F 1 "GND" H 4155 3427 50  0000 C CNN
-F 2 "" H 4150 3600 50  0001 C CNN
-F 3 "" H 4150 3600 50  0001 C CNN
-	1    4150 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F6E135A
-P 2750 3200
-AR Path="/5F6E135A" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F6E135A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2750 2950 50  0001 C CNN
-F 1 "GND" H 2755 3027 50  0000 C CNN
-F 2 "" H 2750 3200 50  0001 C CNN
-F 3 "" H 2750 3200 50  0001 C CNN
-	1    2750 3200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 2350 2850 2350
-Text GLabel 2650 2350 0    50   Input ~ 0
-VREF_4.096V
-$Comp
-L irex_Analog_Switch:74VHC4052AFT U?
-U 1 1 5F6B05C2
-P 3450 3050
-F 0 "U?" H 3100 4100 50  0000 C CNN
-F 1 "74VHC4052AFT" H 3050 4000 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 4350 2050 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/408/74VHC4052AFT_datasheet_en_20181030-1760546.pdf" H 3450 3050 50  0001 C CNN
-	1    3450 3050
-	1    0    0    -1  
-$EndComp
-Wire Notes Line style solid
-	950  1800 950  2550
-Wire Notes Line style solid
-	1100 1800 1100 2550
-Text Notes 850  1900 0    50   ~ 0
-A
-Text Notes 1000 1900 0    50   ~ 0
-B\n
-Text Notes 1150 1900 0    50   ~ 0
-Connection
-Text Notes 850  2050 0    50   ~ 0
-0
-Text Notes 1000 2050 0    50   ~ 0
-0
-Text Notes 1000 2200 0    50   ~ 0
-1
-Text Notes 850  2200 0    50   ~ 0
-0
-Text Notes 850  2350 0    50   ~ 0
-1
-Text Notes 1000 2350 0    50   ~ 0
-0
-Text Notes 850  2500 0    50   ~ 0
-1
-Text Notes 1000 2500 0    50   ~ 0
-1
-Text Notes 1150 2050 0    50   ~ 0
-4.096V
-Wire Notes Line style solid
-	800  2550 1750 2550
-Wire Notes Line style solid
-	800  2100 1750 2100
-Wire Notes Line style solid
-	800  2250 1750 2250
-Wire Notes Line style solid
-	800  2400 1750 2400
-Text Notes 1150 2350 0    50   ~ 0
-GND
+Text Notes 5100 750  0    118  ~ 24
+Input divider
 $Comp
 L Device:R_US R?
 U 1 1 5FE8E52B
-P 4450 6200
+P 2800 4050
 AR Path="/5FE8E52B" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FE8E52B" Ref="R?"  Part="1" 
-F 0 "R?" H 4500 6250 50  0000 L CNN
-F 1 "10k" H 4500 6150 50  0000 L CNN
-F 2 "" V 4490 6190 50  0001 C CNN
-F 3 "~" H 4450 6200 50  0001 C CNN
-F 4 "1%" H 4500 6050 50  0000 L CNN "Tolerance"
-	1    4450 6200
+F 0 "R?" H 2850 4100 50  0000 L CNN
+F 1 "10k" H 2850 4000 50  0000 L CNN
+F 2 "" V 2840 4040 50  0001 C CNN
+F 3 "~" H 2800 4050 50  0001 C CNN
+F 4 "1%" H 2850 3900 50  0000 L CNN "Tolerance"
+	1    2800 4050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 5FE8F61F
-P 4450 5750
+P 2800 3600
 AR Path="/5FE8F61F" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FE8F61F" Ref="R?"  Part="1" 
-F 0 "R?" H 4500 5800 50  0000 L CNN
-F 1 "10k" H 4500 5700 50  0000 L CNN
-F 2 "" V 4490 5740 50  0001 C CNN
-F 3 "~" H 4450 5750 50  0001 C CNN
-F 4 "1%" H 4500 5600 50  0000 L CNN "Tolerance"
-	1    4450 5750
+F 0 "R?" H 2850 3650 50  0000 L CNN
+F 1 "10k" H 2850 3550 50  0000 L CNN
+F 2 "" V 2840 3590 50  0001 C CNN
+F 3 "~" H 2800 3600 50  0001 C CNN
+F 4 "1%" H 2850 3450 50  0000 L CNN "Tolerance"
+	1    2800 3600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4450 5900 4450 6000
+	2800 3750 2800 3850
 $Comp
 L power:GND #PWR?
 U 1 1 5FE957BC
-P 4450 6450
+P 2800 4300
 AR Path="/5FE957BC" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5FE957BC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4450 6200 50  0001 C CNN
-F 1 "GND" H 4455 6277 50  0000 C CNN
-F 2 "" H 4450 6450 50  0001 C CNN
-F 3 "" H 4450 6450 50  0001 C CNN
-	1    4450 6450
+F 0 "#PWR?" H 2800 4050 50  0001 C CNN
+F 1 "GND" H 2805 4127 50  0000 C CNN
+F 2 "" H 2800 4300 50  0001 C CNN
+F 3 "" H 2800 4300 50  0001 C CNN
+	1    2800 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4450 6450 4450 6350
-Text GLabel 4200 5450 0    50   Input ~ 0
+	2800 4300 2800 4200
+Text GLabel 2550 3300 0    50   Input ~ 0
 VREF_4.096V
 Wire Wire Line
-	4200 5450 4450 5450
+	2550 3300 2800 3300
 Wire Wire Line
-	4450 5450 4450 5600
-Connection ~ 4450 6000
+	2800 3300 2800 3450
+Connection ~ 2800 3850
 Wire Wire Line
-	4450 6000 4450 6050
-Wire Notes Line
-	6350 5600 6850 5600
-Wire Notes Line
-	6850 5600 6850 7800
+	2800 3850 2800 3900
 Wire Wire Line
-	5700 5150 5900 5150
-Connection ~ 5700 5150
+	3150 4050 3150 4350
 Wire Wire Line
-	3250 5150 5700 5150
+	4050 3800 4200 3800
+Connection ~ 4050 3950
 Wire Wire Line
-	5700 5150 5700 5950
-Wire Wire Line
-	4800 6200 4800 6500
-Connection ~ 5700 5950
-Wire Wire Line
-	5700 5950 5850 5950
-Connection ~ 5700 6100
-Wire Wire Line
-	5700 6100 5700 5950
-Text GLabel 5850 5950 2    50   Output ~ 0
+	4050 3950 4050 3800
+Text GLabel 4200 3800 2    50   Output ~ 0
 VREF_2.048V
 Wire Wire Line
-	5700 6100 5700 6500
+	4050 3950 4050 4350
 Wire Wire Line
-	5700 6100 5550 6100
+	4050 3950 3900 3950
 Wire Wire Line
-	4800 6500 5700 6500
+	3150 4350 4050 4350
 Wire Wire Line
-	4950 6200 4800 6200
+	3300 4050 3150 4050
 $Comp
 L Amplifier_Operational:LMV358 U?
 U 2 1 5F569327
-P 5250 6100
+P 3600 3950
 AR Path="/5F569327" Ref="U?"  Part="2" 
 AR Path="/5F511849/5F569327" Ref="U?"  Part="2" 
-F 0 "U?" H 5250 6467 50  0000 C CNN
-F 1 "LMV358" H 5250 6376 50  0000 C CNN
-F 2 "" H 5250 6100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 5250 6100 50  0001 C CNN
-	2    5250 6100
+F 0 "U?" H 3600 4317 50  0000 C CNN
+F 1 "LMV358" H 3600 4226 50  0000 C CNN
+F 2 "" H 3600 3950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 3600 3950 50  0001 C CNN
+	2    3600 3950
 	1    0    0    -1  
 $EndComp
-Wire Notes Line
-	6350 3600 6350 5600
 Wire Wire Line
-	4450 6000 4950 6000
+	2800 3850 3300 3850
+Wire Wire Line
+	1350 5250 1850 5250
+$Sheet
+S 2200 1500 1150 800 
+U 5F4FBB9F
+F0 "Calibration Mux" 50
+F1 "Calibration Mux.sch" 50
+F2 "INPUT_COM" I L 2200 2100 50 
+F3 "INPUT_V+" O R 3350 2100 50 
+F4 "CALIBRATE_MUX_INH" I L 2200 1650 50 
+F5 "CALIBRATE_MUX_A" I L 2200 1750 50 
+F6 "CALIBRATE_MUX_B" I L 2200 1850 50 
+$EndSheet
+Wire Wire Line
+	3350 2100 3650 2100
+Wire Wire Line
+	3650 2100 3650 1150
+Wire Wire Line
+	3650 1150 3900 1150
+Wire Wire Line
+	2200 2100 1850 2100
+Wire Wire Line
+	1850 2100 1850 5250
+Connection ~ 1850 5250
+Wire Wire Line
+	1850 5250 2150 5250
+Text HLabel 2000 1650 0    50   Input ~ 0
+CALIBRATE_MUX_INH
+Wire Wire Line
+	2000 1650 2200 1650
+Text HLabel 2000 1750 0    50   Input ~ 0
+CALIBRATE_MUX_A
+Text HLabel 2000 1850 0    50   Input ~ 0
+CALIBRATE_MUX_B
+Wire Wire Line
+	2000 1850 2200 1850
+Wire Wire Line
+	2000 1750 2200 1750
+Text HLabel 8450 1150 2    50   Input ~ 0
+METER_CURRENT_SOURCE
+Text HLabel 8450 2600 2    50   Output ~ 0
+V+_INPUT_BUFFERED
+Text HLabel 7050 4100 0    50   Input ~ 0
+CURRENT_SOURCE_ON
+Text HLabel 9850 4100 0    50   Input ~ 0
+CALIBRATE_RELAY_ON
+Wire Notes Line
+	5000 475  5000 4250
+Wire Notes Line
+	5000 4250 6150 4250
+Wire Wire Line
+	3250 5150 5500 5150
+Wire Wire Line
+	4050 4350 5500 4350
+Connection ~ 4050 4350
+Connection ~ 5500 4350
+Wire Wire Line
+	5500 4350 5500 5150
+Wire Notes Line
+	6150 3600 6150 7800
+Text HLabel 3550 6200 2    50   Output ~ 0
+I_SENSE-
+Text HLabel 3550 6700 2    50   Output ~ 0
+I_SENSE+
 $EndSCHEMATC
