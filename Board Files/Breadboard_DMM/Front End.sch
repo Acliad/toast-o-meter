@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 4 6
 Title ""
 Date ""
 Rev ""
@@ -66,19 +66,19 @@ F 3 "~" H 5400 1750 50  0001 C CNN
 	1    5400 1750
 	1    0    0    -1  
 $EndComp
-Text Notes 5450 2400 0    50   ~ 0
+Text Notes 5500 2400 0    50   ~ 0
 Resistor ratio gives an \noutput of 4.096V (full scale)\nat ~~ 27V differential
 $Comp
 L Device:R_US R?
 U 1 1 5F569319
-P 5500 3800
+P 5500 3700
 AR Path="/5F569319" Ref="R?"  Part="1" 
 AR Path="/5F511849/5F569319" Ref="R?"  Part="1" 
-F 0 "R?" H 5568 3846 50  0000 L CNN
-F 1 "820k" H 5568 3755 50  0000 L CNN
-F 2 "" V 5540 3790 50  0001 C CNN
-F 3 "~" H 5500 3800 50  0001 C CNN
-	1    5500 3800
+F 0 "R?" H 5568 3746 50  0000 L CNN
+F 1 "820k" H 5568 3655 50  0000 L CNN
+F 2 "" V 5540 3690 50  0001 C CNN
+F 3 "~" H 5500 3700 50  0001 C CNN
+	1    5500 3700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -95,7 +95,7 @@ F 3 "~" H 1150 5250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5500 3950 5500 4350
+	5500 3850 5500 4350
 Wire Wire Line
 	2750 5150 3250 5150
 $Comp
@@ -116,7 +116,7 @@ Wire Wire Line
 Wire Wire Line
 	2950 5350 2950 5450
 Wire Wire Line
-	5500 3650 5500 3350
+	5500 3550 5500 3350
 Wire Wire Line
 	5400 2750 5400 2500
 Connection ~ 5400 2500
@@ -694,12 +694,12 @@ Wire Wire Line
 	7950 2600 8450 2600
 Connection ~ 7950 2600
 Wire Notes Line
-	6150 3600 11225 3600
+	5850 3600 11225 3600
 Wire Notes Line
 	9750 475  9750 3600
-Text Notes 9800 850  0    118  ~ 24
+Text Notes 9800 800  0    118  ~ 24
 Op-amp power\n
-Text Notes 6250 3850 0    118  ~ 24
+Text Notes 6200 3850 0    118  ~ 24
 Relay Coils
 Wire Notes Line
 	1000 6000 4050 6000
@@ -715,7 +715,7 @@ Wire Wire Line
 	3250 6200 3250 5150
 Connection ~ 3250 6200
 Connection ~ 3250 5150
-Text Notes 7550 4250 0    50   ~ 0
+Text Notes 7450 4250 0    50   ~ 0
 In Voltmeter mode, Relays x and x\nare in the NC position. In ohmeter\nmode, they are in NO position. \n\nWhen calibrating, relay X is in NO\nposition to connect the input to \nreference nodes.
 Text Label 1350 5250 0    50   ~ 0
 INPUT_COM
@@ -723,7 +723,7 @@ Text Label 1350 950  0    50   ~ 0
 INPUT_V+
 Text Label 1350 6950 0    50   ~ 0
 INPUT_I+
-Text Notes 5100 750  0    118  ~ 24
+Text Notes 5100 800  0    118  ~ 24
 Input divider
 $Comp
 L Device:R_US R?
@@ -854,13 +854,13 @@ METER_CURRENT_SOURCE
 Text HLabel 8450 2600 2    50   Output ~ 0
 V+_INPUT_BUFFERED
 Text HLabel 7050 4100 0    50   Input ~ 0
-CURRENT_SOURCE_ON
+METER_CURRENT_SOURCE_ON
 Text HLabel 9850 4100 0    50   Input ~ 0
 CALIBRATE_RELAY_ON
 Wire Notes Line
-	5000 475  5000 4250
+	5000 475  5000 3950
 Wire Notes Line
-	5000 4250 6150 4250
+	5000 3950 5850 3950
 Wire Wire Line
 	3250 5150 5500 5150
 Wire Wire Line
@@ -870,9 +870,35 @@ Connection ~ 5500 4350
 Wire Wire Line
 	5500 4350 5500 5150
 Wire Notes Line
-	6150 3600 6150 7800
+	5850 3600 5850 7800
 Text HLabel 3550 6200 2    50   Output ~ 0
 I_SENSE-
 Text HLabel 3550 6700 2    50   Output ~ 0
 I_SENSE+
+Text Notes 3200 3450 0    50   ~ 0
+Establishes a virtual ground \nfor input signals at 1/2 the \n4.096V reference\n
+Wire Notes Line width 8 style solid
+	5450 2100 5450 2450
+Wire Notes Line width 8 style solid
+	5450 2450 6700 2450
+Wire Notes Line width 8 style solid
+	6700 2450 6700 2100
+Wire Notes Line width 8 style solid
+	6700 2100 5450 2100
+Wire Notes Line width 8 style solid
+	7400 4300 8850 4300
+Wire Notes Line width 8 style solid
+	8850 4300 8850 3650
+Wire Notes Line width 8 style solid
+	7400 3650 8850 3650
+Wire Notes Line width 8 style solid
+	7400 4300 7400 3650
+Wire Notes Line width 8 style solid
+	3150 3500 4350 3500
+Wire Notes Line width 8 style solid
+	4350 3500 4350 3150
+Wire Notes Line width 8 style solid
+	4350 3150 3150 3150
+Wire Notes Line width 8 style solid
+	3150 3500 3150 3150
 $EndSCHEMATC
