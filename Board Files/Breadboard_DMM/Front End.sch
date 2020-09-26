@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
-Title ""
+Sheet 3 9
+Title "Toast-O-Meter"
 Date ""
-Rev ""
+Rev "0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -96,25 +96,6 @@ F 3 "~" H 950 5250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5500 3850 5500 4350
-Wire Wire Line
-	2550 5150 3050 5150
-$Comp
-L power:GND #PWR?
-U 1 1 5F569347
-P 2750 5450
-AR Path="/5F569347" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F569347" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2750 5200 50  0001 C CNN
-F 1 "GND" H 2755 5277 50  0000 C CNN
-F 2 "" H 2750 5450 50  0001 C CNN
-F 3 "" H 2750 5450 50  0001 C CNN
-	1    2750 5450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2550 5350 2750 5350
-Wire Wire Line
-	2750 5350 2750 5450
 Wire Wire Line
 	5500 3550 5500 3350
 Wire Wire Line
@@ -232,16 +213,12 @@ P 7450 3050
 AR Path="/5F569306" Ref="R?"  Part="1" 
 AR Path="/5F511849/5F569306" Ref="R?"  Part="1" 
 F 0 "R?" V 7245 3050 50  0000 C CNN
-F 1 "R_US" V 7336 3050 50  0000 C CNN
+F 1 "750k" V 7336 3050 50  0000 C CNN
 F 2 "" V 7490 3040 50  0001 C CNN
 F 3 "~" H 7450 3050 50  0001 C CNN
 	1    7450 3050
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	7450 1150 7650 1150
-Wire Wire Line
-	7950 1150 8150 1150
 Wire Wire Line
 	4300 1050 5400 1050
 Connection ~ 5400 1050
@@ -249,24 +226,11 @@ Wire Wire Line
 	3700 950  1150 950 
 $Comp
 L irex_Relay:EC2-5NU_Split K?
-U 2 1 5F56937E
-P 4000 1050
-AR Path="/5F56937E" Ref="K?"  Part="2" 
-AR Path="/5F511849/5F56937E" Ref="K?"  Part="2" 
-F 0 "K?" V 3700 1050 50  0000 C CNN
-F 1 "EC2-5NU" V 3800 1050 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 4200 950 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 4000 1050 50  0001 C CNN
-	2    4000 1050
-	0    -1   1    0   
-$EndComp
-$Comp
-L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F569360
 P 6000 1550
 AR Path="/5F569360" Ref="K?"  Part="3" 
-AR Path="/5F511849/5F569360" Ref="K?"  Part="3" 
-F 0 "K?" H 6400 1700 50  0000 C CNN
+AR Path="/5F511849/5F569360" Ref="K2"  Part="3" 
+F 0 "K2" H 6400 1700 50  0000 C CNN
 F 1 "EC2-5NU" H 6400 1600 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 6200 1450 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 6000 1550 50  0001 C CNN
@@ -278,8 +242,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F56935A
 P 7150 1150
 AR Path="/5F56935A" Ref="K?"  Part="2" 
-AR Path="/5F511849/5F56935A" Ref="K?"  Part="2" 
-F 0 "K?" V 7431 1150 50  0000 C CNN
+AR Path="/5F511849/5F56935A" Ref="K2"  Part="2" 
+F 0 "K2" V 7431 1150 50  0000 C CNN
 F 1 "EC2-5NU" V 7340 1150 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 7350 1050 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7150 1150 50  0001 C CNN
@@ -291,8 +255,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F56933F
 P 5500 3050
 AR Path="/5F56933F" Ref="K?"  Part="3" 
-AR Path="/5F511849/5F56933F" Ref="K?"  Part="3" 
-F 0 "K?" H 5750 3300 50  0000 C CNN
+AR Path="/5F511849/5F56933F" Ref="K3"  Part="3" 
+F 0 "K3" H 5750 3300 50  0000 C CNN
 F 1 "EC2-5NU" H 5850 3200 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5700 2950 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5500 3050 50  0001 C CNN
@@ -301,430 +265,261 @@ F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5500 3050 50 
 $EndComp
 $Comp
 L irex_Relay:EC2-5NU_Split K?
-U 2 1 5F569339
-P 2250 5250
-AR Path="/5F569339" Ref="K?"  Part="2" 
-AR Path="/5F511849/5F569339" Ref="K?"  Part="2" 
-F 0 "K?" V 1925 5250 50  0000 C CNN
-F 1 "EC2-5NU" V 2016 5250 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 2450 5150 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 2250 5250 50  0001 C CNN
-	2    2250 5250
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:D_Schottky_ALT D?
-U 1 1 5F8C5F2C
-P 7800 1150
-F 0 "D?" H 7800 1367 50  0000 C CNN
-F 1 "BAT46JFILM" H 7800 1276 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 7800 1150 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/bat46.pdf" H 7800 1150 50  0001 C CNN
-	1    7800 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L irex_Relay:EC2-5NU_Split K?
 U 1 1 5F569333
-P 9200 5300
+P 14600 4300
 AR Path="/5F569333" Ref="K?"  Part="1" 
-AR Path="/5F511849/5F569333" Ref="K?"  Part="1" 
-F 0 "K?" H 9355 5346 50  0000 L CNN
-F 1 "EC2-5NU" H 9355 5255 50  0000 L CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 9400 5200 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 9200 5300 50  0001 C CNN
-	1    9200 5300
+AR Path="/5F511849/5F569333" Ref="K3"  Part="1" 
+F 0 "K3" H 14755 4346 50  0000 L CNN
+F 1 "EC2-5NU" H 14755 4255 50  0000 L CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 14800 4200 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 14600 4300 50  0001 C CNN
+	1    14600 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L irex_Relay:EC2-5NU_Split K?
 U 1 1 5F569354
-P 7800 5300
+P 13200 4300
 AR Path="/5F569354" Ref="K?"  Part="1" 
-AR Path="/5F511849/5F569354" Ref="K?"  Part="1" 
-F 0 "K?" H 7955 5346 50  0000 L CNN
-F 1 "EC2-5NU" H 7955 5255 50  0000 L CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 8000 5200 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7800 5300 50  0001 C CNN
-	1    7800 5300
-	1    0    0    -1  
-$EndComp
-$Comp
-L irex_Relay:EC2-5NU_Split K?
-U 1 1 5F569378
-P 10650 5300
-AR Path="/5F569378" Ref="K?"  Part="1" 
-AR Path="/5F511849/5F569378" Ref="K?"  Part="1" 
-F 0 "K?" H 10805 5346 50  0000 L CNN
-F 1 "EC2-5NU" H 10805 5255 50  0000 L CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 10850 5200 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 10650 5300 50  0001 C CNN
-	1    10650 5300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F8A2667
-P 10650 6200
-AR Path="/5F8A2667" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F8A2667" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 10650 5950 50  0001 C CNN
-F 1 "GND" H 10655 6027 50  0000 C CNN
-F 2 "" H 10650 6200 50  0001 C CNN
-F 3 "" H 10650 6200 50  0001 C CNN
-	1    10650 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET:2N7002K Q?
-U 1 1 5F8B0AC1
-P 10550 5950
-AR Path="/5F511849/5F8B0AC1" Ref="Q?"  Part="1" 
-AR Path="/5F5089CB/5F8B0AC1" Ref="Q?"  Part="1" 
-F 0 "Q?" H 10754 5996 50  0000 L CNN
-F 1 "2N7002K" H 10754 5905 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 10750 5875 50  0001 L CIN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 10550 5950 50  0001 L CNN
-	1    10550 5950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10650 5000 10650 4900
-$Comp
-L Device:D_ALT D?
-U 1 1 5F8C3DC3
-P 10350 5300
-F 0 "D?" V 10304 5380 50  0000 L CNN
-F 1 "1N4007" V 10395 5380 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-123" H 10350 5300 50  0001 C CNN
-F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 10350 5300 50  0001 C CNN
-	1    10350 5300
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	10350 5150 10350 4900
-Wire Wire Line
-	10350 4900 10650 4900
-Wire Wire Line
-	10350 5450 10350 5650
-Wire Wire Line
-	10350 5650 10650 5650
-Connection ~ 10650 5650
-Wire Wire Line
-	10650 5650 10650 5600
-$Comp
-L power:+5VA #PWR?
-U 1 1 5F8D90BE
-P 10650 4750
-AR Path="/5F8D90BE" Ref="#PWR?"  Part="1" 
-AR Path="/5F511849/5F8D90BE" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 10650 4600 50  0001 C CNN
-F 1 "+5VA" H 10665 4923 50  0000 C CNN
-F 2 "" H 10650 4750 50  0001 C CNN
-F 3 "" H 10650 4750 50  0001 C CNN
-	1    10650 4750
+AR Path="/5F511849/5F569354" Ref="K2"  Part="1" 
+F 0 "K2" H 13355 4346 50  0000 L CNN
+F 1 "EC2-5NU" H 13355 4255 50  0000 L CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 13400 4200 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 13200 4300 50  0001 C CNN
+	1    13200 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:D_ALT D?
 U 1 1 5F8E900D
-P 8900 5300
-F 0 "D?" V 8854 5380 50  0000 L CNN
-F 1 "1N4007" V 8945 5380 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-123" H 8900 5300 50  0001 C CNN
-F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8900 5300 50  0001 C CNN
-	1    8900 5300
+P 14300 4300
+F 0 "D?" V 14254 4380 50  0000 L CNN
+F 1 "1N4007" V 14345 4380 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 14300 4300 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 14300 4300 50  0001 C CNN
+	1    14300 4300
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	8900 5150 8900 4900
+	14300 4150 14300 3900
 Wire Wire Line
-	8900 4900 9200 4900
+	14300 3900 14600 3900
 Wire Wire Line
-	8900 5450 8900 5650
+	14300 4450 14300 4650
 Wire Wire Line
-	8900 5650 9200 5650
+	14300 4650 14600 4650
 $Comp
 L power:GND #PWR?
 U 1 1 5F8EC198
-P 9200 6200
+P 14600 5350
 AR Path="/5F8EC198" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5F8EC198" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9200 5950 50  0001 C CNN
-F 1 "GND" H 9205 6027 50  0000 C CNN
-F 2 "" H 9200 6200 50  0001 C CNN
-F 3 "" H 9200 6200 50  0001 C CNN
-	1    9200 6200
+F 0 "#PWR?" H 14600 5100 50  0001 C CNN
+F 1 "GND" H 14605 5177 50  0000 C CNN
+F 2 "" H 14600 5350 50  0001 C CNN
+F 3 "" H 14600 5350 50  0001 C CNN
+	1    14600 5350
 	1    0    0    -1  
 $EndComp
-Connection ~ 9200 5650
+Connection ~ 14600 4650
 Wire Wire Line
-	9200 5650 9200 5600
+	14600 4650 14600 4600
 Wire Wire Line
-	9200 5000 9200 4900
-$Comp
-L Transistor_FET:2N7002K Q?
-U 1 1 5F8F1D5D
-P 9100 5950
-AR Path="/5F511849/5F8F1D5D" Ref="Q?"  Part="1" 
-AR Path="/5F5089CB/5F8F1D5D" Ref="Q?"  Part="1" 
-F 0 "Q?" H 9304 5996 50  0000 L CNN
-F 1 "2N7002K" H 9304 5905 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 9300 5875 50  0001 L CIN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 9100 5950 50  0001 L CNN
-	1    9100 5950
-	1    0    0    -1  
-$EndComp
+	14600 4000 14600 3900
 $Comp
 L power:+5VA #PWR?
 U 1 1 5F8F1D68
-P 9200 4750
+P 14600 3800
 AR Path="/5F8F1D68" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5F8F1D68" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9200 4600 50  0001 C CNN
-F 1 "+5VA" H 9215 4923 50  0000 C CNN
-F 2 "" H 9200 4750 50  0001 C CNN
-F 3 "" H 9200 4750 50  0001 C CNN
-	1    9200 4750
+F 0 "#PWR?" H 14600 3650 50  0001 C CNN
+F 1 "+5VA" H 14615 3973 50  0000 C CNN
+F 2 "" H 14600 3800 50  0001 C CNN
+F 3 "" H 14600 3800 50  0001 C CNN
+	1    14600 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7500 5450 7500 5650
+	12900 4450 12900 4650
 Wire Wire Line
-	7500 5650 7800 5650
+	12900 4650 13200 4650
 $Comp
 L power:GND #PWR?
 U 1 1 5F8F81D8
-P 7800 6200
+P 13200 5400
 AR Path="/5F8F81D8" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5F8F81D8" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7800 5950 50  0001 C CNN
-F 1 "GND" H 7805 6027 50  0000 C CNN
-F 2 "" H 7800 6200 50  0001 C CNN
-F 3 "" H 7800 6200 50  0001 C CNN
-	1    7800 6200
+F 0 "#PWR?" H 13200 5150 50  0001 C CNN
+F 1 "GND" H 13205 5227 50  0000 C CNN
+F 2 "" H 13200 5400 50  0001 C CNN
+F 3 "" H 13200 5400 50  0001 C CNN
+	1    13200 5400
 	1    0    0    -1  
 $EndComp
-Connection ~ 7800 5650
+Connection ~ 13200 4650
 Wire Wire Line
-	7800 5650 7800 5600
+	13200 4650 13200 4600
 $Comp
 L Device:D_ALT D?
 U 1 1 5F8FB227
-P 7500 5300
-F 0 "D?" V 7454 5380 50  0000 L CNN
-F 1 "1N4007" V 7545 5380 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-123" H 7500 5300 50  0001 C CNN
-F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 7500 5300 50  0001 C CNN
-	1    7500 5300
+P 12900 4300
+F 0 "D?" V 12854 4380 50  0000 L CNN
+F 1 "1N4007" V 12945 4380 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 12900 4300 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 12900 4300 50  0001 C CNN
+	1    12900 4300
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	7500 5150 7500 4900
+	12900 4150 12900 3900
 Wire Wire Line
-	7500 4900 7800 4900
-$Comp
-L Transistor_FET:2N7002K Q?
-U 1 1 5F8FB233
-P 7700 5950
-AR Path="/5F511849/5F8FB233" Ref="Q?"  Part="1" 
-AR Path="/5F5089CB/5F8FB233" Ref="Q?"  Part="1" 
-F 0 "Q?" H 7904 5996 50  0000 L CNN
-F 1 "2N7002K" H 7904 5905 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7900 5875 50  0001 L CIN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 7700 5950 50  0001 L CNN
-	1    7700 5950
-	1    0    0    -1  
-$EndComp
+	12900 3900 13200 3900
 Wire Wire Line
-	7800 5000 7800 4900
+	13200 4000 13200 3900
 $Comp
 L power:+5VA #PWR?
 U 1 1 5F90612C
-P 7800 4750
+P 13200 3800
 AR Path="/5F90612C" Ref="#PWR?"  Part="1" 
 AR Path="/5F511849/5F90612C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7800 4600 50  0001 C CNN
-F 1 "+5VA" H 7815 4923 50  0000 C CNN
-F 2 "" H 7800 4750 50  0001 C CNN
-F 3 "" H 7800 4750 50  0001 C CNN
-	1    7800 4750
+F 0 "#PWR?" H 13200 3650 50  0001 C CNN
+F 1 "+5VA" H 13215 3973 50  0000 C CNN
+F 2 "" H 13200 3800 50  0001 C CNN
+F 3 "" H 13200 3800 50  0001 C CNN
+	1    13200 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9850 4100 9950 4100
+	13200 3900 13200 3800
+Connection ~ 13200 3900
 Wire Wire Line
-	7800 4900 7800 4750
-Connection ~ 7800 4900
+	14600 3900 14600 3800
+Connection ~ 14600 3900
 Wire Wire Line
-	9200 4900 9200 4750
-Connection ~ 9200 4900
+	13200 4650 13200 4750
 Wire Wire Line
-	10650 4900 10650 4750
-Connection ~ 10650 4900
+	14600 4650 14600 4750
 Wire Wire Line
-	7800 5650 7800 5750
+	14600 5350 14600 5150
 Wire Wire Line
-	9200 5650 9200 5750
+	13200 5400 13200 5150
 Wire Wire Line
-	10650 5650 10650 5750
-Wire Wire Line
-	10650 6200 10650 6150
-Wire Wire Line
-	9200 6200 9200 6150
-Wire Wire Line
-	7800 6200 7800 6150
-Wire Wire Line
-	8500 4400 8500 5950
-Wire Wire Line
-	8500 5950 8550 5950
-Wire Wire Line
-	9950 4100 9950 5950
-Wire Wire Line
-	9950 5950 10000 5950
-Wire Wire Line
-	7100 5950 7150 5950
+	13900 3500 13900 4950
 $Comp
 L Device:R_US R?
 U 1 1 5FB1F936
-P 7300 5950
+P 12650 4950
 AR Path="/5FB1F936" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FB1F936" Ref="R?"  Part="1" 
-F 0 "R?" V 7095 5950 50  0000 C CNN
-F 1 "10" V 7186 5950 50  0000 C CNN
-F 2 "" V 7340 5940 50  0001 C CNN
-F 3 "~" H 7300 5950 50  0001 C CNN
-	1    7300 5950
+F 0 "R?" V 12445 4950 50  0000 C CNN
+F 1 "10" V 12536 4950 50  0000 C CNN
+F 2 "" V 12690 4940 50  0001 C CNN
+F 3 "~" H 12650 4950 50  0001 C CNN
+	1    12650 4950
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7450 5950 7500 5950
+	12800 4950 12850 4950
 $Comp
 L Device:R_US R?
 U 1 1 5FB201F2
-P 8700 5950
+P 14050 4950
 AR Path="/5FB201F2" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FB201F2" Ref="R?"  Part="1" 
-F 0 "R?" V 8495 5950 50  0000 C CNN
-F 1 "10" V 8586 5950 50  0000 C CNN
-F 2 "" V 8740 5940 50  0001 C CNN
-F 3 "~" H 8700 5950 50  0001 C CNN
-	1    8700 5950
+F 0 "R?" V 13845 4950 50  0000 C CNN
+F 1 "10" V 13936 4950 50  0000 C CNN
+F 2 "" V 14090 4940 50  0001 C CNN
+F 3 "~" H 14050 4950 50  0001 C CNN
+	1    14050 4950
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	8850 5950 8900 5950
-$Comp
-L Device:R_US R?
-U 1 1 5FB20E38
-P 10150 5950
-AR Path="/5FB20E38" Ref="R?"  Part="1" 
-AR Path="/5F511849/5FB20E38" Ref="R?"  Part="1" 
-F 0 "R?" V 9945 5950 50  0000 C CNN
-F 1 "10" V 10036 5950 50  0000 C CNN
-F 2 "" V 10190 5940 50  0001 C CNN
-F 3 "~" H 10150 5950 50  0001 C CNN
-	1    10150 5950
-	0    1    1    0   
-$EndComp
+	14200 4950 14250 4950
 Wire Wire Line
-	10300 5950 10350 5950
+	12500 3200 12500 3500
 Wire Wire Line
-	7100 4100 7100 4400
+	12450 3200 12500 3200
 Wire Wire Line
-	7050 4100 7100 4100
+	12500 3500 13900 3500
+Connection ~ 12500 3500
 Wire Wire Line
-	7100 4400 8500 4400
-Connection ~ 7100 4400
-Wire Wire Line
-	7100 4400 7100 5950
+	12500 3500 12500 4950
 $Comp
 L Connector_Generic:Conn_01x01 J?
 U 1 1 5FBB1F7C
-P 950 6950
+P 1700 6950
 AR Path="/5FBB1F7C" Ref="J?"  Part="1" 
 AR Path="/5F511849/5FBB1F7C" Ref="J?"  Part="1" 
-F 0 "J?" H 868 6725 50  0000 C CNN
-F 1 "I+" H 868 6816 50  0000 C CNN
-F 2 "" H 950 6950 50  0001 C CNN
-F 3 "~" H 950 6950 50  0001 C CNN
-	1    950  6950
+F 0 "J?" H 1618 6725 50  0000 C CNN
+F 1 "I+" H 1618 6816 50  0000 C CNN
+F 2 "" H 1700 6950 50  0001 C CNN
+F 3 "~" H 1700 6950 50  0001 C CNN
+	1    1700 6950
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 5FBB2FD2
-P 3050 6450
+P 3800 6350
 AR Path="/5FBB2FD2" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FBB2FD2" Ref="R?"  Part="1" 
-F 0 "R?" H 3118 6496 50  0000 L CNN
-F 1 "0.02" H 3118 6405 50  0000 L CNN
-F 2 "" V 3090 6440 50  0001 C CNN
-F 3 "~" H 3050 6450 50  0001 C CNN
-	1    3050 6450
+F 0 "R?" H 3868 6396 50  0000 L CNN
+F 1 "0.1" H 3868 6305 50  0000 L CNN
+F 2 "" V 3840 6340 50  0001 C CNN
+F 3 "~" H 3800 6350 50  0001 C CNN
+	1    3800 6350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Fuse F?
 U 1 1 5FBB4BF3
-P 2050 6950
-F 0 "F?" V 1853 6950 50  0000 C CNN
-F 1 "3.15A" V 1944 6950 50  0000 C CNN
-F 2 "irex_Fuse:Fuseholder_Cylinder-5x20mm_Littlefuse_0PTF0078P_Horizontal_Open" V 1980 6950 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/617Series_Fuse_DS_v1%200.pdf~" H 2050 6950 50  0001 C CNN
-	1    2050 6950
+P 2800 6950
+F 0 "F?" V 2603 6950 50  0000 C CNN
+F 1 "3.15A" V 2694 6950 50  0000 C CNN
+F 2 "irex_Fuse:Fuseholder_Cylinder-5x20mm_Littlefuse_0PTF0078P_Horizontal_Open" V 2730 6950 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/617Series_Fuse_DS_v1%200.pdf~" H 2800 6950 50  0001 C CNN
+	1    2800 6950
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1150 6950 1900 6950
+	1900 6950 2650 6950
 Wire Wire Line
-	2200 6950 3050 6950
+	2950 6950 3800 6950
 Wire Wire Line
-	3050 6950 3050 6700
+	3800 6200 3800 5800
+Connection ~ 3800 6950
 Wire Wire Line
-	3050 6300 3050 6200
-Wire Wire Line
-	3050 6200 3350 6200
-Wire Wire Line
-	3050 6700 3350 6700
-Connection ~ 3050 6700
-Wire Wire Line
-	3050 6700 3050 6600
+	3800 6950 3800 6500
 Wire Wire Line
 	7950 2600 8450 2600
 Connection ~ 7950 2600
 Wire Notes Line
-	5850 3600 11225 3600
-Wire Notes Line
 	9750 1700 9750 3600
 Text Notes 9850 1900 0    118  ~ 24
 Op-amp power\n
-Text Notes 6200 3850 0    118  ~ 24
-Relay Coils
+Text Notes 12700 3150 0    118  ~ 24
+Ohmmeter Relay\nCoils
 Wire Notes Line
-	800  6000 3850 6000
+	1550 5650 6500 5650
 Wire Notes Line
-	3850 6000 3850 7350
+	6500 5650 6500 7350
 Wire Notes Line
-	3850 7350 800  7350
+	6500 7350 1550 7350
 Wire Notes Line
-	800  7350 800  6000
-Text Notes 850  6250 0    118  ~ 24
+	1550 7350 1550 5650
+Text Notes 1600 5900 0    118  ~ 24
 Ammeter Input
 Wire Wire Line
-	3050 6200 3050 5150
-Connection ~ 3050 6200
-Connection ~ 3050 5150
-Text Notes 7450 4250 0    50   ~ 0
-In Voltmeter mode, Relays x and x\nare in the NC position. In ohmeter\nmode, they are in NO position. \n\nWhen calibrating, relay X is in NO\nposition to connect the input to \nreference nodes.
+	3800 5800 3800 5150
+Connection ~ 3800 5800
+Text Notes 11825 2500 0    50   ~ 0
+In Voltmeter mode, Relays XX and XX\nare in the NC position. In ohmeter\nmode, they are in NO position. \n\nWhen calibrating, relay XX is in NO\nposition to connect the input to \nreference nodes.
 Text Label 1150 5250 0    50   ~ 0
 INPUT_COM
 Text Label 1150 950  0    50   ~ 0
 INPUT_V+
-Text Label 1150 6950 0    50   ~ 0
+Text Label 1900 6950 0    50   ~ 0
 INPUT_I+
-Text Notes 5100 800  0    118  ~ 24
-Input divider
 $Comp
 L Device:R_US R?
 U 1 1 5FE8E52B
@@ -813,65 +608,26 @@ Wire Wire Line
 	2600 3850 3100 3850
 Wire Wire Line
 	1150 5250 1650 5250
-$Sheet
-S 2000 1500 1150 800 
-U 5F4FBB9F
-F0 "Calibration Mux" 50
-F1 "Calibration Mux.sch" 50
-F2 "INPUT_COM" I L 2000 2100 50 
-F3 "INPUT_V+" O R 3150 2100 50 
-F4 "CALIBRATE_MUX_INH" I L 2000 1650 50 
-F5 "CALIBRATE_MUX_A" I L 2000 1750 50 
-F6 "CALIBRATE_MUX_B" I L 2000 1850 50 
-$EndSheet
 Wire Wire Line
-	3150 2100 3450 2100
+	2000 2250 1650 2250
 Wire Wire Line
-	3450 2100 3450 1150
-Wire Wire Line
-	3450 1150 3700 1150
-Wire Wire Line
-	2000 2100 1650 2100
-Wire Wire Line
-	1650 2100 1650 5250
+	1650 2250 1650 5250
 Connection ~ 1650 5250
 Wire Wire Line
 	1650 5250 1950 5250
-Text HLabel 1800 1650 0    50   Input ~ 0
-CALIBRATE_MUX_INH
-Wire Wire Line
-	1800 1650 2000 1650
-Text HLabel 1800 1750 0    50   Input ~ 0
-CALIBRATE_MUX_A
-Text HLabel 1800 1850 0    50   Input ~ 0
-CALIBRATE_MUX_B
-Wire Wire Line
-	1800 1850 2000 1850
-Wire Wire Line
-	1800 1750 2000 1750
 Text HLabel 8450 2600 2    50   Output ~ 0
 V+_INPUT_BUFFERED
-Text HLabel 7050 4100 0    50   Input ~ 0
+Text HLabel 12450 3200 0    50   Input ~ 0
 METER_CURRENT_SOURCE_ON
-Text HLabel 9850 4100 0    50   Input ~ 0
-CALIBRATE_RELAY_ON
-Wire Notes Line
-	5000 475  5000 3950
-Wire Notes Line
-	5000 3950 5850 3950
-Wire Wire Line
-	3050 5150 5500 5150
 Wire Wire Line
 	3850 4350 5500 4350
 Connection ~ 3850 4350
 Connection ~ 5500 4350
 Wire Wire Line
 	5500 4350 5500 5150
-Wire Notes Line
-	5850 3600 5850 7800
-Text HLabel 3350 6200 2    50   Output ~ 0
+Text HLabel 5700 5800 2    50   Output ~ 0
 I_SENSE-
-Text HLabel 3350 6700 2    50   Output ~ 0
+Text HLabel 5700 6950 2    50   Output ~ 0
 I_SENSE+
 Text Notes 3000 3450 0    50   ~ 0
 Establishes a virtual ground \nfor input signals at 1/2 the \n4.096V reference\n
@@ -884,13 +640,13 @@ Wire Notes Line width 8 style solid
 Wire Notes Line width 8 style solid
 	6700 2100 5450 2100
 Wire Notes Line width 8 style solid
-	7400 4300 8850 4300
+	11775 2550 13275 2550
 Wire Notes Line width 8 style solid
-	8850 4300 8850 3650
+	13275 2550 13275 1900
 Wire Notes Line width 8 style solid
-	7400 3650 8850 3650
+	11775 1900 13275 1900
 Wire Notes Line width 8 style solid
-	7400 4300 7400 3650
+	11775 2550 11775 1900
 Wire Notes Line width 8 style solid
 	2950 3500 4150 3500
 Wire Notes Line width 8 style solid
@@ -901,26 +657,252 @@ Wire Notes Line width 8 style solid
 	2950 3500 2950 3150
 Wire Notes Line
 	9750 1700 11225 1700
-Text HLabel 9500 1550 2    50   Input ~ 0
-SET_CURRENT_SOURCE_B
 Text HLabel 9500 1450 2    50   Input ~ 0
-SET_CURRENT_SOURCE_A
+SET_CURRENT_SOURCE_B
 Text HLabel 9500 1350 2    50   Input ~ 0
-~VREF_1.024V_SDN~
+SET_CURRENT_SOURCE_A
 $Sheet
-S 8150 1000 1150 650 
+S 8150 1100 1150 650 
 U 5F7E68F4
 F0 "Ohmeter Current Source" 50
 F1 "Ohmeter Current Source.sch" 50
-F2 "~SDHN_VREF_1.024V~" I R 9300 1350 50 
-F3 "SET_CURRENT_SOURCE_A" I R 9300 1450 50 
-F4 "SET_CURRENT_SOURCE_B" I R 9300 1550 50 
-F5 "CURRENT_SOURCE_OUT" O L 8150 1150 50 
+F2 "SET_CURRENT_SOURCE_A" I R 9300 1350 50 
+F3 "SET_CURRENT_SOURCE_B" I R 9300 1450 50 
+F4 "CURRENT_SOURCE_OUT+" O L 8150 1150 50 
+F5 "CURRENT_SOURCE_OUT-" I L 8150 1700 50 
 $EndSheet
-Wire Wire Line
-	9500 1550 9300 1550
 Wire Wire Line
 	9500 1450 9300 1450
 Wire Wire Line
 	9500 1350 9300 1350
+$Comp
+L irex_Transistor_FET:NTZD3154N Q?
+U 1 1 5FAD2B97
+P 13200 4950
+F 0 "Q?" H 13305 4996 50  0000 L CNN
+F 1 "NTZD3154N" H 13305 4905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-563" H 13300 4850 50  0001 L CNN
+F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 13200 4950 50  0001 L CNN
+	1    13200 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L irex_Transistor_FET:NTZD3154N Q?
+U 2 1 5FAD5C0F
+P 14600 4950
+F 0 "Q?" H 14705 4996 50  0000 L CNN
+F 1 "NTZD3154N" H 14705 4905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-563" H 14700 4850 50  0001 L CNN
+F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 14600 4950 50  0001 L CNN
+	2    14600 4950
+	1    0    0    -1  
+$EndComp
+Text Notes -200 -200 0    250  ~ 50
+TODO: Clean me…I’m a mess
+Wire Wire Line
+	7450 1150 8150 1150
+$Comp
+L Device:R_US R?
+U 1 1 5FF0C142
+P 12850 5200
+AR Path="/5FF0C142" Ref="R?"  Part="1" 
+AR Path="/5F511849/5FF0C142" Ref="R?"  Part="1" 
+AR Path="/5F511849/5F4FBB9F/5FF0C142" Ref="R?"  Part="1" 
+F 0 "R?" H 12800 5250 50  0000 R CNN
+F 1 "10k" H 12800 5150 50  0000 R CNN
+F 2 "" V 12890 5190 50  0001 C CNN
+F 3 "~" H 12850 5200 50  0001 C CNN
+	1    12850 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12850 5050 12850 4950
+Connection ~ 12850 4950
+Wire Wire Line
+	12850 4950 12900 4950
+$Comp
+L power:GND #PWR?
+U 1 1 5FF1909C
+P 12850 5400
+AR Path="/5FF1909C" Ref="#PWR?"  Part="1" 
+AR Path="/5F511849/5FF1909C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 12850 5150 50  0001 C CNN
+F 1 "GND" H 12855 5227 50  0000 C CNN
+F 2 "" H 12850 5400 50  0001 C CNN
+F 3 "" H 12850 5400 50  0001 C CNN
+	1    12850 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12850 5400 12850 5350
+$Comp
+L Device:R_US R?
+U 1 1 5FF36234
+P 14250 5150
+AR Path="/5FF36234" Ref="R?"  Part="1" 
+AR Path="/5F511849/5FF36234" Ref="R?"  Part="1" 
+AR Path="/5F511849/5F4FBB9F/5FF36234" Ref="R?"  Part="1" 
+F 0 "R?" H 14200 5200 50  0000 R CNN
+F 1 "10k" H 14200 5100 50  0000 R CNN
+F 2 "" V 14290 5140 50  0001 C CNN
+F 3 "~" H 14250 5150 50  0001 C CNN
+	1    14250 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14250 5350 14250 5300
+Wire Wire Line
+	14250 5000 14250 4950
+Connection ~ 14250 4950
+Wire Wire Line
+	14250 4950 14300 4950
+$Comp
+L power:GND #PWR?
+U 1 1 5FF3623E
+P 14250 5350
+AR Path="/5FF3623E" Ref="#PWR?"  Part="1" 
+AR Path="/5F511849/5FF3623E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 14250 5100 50  0001 C CNN
+F 1 "GND" H 14255 5177 50  0000 C CNN
+F 2 "" H 14250 5350 50  0001 C CNN
+F 3 "" H 14250 5350 50  0001 C CNN
+	1    14250 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1850 2000 1850
+Wire Wire Line
+	1800 1950 2000 1950
+Text HLabel 1800 1950 0    50   Input ~ 0
+CALIBRATE_MUX_~B
+Text HLabel 1800 1850 0    50   Input ~ 0
+CALIBRATE_MUX_~A
+$Sheet
+S 2000 1500 1150 850 
+U 5F4FBB9F
+F0 "Calibration Mux" 50
+F1 "Calibration Mux.sch" 50
+F2 "INPUT_COM" I L 2000 2250 50 
+F3 "INPUT_V+" O L 2000 1600 50 
+F4 "CALIBRATE_MUX_~A" I L 2000 1850 50 
+F5 "CALIBRATE_MUX_~B" I L 2000 1950 50 
+F6 "CALIBRATE_RELAY_ON" I L 2000 2050 50 
+F7 "OUTPUT_V+" O R 3150 1600 50 
+$EndSheet
+Wire Wire Line
+	2550 5350 3400 5350
+Text Label 3400 5350 2    50   ~ 0
+CURRENT_SOURCE_-
+Connection ~ 3800 5150
+Wire Wire Line
+	3800 5150 5500 5150
+Wire Wire Line
+	2550 5150 3800 5150
+Wire Wire Line
+	8150 1700 7300 1700
+Text Label 7300 1700 0    50   ~ 0
+CURRENT_SOURCE_-
+Text Notes 6050 2000 0    50   ~ 0
+750k Here
+$Comp
+L irex_Relay:EC2-5NU_Split K?
+U 2 1 5F569339
+P 2250 5250
+AR Path="/5F569339" Ref="K?"  Part="2" 
+AR Path="/5F511849/5F569339" Ref="K3"  Part="2" 
+F 0 "K3" V 1925 5250 50  0000 C CNN
+F 1 "EC2-5NU" V 2016 5250 50  0000 C CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 2450 5150 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 2250 5250 50  0001 C CNN
+	2    2250 5250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5F85FF38
+P 4750 6100
+F 0 "D?" H 4700 6300 50  0000 L CNN
+F 1 "1N4007" H 4600 6200 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 4750 6100 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 4750 6100 50  0001 C CNN
+	1    4750 6100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5F8644E0
+P 5350 6100
+F 0 "D?" H 5300 6300 50  0000 L CNN
+F 1 "1N4007" H 5200 6200 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 5350 6100 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 5350 6100 50  0001 C CNN
+	1    5350 6100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5F868BFF
+P 5350 6750
+F 0 "D?" H 5300 6950 50  0000 L CNN
+F 1 "1N4007" H 5200 6850 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 5350 6750 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 5350 6750 50  0001 C CNN
+	1    5350 6750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5F86DDCC
+P 4750 6750
+F 0 "D?" H 4700 6950 50  0000 L CNN
+F 1 "1N4007" H 4600 6850 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 4750 6750 50  0001 C CNN
+F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 4750 6750 50  0001 C CNN
+	1    4750 6750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 6100 4600 6100
+Wire Wire Line
+	4500 6100 4500 6400
+Wire Wire Line
+	4500 6750 4600 6750
+Wire Wire Line
+	4900 6100 5050 6100
+Wire Wire Line
+	4900 6750 5050 6750
+Wire Wire Line
+	5500 6750 5600 6750
+Wire Wire Line
+	5600 6750 5600 6400
+Wire Wire Line
+	5600 6100 5500 6100
+Wire Wire Line
+	4500 6400 5600 6400
+Connection ~ 4500 6400
+Wire Wire Line
+	4500 6400 4500 6750
+Connection ~ 5600 6400
+Wire Wire Line
+	5600 6400 5600 6100
+Wire Wire Line
+	5050 6950 5050 6750
+Connection ~ 5050 6750
+Wire Wire Line
+	5050 6750 5200 6750
+Wire Wire Line
+	5050 5800 5050 6100
+Connection ~ 5050 6100
+Wire Wire Line
+	5050 6100 5200 6100
+Wire Wire Line
+	5050 5800 5700 5800
+Connection ~ 5050 5800
+Wire Wire Line
+	5050 6950 5700 6950
+Connection ~ 5050 6950
+Wire Wire Line
+	3800 5800 5050 5800
+Wire Wire Line
+	3800 6950 5050 6950
 $EndSCHEMATC
