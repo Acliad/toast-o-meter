@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 9
+Sheet 3 10
 Title "Toast-O-Meter"
 Date ""
 Rev "0"
@@ -18,11 +18,13 @@ L Device:R_US R?
 U 1 1 5F7D131D
 P 4000 3250
 AR Path="/5FDFAE85/5F7D131D" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7D131D" Ref="R?"  Part="1" 
-F 0 "R?" H 3932 3204 50  0000 R CNN
+AR Path="/5F7CCAA0/5F7D131D" Ref="R304"  Part="1" 
+F 0 "R304" H 3932 3204 50  0000 R CNN
 F 1 "10k" H 3932 3295 50  0000 R CNN
 F 2 "" V 4040 3240 50  0001 C CNN
 F 3 "~" H 4000 3250 50  0001 C CNN
+F 4 "" H 4000 3250 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 4000 3250 50  0001 C CNN "Digi-Key PN"
 	1    4000 3250
 	-1   0    0    1   
 $EndComp
@@ -31,11 +33,13 @@ L Device:R_US R?
 U 1 1 5F7D1D7F
 P 6000 3000
 AR Path="/5FDFAE85/5F7D1D7F" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7D1D7F" Ref="R?"  Part="1" 
-F 0 "R?" V 5800 2950 50  0000 L CNN
+AR Path="/5F7CCAA0/5F7D1D7F" Ref="R302"  Part="1" 
+F 0 "R302" V 5800 2950 50  0000 L CNN
 F 1 "10k" V 5900 2950 50  0000 L CNN
 F 2 "" V 6040 2990 50  0001 C CNN
 F 3 "~" H 6000 3000 50  0001 C CNN
+F 4 "" H 6000 3000 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 6000 3000 50  0001 C CNN "Digi-Key PN"
 	1    6000 3000
 	0    1    1    0   
 $EndComp
@@ -44,33 +48,41 @@ L Device:R_US R?
 U 1 1 5F7D260A
 P 7250 3600
 AR Path="/5FDFAE85/5F7D260A" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7D260A" Ref="R?"  Part="1" 
-F 0 "R?" H 7182 3554 50  0000 R CNN
+AR Path="/5F7CCAA0/5F7D260A" Ref="R305"  Part="1" 
+F 0 "R305" H 7182 3554 50  0000 R CNN
 F 1 "10k" H 7182 3645 50  0000 R CNN
 F 2 "" V 7290 3590 50  0001 C CNN
 F 3 "~" H 7250 3600 50  0001 C CNN
+F 4 "" H 7250 3600 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 7250 3600 50  0001 C CNN "Digi-Key PN"
 	1    7250 3600
 	-1   0    0    1   
 $EndComp
 $Comp
-L irex_Transistor_FET:DMP3085LSD Q?
+L irex_Transistor_FET:DMP3085LSD Q301
 U 1 1 5F7DB1F5
 P 4000 2600
-F 0 "Q?" V 4425 2600 50  0000 C CNN
+F 0 "Q301" V 4425 2600 50  0000 C CNN
 F 1 "DMP3085LSD" V 4334 2600 50  0000 C CNN
 F 2 "Package_SO:SO-8_3.9x4.9mm_P1.27mm" H 4200 2450 50  0001 L CNN
 F 3 "https://www.diodes.com/assets/Datasheets/DMP3085LSD.pdf" H 4050 2600 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/diodes-incorporated/DMP3085LSD-13/4251594" H 4000 2600 50  0001 C CNN "Digi-Key Link"
+F 5 "DMP3085LSD-13DICT-ND" H 4000 2600 50  0001 C CNN "Digi-Key PN"
+F 6 "DMP3085LSD" H 4000 2600 50  0001 C CNN "MPN"
 	1    4000 2600
 	0    -1   -1   0   
 $EndComp
 $Comp
-L irex_Transistor_FET:DMP3085LSD Q?
+L irex_Transistor_FET:DMP3085LSD Q301
 U 2 1 5F7DDE08
 P 7250 2600
-F 0 "Q?" V 7675 2600 50  0000 C CNN
+F 0 "Q301" V 7675 2600 50  0000 C CNN
 F 1 "DMP3085LSD" V 7584 2600 50  0000 C CNN
 F 2 "Package_SO:SO-8_3.9x4.9mm_P1.27mm" H 7450 2450 50  0001 L CNN
 F 3 "https://www.diodes.com/assets/Datasheets/DMP3085LSD.pdf" H 7300 2600 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/diodes-incorporated/DMP3085LSD-13/4251594" H 7250 2600 50  0001 C CNN "Digi-Key Link"
+F 5 "DMP3085LSD-13DICT-ND" H 7250 2600 50  0001 C CNN "Digi-Key PN"
+F 6 "DMP3085LSD" H 7250 2600 50  0001 C CNN "MPN"
 	2    7250 2600
 	0    1    -1   0   
 $EndComp
@@ -79,11 +91,13 @@ L Device:R_US R?
 U 1 1 5F7E105A
 P 5550 2750
 AR Path="/5FDFAE85/5F7E105A" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7E105A" Ref="R?"  Part="1" 
-F 0 "R?" H 5482 2704 50  0000 R CNN
+AR Path="/5F7CCAA0/5F7E105A" Ref="R301"  Part="1" 
+F 0 "R301" H 5482 2704 50  0000 R CNN
 F 1 "1.5k" H 5482 2795 50  0000 R CNN
 F 2 "" V 5590 2740 50  0001 C CNN
 F 3 "~" H 5550 2750 50  0001 C CNN
+F 4 "" H 5550 2750 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 5550 2750 50  0001 C CNN "Digi-Key PN"
 	1    5550 2750
 	-1   0    0    1   
 $EndComp
@@ -112,13 +126,16 @@ Wire Wire Line
 Wire Wire Line
 	5150 3350 5450 3350
 $Comp
-L irex_Reference_Voltage:TL432LI U?
+L irex_Reference_Voltage:TL432LI U301
 U 1 1 5F7E207E
 P 5550 3350
-F 0 "U?" V 5596 3280 50  0000 R CNN
+F 0 "U301" V 5596 3280 50  0000 R CNN
 F 1 "TL432LI" V 5505 3280 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 5550 3200 50  0001 C CIN
 F 3 "https://www.ti.com/lit/ds/symlink/tl431li.pdf?HQS=TI-null-null-digikeymode-df-pf-null-wwe&ts=1601074554367" H 5550 3350 50  0001 C CIN
+F 4 "https://www.digikey.com/en/products/detail/texas-instruments/TL432LIACDBZR/9860322" H 5550 3350 50  0001 C CNN "Digi-Key Link"
+F 5 "296-53244-1-ND" H 5550 3350 50  0001 C CNN "Digi-Key PN"
+F 6 "TL432LI" H 5550 3350 50  0001 C CNN "MPN"
 	1    5550 3350
 	0    -1   -1   0   
 $EndComp
@@ -129,11 +146,13 @@ L Device:R_US R?
 U 1 1 5F7D15E1
 P 5150 3650
 AR Path="/5FDFAE85/5F7D15E1" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7D15E1" Ref="R?"  Part="1" 
-F 0 "R?" H 5082 3604 50  0000 R CNN
+AR Path="/5F7CCAA0/5F7D15E1" Ref="R306"  Part="1" 
+F 0 "R306" H 5082 3604 50  0000 R CNN
 F 1 "10k" H 5082 3695 50  0000 R CNN
 F 2 "" V 5190 3640 50  0001 C CNN
 F 3 "~" H 5150 3650 50  0001 C CNN
+F 4 "" H 5150 3650 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 5150 3650 50  0001 C CNN "Digi-Key PN"
 	1    5150 3650
 	-1   0    0    1   
 $EndComp
@@ -146,11 +165,13 @@ L Device:R_US R?
 U 1 1 5F7E0D9C
 P 5150 3050
 AR Path="/5FDFAE85/5F7E0D9C" Ref="R?"  Part="1" 
-AR Path="/5F7CCAA0/5F7E0D9C" Ref="R?"  Part="1" 
-F 0 "R?" H 5082 3004 50  0000 R CNN
+AR Path="/5F7CCAA0/5F7E0D9C" Ref="R303"  Part="1" 
+F 0 "R303" H 5082 3004 50  0000 R CNN
 F 1 "12k" H 5082 3095 50  0000 R CNN
 F 2 "" V 5190 3040 50  0001 C CNN
 F 3 "~" H 5150 3050 50  0001 C CNN
+F 4 "" H 5150 3050 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 5150 3050 50  0001 C CNN "Digi-Key PN"
 	1    5150 3050
 	-1   0    0    1   
 $EndComp
@@ -219,14 +240,16 @@ U? acts as a comparator and\ngoes low  when Vin = 5.5V.\nInternal Vref = 2.495V
 Wire Wire Line
 	7250 2800 7250 3300
 $Comp
-L Device:Q_PNP_BEC Q?
+L Device:Q_PNP_BEC Q302
 U 1 1 5F81D169
 P 6550 3000
-F 0 "Q?" H 6741 3046 50  0000 L CNN
+F 0 "Q302" H 6741 3046 50  0000 L CNN
 F 1 "PMBT2907A" H 6741 2955 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6750 3100 50  0001 C CNN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/NXP%20PDFs/PMBT2907(A).pdf" H 6550 3000 50  0001 C CNN
 F 4 "PMBT2907A" H 6550 3000 50  0001 C CNN "MPN"
+F 5 "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PMBT2907A215/763344" H 6550 3000 50  0001 C CNN "Digi-Key Link"
+F 6 "1727-2958-1-ND" H 6550 3000 50  0001 C CNN "Digi-Key PN"
 	1    6550 3000
 	1    0    0    -1  
 $EndComp
