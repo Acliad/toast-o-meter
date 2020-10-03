@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 10
+Sheet 1 11
 Title "Toast-O-Meter"
 Date "2020-08-14"
 Rev "0"
@@ -65,19 +65,6 @@ F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A4
 F 5 "1276-6462-1-ND" H 3450 1450 50  0001 C CNN "Digi-Key PN"
 	1    3450 1450
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:L L102
-U 1 1 5F38DC8E
-P 3150 1150
-F 0 "L102" V 3250 1150 50  0000 C CNN
-F 1 "6.8uH" V 3050 1150 50  0000 C CNN
-F 2 "" H 3150 1150 50  0001 C CNN
-F 3 "~" H 3150 1150 50  0001 C CNN
-F 4 "" H 3150 1150 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 3150 1150 50  0001 C CNN "Digi-Key PN"
-	1    3150 1150
-	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	3300 1150 3450 1150
@@ -401,19 +388,6 @@ F 5 "1276-6462-1-ND" H 6750 1450 50  0001 C CNN "Digi-Key PN"
 	1    6750 1450
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:L L101
-U 1 1 600AF036
-P 6300 1100
-F 0 "L101" V 6400 1100 50  0000 C CNN
-F 1 "6.8uH" V 6200 1100 50  0000 C CNN
-F 2 "" H 6300 1100 50  0001 C CNN
-F 3 "~" H 6300 1100 50  0001 C CNN
-F 4 "" H 6300 1100 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 6300 1100 50  0001 C CNN "Digi-Key PN"
-	1    6300 1100
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7300 1300 7300 1100
 Connection ~ 7300 1100
@@ -594,5 +568,31 @@ F 4 "https://www.digikey.com/en/products/detail/würth-elektronik/865080542006/5
 F 5 "732-8505-1-ND" H 7300 1450 50  0001 C CNN "Digi-Key PN"
 	1    7300 1450
 	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L102
+U 1 1 5F78CC57
+P 3150 1150
+F 0 "L102" V 3250 1150 50  0000 C CNN
+F 1 "6.8uH" V 3050 1150 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3150 1150 50  0001 C CNN
+F 3 "~" H 3150 1150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MLZ2012N6R8LT000/2523499" H 3150 1150 50  0001 C CNN "Digi-Key Link"
+F 5 "445-6761-1-ND" H 3150 1150 50  0001 C CNN "Digi-Key PN"
+	1    3150 1150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L L101
+U 1 1 5F78D87B
+P 6300 1100
+F 0 "L101" V 6400 1100 50  0000 C CNN
+F 1 "6.8uH" V 6200 1100 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6300 1100 50  0001 C CNN
+F 3 "~" H 6300 1100 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MLZ2012N6R8LT000/2523499" H 6300 1100 50  0001 C CNN "Digi-Key Link"
+F 5 "445-6761-1-ND" H 6300 1100 50  0001 C CNN "Digi-Key PN"
+	1    6300 1100
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC

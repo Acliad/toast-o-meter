@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 10
+Sheet 5 11
 Title "Toast-O-Meter"
-Date ""
+Date "2020-08-14"
 Rev "0"
 Comp ""
 Comment1 ""
@@ -292,8 +292,8 @@ F 0 "Q502" H 3900 6750 50  0000 R CNN
 F 1 "NTZD3154N" H 3900 6650 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 4150 6450 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 4050 6550 50  0001 L CNN
-F 4 "" H 4050 6550 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4050 6550 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 4050 6550 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 4050 6550 50  0001 C CNN "Digi-Key PN"
 	2    4050 6550
 	-1   0    0    -1  
 $EndComp
@@ -305,8 +305,8 @@ F 0 "Q502" H 4700 5700 50  0000 R CNN
 F 1 "NTZD3154N" H 4700 5600 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 4950 5400 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 4850 5500 50  0001 L CNN
-F 4 "" H 4850 5500 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4850 5500 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 4850 5500 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 4850 5500 50  0001 C CNN "Digi-Key PN"
 	1    4850 5500
 	-1   0    0    -1  
 $EndComp
@@ -551,7 +551,7 @@ AR Path="/5F5089CB/5F51AFAC" Ref="R?"  Part="1"
 AR Path="/5F7E5DD1/5F51AFAC" Ref="R?"  Part="1" 
 AR Path="/5F511849/5F7E68F4/5F51AFAC" Ref="R505"  Part="1" 
 F 0 "R505" V 2945 4450 50  0000 C CNN
-F 1 "10k" V 3036 4450 50  0000 C CNN
+F 1 "1k" V 3036 4450 50  0000 C CNN
 F 2 "" V 3190 4440 50  0001 C CNN
 F 3 "~" H 3150 4450 50  0001 C CNN
 F 4 "" H 3150 4450 50  0001 C CNN "Digi-Key Link"
@@ -609,7 +609,7 @@ AR Path="/5F5089CB/5F51AFA6" Ref="C?"  Part="1"
 AR Path="/5F7E5DD1/5F51AFA6" Ref="C?"  Part="1" 
 AR Path="/5F511849/5F7E68F4/5F51AFA6" Ref="C503"  Part="1" 
 F 0 "C503" H 2815 4096 50  0000 L CNN
-F 1 "10nF" H 2815 4005 50  0000 L CNN
+F 1 "0.1uF" H 2815 4005 50  0000 L CNN
 F 2 "" H 2738 3900 50  0001 C CNN
 F 3 "~" H 2700 4050 50  0001 C CNN
 F 4 "" H 2700 4050 50  0001 C CNN "Digi-Key Link"
@@ -685,8 +685,8 @@ F 0 "Q501" H 5650 4300 50  0000 L CNN
 F 1 "NTZD3154N" H 5650 4200 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 5650 4050 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 5550 4150 50  0001 L CNN
-F 4 "" H 5550 4150 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 5550 4150 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 5550 4150 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 5550 4150 50  0001 C CNN "Digi-Key PN"
 	2    5550 4150
 	1    0    0    -1  
 $EndComp
@@ -761,8 +761,8 @@ F 0 "Q501" H 5050 4100 50  0000 L CNN
 F 1 "NTZD3154N" H 5050 4000 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 5100 3800 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 5000 3900 50  0001 L CNN
-F 4 "" H 5000 3900 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 5000 3900 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 5000 3900 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 5000 3900 50  0001 C CNN "Digi-Key PN"
 	1    5000 3900
 	1    0    0    -1  
 $EndComp

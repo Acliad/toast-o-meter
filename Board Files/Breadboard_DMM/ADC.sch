@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 10
+Sheet 2 11
 Title "Toast-O-Meter"
-Date ""
+Date "2020-08-14"
 Rev "0"
 Comp ""
 Comment1 ""
@@ -650,8 +650,8 @@ F 0 "Q201" H 8805 4946 50  0000 L CNN
 F 1 "NTZD3154N" H 8805 4855 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 8800 4800 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 8700 4900 50  0001 L CNN
-F 4 "" H 8700 4900 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 8700 4900 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 8700 4900 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 8700 4900 50  0001 C CNN "Digi-Key PN"
 	1    8700 4900
 	1    0    0    -1  
 $EndComp
@@ -663,8 +663,8 @@ F 0 "Q201" H 3255 5796 50  0000 L CNN
 F 1 "NTZD3154N" H 3255 5705 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 3250 5650 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 3150 5750 50  0001 L CNN
-F 4 "" H 3150 5750 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 3150 5750 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 3150 5750 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 3150 5750 50  0001 C CNN "Digi-Key PN"
 	2    3150 5750
 	1    0    0    -1  
 $EndComp

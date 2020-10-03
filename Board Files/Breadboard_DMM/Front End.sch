@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 10
+Sheet 4 11
 Title "Toast-O-Meter"
-Date ""
+Date "2020-08-14"
 Rev "0"
 Comp ""
 Comment1 ""
@@ -148,8 +148,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F56935A
 P 7050 2100
 AR Path="/5F56935A" Ref="K?"  Part="2" 
-AR Path="/5F511849/5F56935A" Ref="K2"  Part="2" 
-F 0 "K2" V 7331 2100 50  0000 C CNN
+AR Path="/5F511849/5F56935A" Ref="K401"  Part="2" 
+F 0 "K401" V 7331 2100 50  0000 C CNN
 F 1 "EC2-5NU" V 7240 2100 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 7250 2000 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7050 2100 50  0001 C CNN
@@ -163,8 +163,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F56933F
 P 5550 4150
 AR Path="/5F56933F" Ref="K?"  Part="3" 
-AR Path="/5F511849/5F56933F" Ref="K3"  Part="3" 
-F 0 "K3" H 5800 4400 50  0000 C CNN
+AR Path="/5F511849/5F56933F" Ref="K402"  Part="3" 
+F 0 "K402" H 5800 4400 50  0000 C CNN
 F 1 "EC2-5NU" H 5900 4300 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5750 4050 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5550 4150 50  0001 C CNN
@@ -192,7 +192,7 @@ Wire Wire Line
 	7350 3700 7850 3700
 Connection ~ 7350 3700
 Text Notes 6125 1550 0    50   ~ 0
-In Voltmeter mode, Relays XX and XX\nare in the NC position. In ohmeter\nmode, they are in NO position. \n\nWhen calibrating, relay XX is in NO\nposition to connect the input to \nreference nodes.
+In Voltmeter mode, Relays 401 and \n402 are in the NC position. In ohmeter\nmode, they are in NO position. \n\nWhen calibrating, calibration relay \nis in NO position to connect the input\nto reference nodes.
 Text HLabel 7850 3700 2    50   Output ~ 0
 V+_INPUT_BUFFERED
 Wire Notes Line width 8 style solid
@@ -204,11 +204,11 @@ Wire Notes Line width 8 style solid
 Wire Notes Line width 8 style solid
 	8650 3250 7400 3250
 Wire Notes Line width 8 style solid
-	6075 1600 7575 1600
+	6075 1600 7650 1600
 Wire Notes Line width 8 style solid
-	7575 1600 7575 950 
+	7650 1600 7650 950 
 Wire Notes Line width 8 style solid
-	6075 950  7575 950 
+	6075 950  7650 950 
 Wire Notes Line width 8 style solid
 	6075 1600 6075 950 
 Text HLabel 9250 2400 2    50   Input ~ 0
@@ -256,8 +256,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 2 1 5F569339
 P 2050 5350
 AR Path="/5F569339" Ref="K?"  Part="2" 
-AR Path="/5F511849/5F569339" Ref="K3"  Part="2" 
-F 0 "K3" V 1725 5350 50  0000 C CNN
+AR Path="/5F511849/5F569339" Ref="K402"  Part="2" 
+F 0 "K402" V 1725 5350 50  0000 C CNN
 F 1 "EC2-5NU" V 1816 5350 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 2250 5250 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 2050 5350 50  0001 C CNN
@@ -312,8 +312,8 @@ L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F569360
 P 5550 2400
 AR Path="/5F569360" Ref="K?"  Part="3" 
-AR Path="/5F511849/5F569360" Ref="K2"  Part="3" 
-F 0 "K2" H 5800 2400 50  0000 C CNN
+AR Path="/5F511849/5F569360" Ref="K401"  Part="3" 
+F 0 "K401" H 5800 2400 50  0000 C CNN
 F 1 "EC2-5NU" H 5900 2500 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5750 2300 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5550 2400 50  0001 C CNN

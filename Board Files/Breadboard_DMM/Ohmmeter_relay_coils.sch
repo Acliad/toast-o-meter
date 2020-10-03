@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 10
-Title ""
-Date ""
-Rev ""
+Sheet 8 11
+Title "Toast-O-Meter"
+Date "2020-08-14"
+Rev "0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -19,8 +19,8 @@ U 1 1 6001BE83
 P 7700 4150
 AR Path="/6001BE83" Ref="K?"  Part="1" 
 AR Path="/5F511849/6001BE83" Ref="K?"  Part="1" 
-AR Path="/5F511849/5FFF3ED7/6001BE83" Ref="K3"  Part="1" 
-F 0 "K3" H 7855 4196 50  0000 L CNN
+AR Path="/5F511849/5FFF3ED7/6001BE83" Ref="K402"  Part="1" 
+F 0 "K402" H 7855 4196 50  0000 L CNN
 F 1 "EC2-5NU" H 7855 4105 50  0000 L CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 7900 4050 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7700 4150 50  0001 C CNN
@@ -39,8 +39,8 @@ F 0 "D802" V 7304 4230 50  0000 L CNN
 F 1 "1N4007" V 7395 4230 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 7350 4150 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 7350 4150 50  0001 C CNN
-F 4 "" H 7350 4150 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 7350 4150 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 7350 4150 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 7350 4150 50  0001 C CNN "Digi-Key PN"
 	1    7350 4150
 	0    -1   1    0   
 $EndComp
@@ -124,8 +124,8 @@ F 0 "Q801" H 7805 4996 50  0000 L CNN
 F 1 "NTZD3154N" H 7805 4905 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 7800 4850 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 7700 4950 50  0001 L CNN
-F 4 "" H 7700 4950 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 7700 4950 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 7700 4950 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 7700 4950 50  0001 C CNN "Digi-Key PN"
 	1    7700 4950
 	1    0    0    -1  
 $EndComp
@@ -215,8 +215,8 @@ F 0 "Q602" H 5255 4996 50  0000 L CNN
 F 1 "NTZD3154N" H 5255 4905 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 5250 4850 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 5150 4950 50  0001 L CNN
-F 4 "" H 5150 4950 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 5150 4950 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 5150 4950 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 5150 4950 50  0001 C CNN "Digi-Key PN"
 	2    5150 4950
 	1    0    0    -1  
 $EndComp
@@ -289,8 +289,8 @@ F 0 "D801" V 4754 4230 50  0000 L CNN
 F 1 "1N4007" V 4845 4230 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 4800 4150 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 4800 4150 50  0001 C CNN
-F 4 "" H 4800 4150 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4800 4150 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 4800 4150 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 4800 4150 50  0001 C CNN "Digi-Key PN"
 	1    4800 4150
 	0    -1   1    0   
 $EndComp
@@ -307,8 +307,8 @@ U 1 1 6001BF05
 P 5150 4150
 AR Path="/6001BF05" Ref="K?"  Part="1" 
 AR Path="/5F511849/6001BF05" Ref="K?"  Part="1" 
-AR Path="/5F511849/5FFF3ED7/6001BF05" Ref="K2"  Part="1" 
-F 0 "K2" H 5305 4196 50  0000 L CNN
+AR Path="/5F511849/5FFF3ED7/6001BF05" Ref="K401"  Part="1" 
+F 0 "K401" H 5305 4196 50  0000 L CNN
 F 1 "EC2-5NU" H 5305 4105 50  0000 L CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 5350 4050 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 5150 4150 50  0001 C CNN

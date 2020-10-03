@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 5 10
+Sheet 6 11
 Title "Toast-O-Meter"
-Date ""
+Date "2020-08-14"
 Rev "0"
 Comp ""
 Comment1 ""
@@ -217,7 +217,7 @@ Wire Wire Line
 	4450 4000 5150 4000
 $Comp
 L irex_Transistor_FET:NTZD3154N Q?
-U 1 1 5FFA77CB
+U 2 1 5FFA77CB
 P 4000 6450
 AR Path="/5F3FD151/5FFA77CB" Ref="Q?"  Part="2" 
 AR Path="/5F3FD151/5FDB7453/5FFA77CB" Ref="Q?"  Part="2" 
@@ -226,14 +226,14 @@ AR Path="/5FDFAE85/5FE702E1/5FFA77CB" Ref="Q?"  Part="2"
 AR Path="/5FDFAE85/5FE7329E/5FFA77CB" Ref="Q?"  Part="2" 
 AR Path="/5F3FD151/5FEE79D7/5FFA77CB" Ref="Q?"  Part="2" 
 AR Path="/5F511849/5F4FBB9F/5FEE8CDB/5FFA77CB" Ref="Q?"  Part="2" 
-AR Path="/5F511849/5F4FBB9F/5FFA77CB" Ref="Q602"  Part="1" 
-F 0 "Q602" H 4050 6700 50  0000 L CNN
+AR Path="/5F511849/5F4FBB9F/5FFA77CB" Ref="Q601"  Part="2" 
+F 0 "Q601" H 4050 6700 50  0000 L CNN
 F 1 "NTZD3154N" H 4050 6600 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 4100 6350 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 4000 6450 50  0001 L CNN
-F 4 "" H 4000 6450 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4000 6450 50  0001 C CNN "Digi-Key PN"
-	1    4000 6450
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 4000 6450 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 4000 6450 50  0001 C CNN "Digi-Key PN"
+	2    4000 6450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -255,8 +255,8 @@ F 0 "Q601" H 3350 5500 50  0000 L CNN
 F 1 "NTZD3154N" H 3350 5400 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 3400 5150 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 3300 5250 50  0001 L CNN
-F 4 "" H 3300 5250 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 3300 5250 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 3300 5250 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 3300 5250 50  0001 C CNN "Digi-Key PN"
 	1    3300 5250
 	1    0    0    -1  
 $EndComp
@@ -357,7 +357,7 @@ Wire Wire Line
 	3900 3800 3900 3700
 $Comp
 L irex_Transistor_FET:NTZD3154N Q?
-U 2 1 5FFCC6C6
+U 1 1 5FFCC6C6
 P 9600 5950
 AR Path="/5F3FD151/5FFCC6C6" Ref="Q?"  Part="1" 
 AR Path="/5F3FD151/5FD730FD/5FFCC6C6" Ref="Q?"  Part="1" 
@@ -369,14 +369,14 @@ AR Path="/5F3FD151/5FEE79DD/5FFCC6C6" Ref="Q?"  Part="1"
 AR Path="/5F511849/5F4FBB9F/5FEE8CE1/5FFCC6C6" Ref="Q?"  Part="1" 
 AR Path="/5F511849/5F4FBB9F/5FEF5786/5FFCC6C6" Ref="Q?"  Part="1" 
 AR Path="/5F511849/5F4FBB9F/5FEF9BAE/5FFCC6C6" Ref="Q?"  Part="1" 
-AR Path="/5F511849/5F4FBB9F/5FFCC6C6" Ref="Q601"  Part="2" 
-F 0 "Q601" H 9650 6200 50  0000 L CNN
+AR Path="/5F511849/5F4FBB9F/5FFCC6C6" Ref="Q602"  Part="1" 
+F 0 "Q602" H 9650 6200 50  0000 L CNN
 F 1 "NTZD3154N" H 9650 6100 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-563" H 9700 5850 50  0001 L CNN
 F 3 "https://www.onsemi.cn/PowerSolutions/document/NTZD3154N-D.PDF" H 9600 5950 50  0001 L CNN
-F 4 "" H 9600 5950 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 9600 5950 50  0001 C CNN "Digi-Key PN"
-	2    9600 5950
+F 4 "https://www.digikey.com/en/products/detail/on-semiconductor/NTZD3154NT1G/687137" H 9600 5950 50  0001 C CNN "Digi-Key Link"
+F 5 "NTZD3154NT1GOSCT-ND" H 9600 5950 50  0001 C CNN "Digi-Key PN"
+	1    9600 5950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -416,34 +416,34 @@ Wire Wire Line
 $Comp
 L irex_Relay:EC2-5NU_Split K?
 U 1 1 5FAFCC09
-P 7900 2800
+P 9600 5200
 AR Path="/5FAFCC09" Ref="K?"  Part="2" 
 AR Path="/5F511849/5FAFCC09" Ref="K?"  Part="2" 
 AR Path="/5F511849/5F4FBB9F/5FAFCC09" Ref="K601"  Part="1" 
-F 0 "K601" V 7600 2800 50  0000 C CNN
-F 1 "EC2-5NU" V 7700 2800 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 8100 2700 50  0001 L CNN
-F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7900 2800 50  0001 C CNN
-F 4 "" H 7900 2800 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 7900 2800 50  0001 C CNN "Digi-Key PN"
-	1    7900 2800
-	0    -1   1    0   
-$EndComp
-$Comp
-L irex_Relay:EC2-5NU_Split K?
-U 2 1 5FAFCC0F
-P 9600 5200
-AR Path="/5FAFCC0F" Ref="K?"  Part="1" 
-AR Path="/5F511849/5FAFCC0F" Ref="K?"  Part="1" 
-AR Path="/5F511849/5F4FBB9F/5FAFCC0F" Ref="K601"  Part="2" 
-F 0 "K601" H 9755 5246 50  0000 L CNN
-F 1 "EC2-5NU" H 9755 5155 50  0000 L CNN
+F 0 "K601" H 9300 5250 50  0000 C CNN
+F 1 "EC2-5NU" H 9250 5150 50  0000 C CNN
 F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 9800 5100 50  0001 L CNN
 F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 9600 5200 50  0001 C CNN
 F 4 "" H 9600 5200 50  0001 C CNN "Digi-Key Link"
 F 5 "-" H 9600 5200 50  0001 C CNN "Digi-Key PN"
-	2    9600 5200
-	1    0    0    -1  
+	1    9600 5200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L irex_Relay:EC2-5NU_Split K?
+U 2 1 5FAFCC0F
+P 7900 2800
+AR Path="/5FAFCC0F" Ref="K?"  Part="1" 
+AR Path="/5F511849/5FAFCC0F" Ref="K?"  Part="1" 
+AR Path="/5F511849/5F4FBB9F/5FAFCC0F" Ref="K601"  Part="2" 
+F 0 "K601" V 7600 2750 50  0000 L CNN
+F 1 "EC2-5NU" V 7700 2650 50  0000 L CNN
+F 2 "Relay_THT:Relay_DPDT_Kemet_EC2" H 8100 2700 50  0001 L CNN
+F 3 "https://content.kemet.com/datasheets/KEM_R7002_EC2_EE2.pdf" H 7900 2800 50  0001 C CNN
+F 4 "" H 7900 2800 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 7900 2800 50  0001 C CNN "Digi-Key PN"
+	2    7900 2800
+	0    -1   1    0   
 $EndComp
 $Comp
 L power:GND #PWR?
@@ -537,8 +537,8 @@ F 0 "D601" V 9204 5280 50  0000 L CNN
 F 1 "1N4007" V 9295 5280 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 9250 5200 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 9250 5200 50  0001 C CNN
-F 4 "" H 9250 5200 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 9250 5200 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 9250 5200 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 9250 5200 50  0001 C CNN "Digi-Key PN"
 	1    9250 5200
 	0    -1   1    0   
 $EndComp

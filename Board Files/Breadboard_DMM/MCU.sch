@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 10
+Sheet 9 11
 Title "Toast-O-Meter"
-Date ""
+Date "2020-08-14"
 Rev "0"
 Comp ""
 Comment1 ""
@@ -55,8 +55,8 @@ F 0 "D902" V 7954 1880 50  0000 L CNN
 F 1 "1N4007" V 8045 1880 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 8000 1800 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8000 1800 50  0001 C CNN
-F 4 "" H 8000 1800 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 8000 1800 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 8000 1800 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 8000 1800 50  0001 C CNN "Digi-Key PN"
 	1    8000 1800
 	0    -1   1    0   
 $EndComp
@@ -111,8 +111,8 @@ F 0 "D901" V 10654 1430 50  0000 L CNN
 F 1 "1N4007" V 10745 1430 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 10700 1350 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 10700 1350 50  0001 C CNN
-F 4 "" H 10700 1350 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 10700 1350 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 10700 1350 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 10700 1350 50  0001 C CNN "Digi-Key PN"
 	1    10700 1350
 	0    -1   1    0   
 $EndComp
@@ -172,19 +172,6 @@ F 3 "" H 9700 850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	9700 850  9700 950 
-$Comp
-L Switch:SW_Push SW901
-U 1 1 5F49C582
-P 9700 1650
-F 0 "SW901" V 9746 1602 50  0000 R CNN
-F 1 "SW_Push" V 9655 1602 50  0000 R CNN
-F 2 "" H 9700 1850 50  0001 C CNN
-F 3 "~" H 9700 1850 50  0001 C CNN
-F 4 "" H 9700 1650 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 9700 1650 50  0001 C CNN "Digi-Key PN"
-	1    9700 1650
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	9700 1850 9700 2000
 Connection ~ 9700 2000
@@ -244,7 +231,7 @@ F 0 "U902" H 9250 5400 50  0000 L CNN
 F 1 "LCD-Generic_3.2in_SPI_SD" H 9550 5300 50  0000 R CNN
 F 2 "irex_Display:LCD-Generic-3.2in_89.30x55.04mm" H 10650 3750 50  0001 C CNN
 F 3 "https://www.aliexpress.com/item/4001122632293.html?spm=a2g0o.productlist.0.0.626763a37DWpAR&algo_pvid=075ffa5b-9e24-45ec-b277-c66fde4fd636&algo_expid=075ffa5b-9e24-45ec-b277-c66fde4fd636-8&btsid=0be3746c15983696518323585e6542&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_" H 9550 4950 50  0001 C CNN
-F 4 "" H 9650 4550 50  0001 C CNN "Digi-Key Link"
+F 4 "-" H 9650 4550 50  0001 C CNN "Digi-Key Link"
 F 5 "-" H 9650 4550 50  0001 C CNN "Digi-Key PN"
 	1    9650 4550
 	1    0    0    -1  
@@ -357,228 +344,228 @@ Text Notes 8200 3300 0    118  ~ 24
 Display
 Wire Notes Line
 	8100 3000 8100 6525
-Connection ~ 2300 4800
-Connection ~ 1700 4800
+Connection ~ 1850 4850
+Connection ~ 1250 4850
 Wire Wire Line
-	1700 4800 1250 4800
+	1250 4850 800  4850
 Wire Wire Line
-	1700 4800 2300 4800
+	1250 4850 1850 4850
 $Comp
 L power:GND #PWR0919
 U 1 1 5F418EEC
-P 2000 5900
-F 0 "#PWR0919" H 2000 5650 50  0001 C CNN
-F 1 "GND" H 2005 5727 50  0000 C CNN
-F 2 "" H 2000 5900 50  0001 C CNN
-F 3 "" H 2000 5900 50  0001 C CNN
-	1    2000 5900
+P 1550 5950
+F 0 "#PWR0919" H 1550 5700 50  0001 C CNN
+F 1 "GND" H 1555 5777 50  0000 C CNN
+F 2 "" H 1550 5950 50  0001 C CNN
+F 3 "" H 1550 5950 50  0001 C CNN
+	1    1550 5950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2000 5900 2000 5850
-Connection ~ 2000 5850
+	1550 5950 1550 5900
+Connection ~ 1550 5900
 Wire Wire Line
-	1700 5850 2000 5850
+	1250 5900 1550 5900
 Wire Wire Line
-	2000 5850 2300 5850
+	1550 5900 1850 5900
 Wire Wire Line
-	2300 5450 2300 5850
+	1850 5500 1850 5900
 Wire Wire Line
-	1700 5750 1700 5850
+	1250 5800 1250 5900
 $Comp
 L Switch:SW_Push SW902
 U 1 1 5F419EFC
-P 1700 5550
-F 0 "SW902" V 1746 5502 50  0000 R CNN
-F 1 "SW_Push" V 1655 5502 50  0000 R CNN
-F 2 "" H 1700 5750 50  0001 C CNN
-F 3 "~" H 1700 5750 50  0001 C CNN
-F 4 "" H 1700 5550 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 1700 5550 50  0001 C CNN "Digi-Key PN"
-	1    1700 5550
+P 1250 5600
+F 0 "SW902" V 1296 5552 50  0000 R CNN
+F 1 "SW_Push" V 1205 5552 50  0000 R CNN
+F 2 "irex_Button_Switch_SMD:SW-PUSH-6x3.5mm_CK-PTS636SL43x_HandSolder" H 1250 5800 50  0001 C CNN
+F 3 "~" H 1250 5800 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/c-k/PTS636-SL43-SMTR-LFS/10071722" H 1250 5600 50  0001 C CNN "Digi-Key Link"
+F 5 "CKN12309-1-ND" H 1250 5600 50  0001 C CNN "Digi-Key PN"
+	1    1250 5600
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:C C905
 U 1 1 5F417C54
-P 2300 5300
-F 0 "C905" H 2415 5346 50  0000 L CNN
-F 1 "0.1uF" H 2415 5255 50  0000 L CNN
-F 2 "" H 2338 5150 50  0001 C CNN
-F 3 "~" H 2300 5300 50  0001 C CNN
-F 4 "" H 2300 5300 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 2300 5300 50  0001 C CNN "Digi-Key PN"
-	1    2300 5300
+P 1850 5350
+F 0 "C905" H 1965 5396 50  0000 L CNN
+F 1 "0.1uF" H 1965 5305 50  0000 L CNN
+F 2 "" H 1888 5200 50  0001 C CNN
+F 3 "~" H 1850 5350 50  0001 C CNN
+F 4 "" H 1850 5350 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 1850 5350 50  0001 C CNN "Digi-Key PN"
+	1    1850 5350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_US R904
 U 1 1 5F42946A
-P 1700 5100
-F 0 "R904" H 1768 5146 50  0000 L CNN
-F 1 "1k" H 1768 5055 50  0000 L CNN
-F 2 "" V 1740 5090 50  0001 C CNN
-F 3 "~" H 1700 5100 50  0001 C CNN
-F 4 "" H 1700 5100 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 1700 5100 50  0001 C CNN "Digi-Key PN"
-	1    1700 5100
+P 1250 5150
+F 0 "R904" H 1318 5196 50  0000 L CNN
+F 1 "1k" H 1318 5105 50  0000 L CNN
+F 2 "" V 1290 5140 50  0001 C CNN
+F 3 "~" H 1250 5150 50  0001 C CNN
+F 4 "" H 1250 5150 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 1250 5150 50  0001 C CNN "Digi-Key PN"
+	1    1250 5150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1700 4800 1700 4950
+	1250 4850 1250 5000
 Wire Wire Line
-	1700 5350 1700 5250
+	1250 5400 1250 5300
 Wire Wire Line
-	2300 4800 2300 5150
-Text Label 1250 4800 0    50   ~ 0
+	1850 4850 1850 5200
+Text Label 800  4850 0    50   ~ 0
 MCU_NRST
 Wire Wire Line
-	5450 6300 6300 6300
+	5000 6350 5850 6350
 Wire Wire Line
-	5450 6000 6300 6000
+	5000 6050 5850 6050
 Wire Wire Line
-	5450 5900 6300 5900
-Text HLabel 6300 5900 2    50   Output ~ 0
+	5000 5950 5850 5950
+Text HLabel 5850 5950 2    50   Output ~ 0
 SET_CURRENT_SOURCE_A
-Text HLabel 6300 6000 2    50   Output ~ 0
+Text HLabel 5850 6050 2    50   Output ~ 0
 SET_CURRENT_SOURCE_B
 Wire Wire Line
-	6300 4900 5450 4900
-Text Label 6250 5000 2    50   ~ 0
+	5850 4950 5000 4950
+Text Label 5800 5050 2    50   ~ 0
 LCD_~RESET~
-Text Label 6250 5100 2    50   ~ 0
+Text Label 5800 5150 2    50   ~ 0
 LCD_DC
 Wire Wire Line
-	5450 5000 6250 5000
+	5000 5050 5800 5050
 Wire Wire Line
-	5450 5100 6250 5100
-Text Label 6250 5600 2    50   ~ 0
+	5000 5150 5800 5150
+Text Label 5800 5650 2    50   ~ 0
 SPI_SD_CS
 Wire Wire Line
-	5450 5600 6250 5600
+	5000 5650 5800 5650
 Wire Wire Line
-	6250 5400 5450 5400
-Text Label 6250 5400 2    50   ~ 0
+	5800 5450 5000 5450
+Text Label 5800 5450 2    50   ~ 0
 SPI_MISO
 Wire Wire Line
-	5450 5200 6250 5200
-Text Label 6250 5200 2    50   ~ 0
+	5000 5250 5800 5250
+Text Label 5800 5250 2    50   ~ 0
 SPI_LCD_CS
 Wire Wire Line
-	5450 5500 6250 5500
-Text Label 6250 5500 2    50   ~ 0
+	5000 5550 5800 5550
+Text Label 5800 5550 2    50   ~ 0
 SPI_MOSI
-Text Label 6250 5300 2    50   ~ 0
+Text Label 5800 5350 2    50   ~ 0
 SPI_SCK
 Wire Wire Line
-	5450 5300 6250 5300
-Text HLabel 6300 6300 2    50   Output ~ 0
+	5000 5350 5800 5350
+Text HLabel 5850 6350 2    50   Output ~ 0
 METER_CURRENT_SOURCE_ON
-Text Label 6250 6100 2    50   ~ 0
+Text Label 5800 6150 2    50   ~ 0
 MCU_SWCLK
-Text Label 6250 6200 2    50   ~ 0
+Text Label 5800 6250 2    50   ~ 0
 MCU_SWDIO_BOOT0
 Wire Wire Line
-	5450 6100 6250 6100
+	5000 6150 5800 6150
 Wire Wire Line
-	5450 6200 6250 6200
+	5000 6250 5800 6250
 Wire Wire Line
-	4850 4500 4850 3600
+	4400 4550 4400 3650
 $Comp
 L irex_MCU_ST_STM32G0:STM32G030Kx U903
 U 1 1 5F3FD47F
-P 4850 5500
-F 0 "U903" H 4350 6550 50  0000 L CNN
-F 1 "STM32G030Kx" H 4500 6450 50  0000 C CNN
-F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 5700 4450 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf" H 4850 6400 50  0001 C CNN
-F 4 "" H 4850 5500 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4850 5500 50  0001 C CNN "Digi-Key PN"
-	1    4850 5500
+P 4400 5550
+F 0 "U903" H 3900 6600 50  0000 L CNN
+F 1 "STM32G030Kx" H 4050 6500 50  0000 C CNN
+F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 5250 4500 50  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf" H 4400 6450 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/stmicroelectronics/STM32G030K6T6/10326688" H 4400 5550 50  0001 C CNN "Digi-Key Link"
+F 5 "497-19769-ND" H 4400 5550 50  0001 C CNN "Digi-Key PN"
+	1    4400 5550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4850 6750 4850 6600
+	4400 6800 4400 6650
 $Comp
 L power:GND #PWR0920
 U 1 1 5F400132
-P 4850 6750
-F 0 "#PWR0920" H 4850 6500 50  0001 C CNN
-F 1 "GND" H 4855 6577 50  0000 C CNN
-F 2 "" H 4850 6750 50  0001 C CNN
-F 3 "" H 4850 6750 50  0001 C CNN
-	1    4850 6750
+P 4400 6800
+F 0 "#PWR0920" H 4400 6550 50  0001 C CNN
+F 1 "GND" H 4405 6627 50  0000 C CNN
+F 2 "" H 4400 6800 50  0001 C CNN
+F 3 "" H 4400 6800 50  0001 C CNN
+	1    4400 6800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C903
 U 1 1 5F4032ED
-P 3800 3850
-F 0 "C903" H 3915 3896 50  0000 L CNN
-F 1 "4.7uF" H 3915 3805 50  0000 L CNN
-F 2 "" H 3838 3700 50  0001 C CNN
-F 3 "~" H 3800 3850 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 3800 3850 50  0001 C CNN "Digi-Key Link"
-F 5 "1276-6462-1-ND" H 3800 3850 50  0001 C CNN "Digi-Key PN"
-	1    3800 3850
+P 3350 3900
+F 0 "C903" H 3465 3946 50  0000 L CNN
+F 1 "4.7uF" H 3465 3855 50  0000 L CNN
+F 2 "" H 3388 3750 50  0001 C CNN
+F 3 "~" H 3350 3900 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 3350 3900 50  0001 C CNN "Digi-Key Link"
+F 5 "1276-6462-1-ND" H 3350 3900 50  0001 C CNN "Digi-Key PN"
+	1    3350 3900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C904
 U 1 1 5F4021CE
-P 4300 3850
-F 0 "C904" H 4415 3896 50  0000 L CNN
-F 1 "0.1uF" H 4415 3805 50  0000 L CNN
-F 2 "" H 4338 3700 50  0001 C CNN
-F 3 "~" H 4300 3850 50  0001 C CNN
-F 4 "" H 4300 3850 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 4300 3850 50  0001 C CNN "Digi-Key PN"
-	1    4300 3850
+P 3850 3900
+F 0 "C904" H 3965 3946 50  0000 L CNN
+F 1 "0.1uF" H 3965 3855 50  0000 L CNN
+F 2 "" H 3888 3750 50  0001 C CNN
+F 3 "~" H 3850 3900 50  0001 C CNN
+F 4 "" H 3850 3900 50  0001 C CNN "Digi-Key Link"
+F 5 "-" H 3850 3900 50  0001 C CNN "Digi-Key PN"
+	1    3850 3900
 	1    0    0    -1  
 $EndComp
-Connection ~ 3800 3600
-Connection ~ 4300 3600
+Connection ~ 3350 3650
+Connection ~ 3850 3650
 Wire Wire Line
-	3800 3500 3800 3600
+	3350 3550 3350 3650
 $Comp
 L power:+3V3 #PWR0914
 U 1 1 5F4096EC
-P 3800 3500
-F 0 "#PWR0914" H 3800 3350 50  0001 C CNN
-F 1 "+3V3" H 3815 3673 50  0000 C CNN
-F 2 "" H 3800 3500 50  0001 C CNN
-F 3 "" H 3800 3500 50  0001 C CNN
-	1    3800 3500
+P 3350 3550
+F 0 "#PWR0914" H 3350 3400 50  0001 C CNN
+F 1 "+3V3" H 3365 3723 50  0000 C CNN
+F 2 "" H 3350 3550 50  0001 C CNN
+F 3 "" H 3350 3550 50  0001 C CNN
+	1    3350 3550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 3600 4300 3600
+	3350 3650 3850 3650
 Wire Wire Line
-	3800 3700 3800 3600
+	3350 3750 3350 3650
 Wire Wire Line
-	4300 3600 4300 3700
+	3850 3650 3850 3750
 Wire Wire Line
-	4850 3600 4300 3600
+	4400 3650 3850 3650
 Wire Wire Line
-	4050 4050 3800 4050
-Connection ~ 4050 4050
+	3600 4100 3350 4100
+Connection ~ 3600 4100
 Wire Wire Line
-	4050 4100 4050 4050
+	3600 4150 3600 4100
 Wire Wire Line
-	3800 4050 3800 4000
+	3350 4100 3350 4050
 Wire Wire Line
-	4300 4050 4050 4050
+	3850 4100 3600 4100
 Wire Wire Line
-	4300 4000 4300 4050
+	3850 4050 3850 4100
 $Comp
 L power:GND #PWR0916
 U 1 1 5F403743
-P 4050 4100
-F 0 "#PWR0916" H 4050 3850 50  0001 C CNN
-F 1 "GND" H 4055 3927 50  0000 C CNN
-F 2 "" H 4050 4100 50  0001 C CNN
-F 3 "" H 4050 4100 50  0001 C CNN
-	1    4050 4100
+P 3600 4150
+F 0 "#PWR0916" H 3600 3900 50  0001 C CNN
+F 1 "GND" H 3605 3977 50  0000 C CNN
+F 2 "" H 3600 4150 50  0001 C CNN
+F 3 "" H 3600 4150 50  0001 C CNN
+	1    3600 4150
 	1    0    0    -1  
 $EndComp
 Text Label 4600 1700 0    50   ~ 0
@@ -595,26 +582,24 @@ Text HLabel 6100 1950 2    50   Output ~ 0
 SDA_5V
 Wire Wire Line
 	5900 1950 6100 1950
-Wire Notes Line
-	6550 475  6550 3000
 Text Notes 4550 900  0    118  ~ 24
 I2C Level Shifters
-Text Label 3850 6200 0    50   ~ 0
+Text Label 3400 6250 0    50   ~ 0
 SCL
-Text Label 3850 6300 0    50   ~ 0
+Text Label 3400 6350 0    50   ~ 0
 SDA
-Text Label 6250 5700 2    50   ~ 0
+Text Label 5800 5750 2    50   ~ 0
 MCU_PROG_TX
-Text Label 6250 5800 2    50   ~ 0
+Text Label 5800 5850 2    50   ~ 0
 MCU_PROG_RX
 Wire Wire Line
-	5450 5700 6250 5700
+	5000 5750 5800 5750
 Wire Wire Line
-	5450 5800 6250 5800
+	5000 5850 5800 5850
 Wire Wire Line
-	4250 6200 3850 6200
+	3800 6250 3400 6250
 Wire Wire Line
-	4250 6300 3850 6300
+	3800 6350 3400 6350
 $Sheet
 S 4950 1600 950  450 
 U 5FD730FD
@@ -626,38 +611,36 @@ F4 "IO_B_5V" B R 5900 1950 50
 F5 "IO_B_3V3" B L 4950 1950 50 
 $EndSheet
 Wire Wire Line
-	3850 5500 4250 5500
+	3300 5750 3800 5750
 Wire Wire Line
-	3850 5600 4250 5600
+	3300 5850 3800 5850
 Wire Wire Line
-	3850 5700 4250 5700
-Text HLabel 3850 5700 0    50   Output ~ 0
+	3300 5950 3800 5950
+Text HLabel 3300 5950 0    50   Output ~ 0
 CALIBRATE_RELAY_ON
-Text HLabel 3850 5600 0    50   Output ~ 0
+Text HLabel 3300 5850 0    50   Output ~ 0
 CALIBRATE_MUX_~B
-Text HLabel 3850 5500 0    50   Output ~ 0
+Text HLabel 3300 5750 0    50   Output ~ 0
 CALIBRATE_MUX_~A
-Text HLabel 6300 4800 2    50   Output ~ 0
+Text HLabel 5850 4850 2    50   Output ~ 0
 VREF_4.096V_~EN
 Wire Wire Line
-	6300 4800 5450 4800
-Text HLabel 6300 4900 2    50   Input ~ 0
+	5850 4850 5000 4850
+Text HLabel 5850 4950 2    50   Input ~ 0
 ADC_~DRDY
 Wire Wire Line
-	4250 6000 3850 6000
+	3800 6050 3400 6050
 Wire Wire Line
-	4250 6100 3850 6100
-Text Label 3850 6100 0    50   ~ 0
+	3800 6150 3400 6150
+Text Label 3400 6150 0    50   ~ 0
 MCU_RX
-Text Label 3850 6000 0    50   ~ 0
+Text Label 3400 6050 0    50   ~ 0
 MCU_TX
-NoConn ~ 4250 5200
-NoConn ~ 4250 5100
-NoConn ~ 4250 5000
-NoConn ~ 4250 5800
-NoConn ~ 4250 5900
+NoConn ~ 3800 5250
+NoConn ~ 3800 5150
+NoConn ~ 3800 5050
 Wire Wire Line
-	2300 4800 4250 4800
+	1850 4850 3800 4850
 Wire Notes Line style solid
 	6650 1200 6650 1450
 Wire Notes Line style solid
@@ -690,8 +673,8 @@ F 0 "U901" H 2300 2500 50  0000 L CNN
 F 1 "SI8422" H 2150 2400 50  0000 L CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 3800 1350 50  0001 C CNN
 F 3 "https://www.silabs.com/documents/public/data-sheets/si841x-2x-datasheet.pdf" H 2200 2250 50  0001 C CNN
-F 4 "" H 2700 1950 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 2700 1950 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/silicon-labs/SI8422AB-D-IS/4901110" H 2700 1950 50  0001 C CNN "Digi-Key Link"
+F 5 "SI8422AB-D-IS-ND" H 2700 1950 50  0001 C CNN "Digi-Key PN"
 	1    2700 1950
 	1    0    0    -1  
 $EndComp
@@ -701,10 +684,10 @@ U 1 1 5FBDEBF7
 P 3900 2050
 F 0 "J902" H 4000 2250 50  0000 R CNN
 F 1 "AudioJack3" H 3620 1984 50  0001 R CNN
-F 2 "" H 3900 2050 50  0001 C CNN
+F 2 "irex_Connector_Audio:Jack_3.5mm_CUI_SJ1-3523N_Horizontal" H 3900 2050 50  0001 C CNN
 F 3 "~" H 3900 2050 50  0001 C CNN
-F 4 "" H 3900 2050 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 3900 2050 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/cui-devices/SJ1-3523N/738689" H 3900 2050 50  0001 C CNN "Digi-Key Link"
+F 5 "CP1-3523N-ND" H 3900 2050 50  0001 C CNN "Digi-Key PN"
 	1    3900 2050
 	-1   0    0    -1  
 $EndComp
@@ -853,4 +836,56 @@ Wire Notes Line
 	8350 1000 8350 2850
 Text Notes 7100 7000 0    200  ~ 40
 MCU & Display
+$Sheet
+S 7250 3450 600  400 
+U 5F82FB20
+F0 "User Input" 50
+F1 "user_input.sch" 50
+F2 "BTN1" I L 7250 3550 50 
+F3 "BTN2" I L 7250 3650 50 
+F4 "BTN3" I L 7250 3750 50 
+$EndSheet
+Wire Notes Line
+	6550 4000 8100 4000
+Wire Notes Line
+	6550 475  6550 4000
+Text Notes 6600 3250 0    118  ~ 24
+Buttons
+Wire Wire Line
+	7250 3550 6850 3550
+Wire Wire Line
+	7250 3650 6850 3650
+Wire Wire Line
+	7250 3750 6850 3750
+Text Label 6850 3550 0    50   ~ 0
+BTN1
+Text Label 6850 3650 0    50   ~ 0
+BTN2
+Text Label 6850 3750 0    50   ~ 0
+BTN3
+Wire Wire Line
+	3800 5450 3400 5450
+Wire Wire Line
+	3800 5550 3400 5550
+Wire Wire Line
+	3800 5650 3400 5650
+Text Label 3400 5450 0    50   ~ 0
+BTN1
+Text Label 3400 5550 0    50   ~ 0
+BTN2
+Text Label 3400 5650 0    50   ~ 0
+BTN3
+$Comp
+L Switch:SW_Push SW901
+U 1 1 5F8FCA4C
+P 9700 1650
+F 0 "SW901" V 9746 1602 50  0000 R CNN
+F 1 "SW_Push" V 9655 1602 50  0000 R CNN
+F 2 "irex_Button_Switch_SMD:SW-PUSH-6x3.5mm_CK-PTS636SL43x_HandSolder" H 9700 1850 50  0001 C CNN
+F 3 "~" H 9700 1850 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/c-k/PTS636-SL43-SMTR-LFS/10071722" H 9700 1650 50  0001 C CNN "Digi-Key Link"
+F 5 "CKN12309-1-ND" H 9700 1650 50  0001 C CNN "Digi-Key PN"
+	1    9700 1650
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

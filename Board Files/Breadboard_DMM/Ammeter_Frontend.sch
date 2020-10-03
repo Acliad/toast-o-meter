@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 10
-Title ""
-Date ""
-Rev ""
+Sheet 7 11
+Title "Toast-O-Meter"
+Date "2020-08-14"
+Rev "0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -46,8 +46,8 @@ F 0 "D701" H 5800 3650 50  0000 L CNN
 F 1 "1N4007" H 5700 3550 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 5850 3450 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 5850 3450 50  0001 C CNN
-F 4 "" H 5850 3450 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 5850 3450 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 5850 3450 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 5850 3450 50  0001 C CNN "Digi-Key PN"
 	1    5850 3450
 	-1   0    0    -1  
 $EndComp
@@ -61,8 +61,8 @@ F 0 "D702" H 6400 3650 50  0000 L CNN
 F 1 "1N4007" H 6300 3550 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 6450 3450 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 6450 3450 50  0001 C CNN
-F 4 "" H 6450 3450 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 6450 3450 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 6450 3450 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 6450 3450 50  0001 C CNN "Digi-Key PN"
 	1    6450 3450
 	-1   0    0    -1  
 $EndComp
@@ -76,8 +76,8 @@ F 0 "D704" H 6400 4300 50  0000 L CNN
 F 1 "1N4007" H 6300 4200 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 6450 4100 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 6450 4100 50  0001 C CNN
-F 4 "" H 6450 4100 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 6450 4100 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 6450 4100 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 6450 4100 50  0001 C CNN "Digi-Key PN"
 	1    6450 4100
 	-1   0    0    -1  
 $EndComp
@@ -91,8 +91,8 @@ F 0 "D703" H 5800 4300 50  0000 L CNN
 F 1 "1N4007" H 5700 4200 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 5850 4100 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 5850 4100 50  0001 C CNN
-F 4 "" H 5850 4100 50  0001 C CNN "Digi-Key Link"
-F 5 "-" H 5850 4100 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4007FLTR/11657817" H 5850 4100 50  0001 C CNN "Digi-Key Link"
+F 5 "1655-1N4007FLCT-ND" H 5850 4100 50  0001 C CNN "Digi-Key PN"
 	1    5850 4100
 	-1   0    0    -1  
 $EndComp
