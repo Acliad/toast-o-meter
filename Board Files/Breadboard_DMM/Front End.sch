@@ -166,28 +166,24 @@ Wire Notes Line width 8 style solid
 	8575 1000 10150 1000
 Wire Notes Line width 8 style solid
 	8575 1650 8575 1000
-Text HLabel 12450 2550 2    50   Input ~ 0
+Text HLabel 12950 2550 2    50   Input ~ 0
 SET_CURRENT_SOURCE_B
-Text HLabel 12450 2450 2    50   Input ~ 0
+Text HLabel 12950 2450 2    50   Input ~ 0
 SET_CURRENT_SOURCE_A
 $Sheet
-S 10950 2200 1150 650 
+S 10950 2200 1650 700 
 U 5F7E68F4
 F0 "Ohmeter Current Source" 50
 F1 "Ohmeter Current Source.sch" 50
-F2 "SET_CURRENT_SOURCE_A" I R 12100 2450 50 
-F3 "SET_CURRENT_SOURCE_B" I R 12100 2550 50 
+F2 "SET_CURRENT_SOURCE_A" I R 12600 2450 50 
+F3 "SET_CURRENT_SOURCE_B" I R 12600 2550 50 
 F4 "CURRENT_SOURCE_OUT+" O L 10950 2250 50 
 F5 "CURRENT_SOURCE_OUT-" I L 10950 2800 50 
 $EndSheet
 Wire Wire Line
-	12450 2550 12100 2550
-Wire Wire Line
-	12450 2450 12100 2450
-Wire Wire Line
 	9700 2250 10950 2250
 $Sheet
-S 5100 2050 1300 1000
+S 5100 2050 1600 1000
 U 5F4FBB9F
 F0 "Calibration Mux" 50
 F1 "Calibration Mux.sch" 50
@@ -196,7 +192,7 @@ F3 "INPUT_V+" O L 5100 2150 50
 F4 "CALIBRATE_MUX_~A" I L 5100 2450 50 
 F5 "CALIBRATE_MUX_~B" I L 5100 2550 50 
 F6 "CALIBRATE_RELAY_ON" I L 5100 2650 50 
-F7 "OUTPUT_V+" O R 6400 2150 50 
+F7 "OUTPUT_V+" O R 6700 2150 50 
 $EndSheet
 Wire Wire Line
 	4000 6700 4850 6700
@@ -255,11 +251,6 @@ Wire Wire Line
 	7700 3200 8000 3200
 Wire Wire Line
 	7700 2900 7700 3200
-Wire Wire Line
-	7600 2150 9100 2150
-Connection ~ 7600 2150
-Wire Wire Line
-	7600 2300 7600 2150
 $Comp
 L irex_Relay:EC2-5NU_Split K?
 U 3 1 5F569360
@@ -275,8 +266,6 @@ F 5 "399-11052-5-ND" H 7600 2600 50  0001 C CNN "Digi-Key PN"
 	3    7600 2600
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	6400 2150 7600 2150
 Wire Wire Line
 	7500 2900 7500 3500
 Wire Wire Line
@@ -395,28 +384,24 @@ F 6 "311-10.0KHRCT-ND" H 4700 8400 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 2600 4250 1000 500 
+S 2450 4250 1100 650 
 U 5FE469BC
 F0 "Ammeter Frontend" 50
 F1 "Ammeter_Frontend.sch" 50
-F2 "I_SENSE-" O R 3600 4650 50 
-F3 "I_SENSE+" O R 3600 4350 50 
-F4 "INPUT_I+" I L 2600 4350 50 
-F5 "INPUT_I-" I L 2600 4650 50 
+F2 "I_SENSE-" O R 3550 4800 50 
+F3 "I_SENSE+" O R 3550 4350 50 
+F4 "INPUT_I+" I L 2450 4350 50 
+F5 "INPUT_I-" I L 2450 4800 50 
 $EndSheet
 Wire Wire Line
-	2600 4650 2400 4650
+	2450 4800 2250 4800
 Wire Wire Line
-	2400 4650 2400 6600
+	2250 4800 2250 6600
 Wire Wire Line
-	2400 6600 3400 6600
-Wire Wire Line
-	3600 4350 3800 4350
-Wire Wire Line
-	3600 4650 3800 4650
-Text HLabel 3800 4350 2    50   Output ~ 0
+	2250 6600 3400 6600
+Text HLabel 3750 4350 2    50   Output ~ 0
 I_SENSE+
-Text HLabel 3800 4650 2    50   Output ~ 0
+Text HLabel 3750 4800 2    50   Output ~ 0
 I_SENSE-
 Wire Wire Line
 	7600 6500 7600 8700
@@ -484,7 +469,7 @@ Wire Wire Line
 Wire Wire Line
 	1700 4400 1650 4400
 Wire Wire Line
-	1700 4350 2600 4350
+	1700 4350 2450 4350
 Connection ~ 1700 4350
 Wire Wire Line
 	1700 4350 1700 4400
@@ -508,11 +493,11 @@ Wire Wire Line
 Wire Wire Line
 	1700 6650 1650 6650
 Wire Wire Line
-	1700 6600 2400 6600
+	1700 6600 2250 6600
 Connection ~ 1700 6600
 Wire Wire Line
 	1700 6600 1700 6650
-Connection ~ 2400 6600
+Connection ~ 2250 6600
 NoConn ~ 7700 4550
 Text HLabel 15150 6250 2    50   Input ~ 0
 METER_CURRENT_SOURCE_ON
@@ -915,4 +900,25 @@ F 5 "296-47593-1-ND" H 15400 1750 50  0001 C CNN "Digi-Key PN"
 	3    15400 1750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7600 2300 7600 2150
+Connection ~ 7600 2150
+Wire Wire Line
+	7600 2150 9100 2150
+Wire Wire Line
+	3550 4350 3750 4350
+Wire Wire Line
+	3750 4800 3550 4800
+Text Notes 2950 4150 0    100  ~ 20
+Sheet 6
+Text Notes 6100 2000 0    100  ~ 20
+Sheet 5
+Text Notes 12000 2100 0    100  ~ 20
+Sheet 4
+Wire Wire Line
+	6700 2150 7600 2150
+Wire Wire Line
+	12600 2550 12950 2550
+Wire Wire Line
+	12600 2450 12950 2450
 $EndSCHEMATC

@@ -28,10 +28,8 @@ F 5 "F6094-ND; F11153-ND" H 6400 4550 50  0001 C CNN "Digi-Key PN"
 	1    6400 4550
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5850 4550 6250 4550
 Text Notes 12450 9750 0    200  ~ 40
-Ammeter Input
+Ammeter Frontend
 Text HLabel 10050 5700 2    50   Output ~ 0
 I_SENSE-
 Text HLabel 10050 4550 2    50   Output ~ 0
@@ -134,8 +132,6 @@ Wire Wire Line
 	8500 4550 10050 4550
 Wire Wire Line
 	8500 5700 10050 5700
-Text HLabel 5850 4550 0    50   Input ~ 0
-INPUT_I+
 Text HLabel 5850 5700 0    50   Input ~ 0
 INPUT_I-
 Wire Notes Line
@@ -193,4 +189,8 @@ Connection ~ 7150 4550
 Wire Wire Line
 	7150 5700 5850 5700
 Connection ~ 7150 5700
+Text HLabel 5850 4550 0    50   Input ~ 0
+INPUT_I+
+Wire Wire Line
+	5850 4550 6250 4550
 $EndSCHEMATC
