@@ -5,10 +5,10 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 8 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -295,6 +295,4 @@ Wire Notes Line style solid
 	9050 6300 9050 5950
 Wire Notes Line style solid
 	10300 5950 10300 6300
-Text Notes 12400 9750 0    200  ~ 40
-Power Input Protection
 $EndSCHEMATC

@@ -5,16 +5,14 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 5 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 12450 9700 0    200  ~ 40
-Calibration Mux
 Text Notes 4350 6250 0    50   ~ 0
 GND
 Wire Wire Line
@@ -570,10 +568,6 @@ Wire Wire Line
 	15050 8450 15050 8400
 Wire Wire Line
 	15050 8400 15300 8400
-Wire Notes Line
-	16520 6700 13400 6700
-Wire Notes Line
-	13400 6700 13400 9230
 $Comp
 L Device:R_US R?
 U 1 1 5FC42E82
@@ -720,4 +714,8 @@ Wire Wire Line
 Wire Wire Line
 	13950 7150 13950 7250
 Connection ~ 13550 7450
+Wire Notes Line
+	16500 6650 13200 6650
+Wire Notes Line
+	13200 6650 13200 9550
 $EndSCHEMATC

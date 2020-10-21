@@ -5,10 +5,10 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 7 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -524,14 +524,14 @@ $Comp
 L Connector:AudioJack3 J802
 U 1 1 5FBDEBF7
 P 3950 2650
-F 0 "J802" H 4050 2850 50  0000 R CNN
+F 0 "J802" H 4050 2400 50  0000 R CNN
 F 1 "AudioJack3" H 3670 2584 50  0001 R CNN
 F 2 "irex_Connector_Audio:Jack_3.5mm_CUI_SJ1-3523N_Horizontal" H 3950 2650 50  0001 C CNN
 F 3 "~" H 3950 2650 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/cui-devices/SJ1-3523N/738689" H 3950 2650 50  0001 C CNN "Digi-Key Link"
 F 5 "CP1-3523N-ND" H 3950 2650 50  0001 C CNN "Digi-Key PN"
 	1    3950 2650
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L dmm_power:GNDL #PWR0813
@@ -627,8 +627,6 @@ Text Notes 700  800  0    118  ~ 24
 UART Isolator
 Wire Notes Line
 	10050 475  10050 3700
-Text Notes 12350 9725 0    200  ~ 40
-MCU & Display
 Text Notes 8950 4050 0    118  ~ 24
 Buttons
 Text Label 9750 4800 0    50   ~ 0
@@ -1371,8 +1369,6 @@ Wire Wire Line
 	12050 2650 12050 2400
 Wire Wire Line
 	12050 2100 12050 1925
-Wire Notes Line
-	12275 9275 12275 3700
 Text Label 13500 6400 0    50   ~ 0
 LCD_~RESET~
 Text Label 13500 6500 0    50   ~ 0
@@ -1492,4 +1488,6 @@ Wire Wire Line
 	1450 2650 2000 2650
 Wire Notes Line
 	13050 950  13050 3500
+Wire Notes Line
+	12350 9500 12350 3700
 $EndSCHEMATC

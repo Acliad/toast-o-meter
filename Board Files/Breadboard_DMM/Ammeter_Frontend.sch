@@ -5,10 +5,10 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 6 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -28,8 +28,6 @@ F 5 "F6094-ND; F11153-ND" H 6400 4550 50  0001 C CNN "Digi-Key PN"
 	1    6400 4550
 	0    1    1    0   
 $EndComp
-Text Notes 12450 9750 0    200  ~ 40
-Ammeter Frontend
 Text HLabel 10050 5700 2    50   Output ~ 0
 I_SENSE-
 Text HLabel 10050 4550 2    50   Output ~ 0

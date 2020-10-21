@@ -1,4 +1,4 @@
-update=Tuesday, October 06, 2020 at 12:27:30 PM
+update=Tuesday, October 06, 2020 at 06:03:37 PM
 version=1
 last_client=kicad
 [general]
@@ -33,7 +33,7 @@ LibDir=
 [eeschema/libraries]
 [schematic_editor]
 version=1
-PageLayoutDescrFile=
+PageLayoutDescrFile=/Users/isaac/KiCad/Pages/irex_Logo-Text-Narrow.kicad_wks
 PlotDirectoryName=../PDFs/
 SubpartIdSeparator=0
 SubpartFirstId=65

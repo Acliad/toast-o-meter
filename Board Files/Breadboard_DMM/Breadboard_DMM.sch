@@ -5,10 +5,10 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 1 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -526,8 +526,6 @@ F 5 "1276-6462-1-ND" H 5500 2150 50  0001 C CNN "Digi-Key PN"
 	1    5500 2150
 	1    0    0    -1  
 $EndComp
-Text Notes 12400 9750 0    180  ~ 36
-Power Supplies / Top Sheet
 Connection ~ 4500 1850
 Connection ~ 4500 2450
 Wire Wire Line

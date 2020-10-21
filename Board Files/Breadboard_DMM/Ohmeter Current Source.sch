@@ -5,10 +5,10 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 4 8
 Title "Toast-O-Meter"
-Date "2020-08-14"
+Date "2020-10-06"
 Rev "0"
 Comp ""
-Comment1 ""
+Comment1 "Isaac Rex"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -797,8 +797,6 @@ F 5 "311-1.00KHRCT-ND" H 6600 5550 50  0001 C CNN "Digi-Key PN"
 	1    6600 5550
 	-1   0    0    1   
 $EndComp
-Text Notes 12400 9750 0    200  ~ 40
-Ohmmeter Current Source
 $Comp
 L Device:R_US R?
 U 1 1 5F98F754
