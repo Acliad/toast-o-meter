@@ -18,13 +18,13 @@ L Device:Fuse F?
 U 1 1 5FE50BA2
 P 6400 4550
 AR Path="/5F511849/5FE50BA2" Ref="F?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50BA2" Ref="F701"  Part="1" 
-F 0 "F701" V 6203 4550 50  0000 C CNN
-F 1 "3.15A" V 6294 4550 50  0000 C CNN
-F 2 "irex_Fuse:Fuseholder_Cylinder-5x20mm_Littlefuse_0PTF0078P_Horizontal_Open" V 6330 4550 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/617Series_Fuse_DS_v1%200.pdf~" H 6400 4550 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/littelfuse-inc/0PTF0078P/3427168 ; https://www.digikey.com/en/products/detail/littelfuse-inc/06173.15MXP/5233771" H 6400 4550 50  0001 C CNN "Digi-Key Link"
-F 5 "F6094-ND; F11153-ND" H 6400 4550 50  0001 C CNN "Digi-Key PN"
+AR Path="/5F511849/5FE469BC/5FE50BA2" Ref="F601"  Part="1" 
+F 0 "F601" V 6203 4550 50  0000 C CNN
+F 1 "2.0A" V 6294 4550 50  0000 C CNN
+F 2 "Fuse:Fuseholder_Littelfuse_Nano2_154x" V 6330 4550 50  0001 C CNN
+F 3 "https://www.littelfuse.com/~/media/electronics/datasheets/fuses/littelfuse_fuse_154_154t_154l_154tl_datasheet.pdf.pdf" H 6400 4550 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/littelfuse-inc/0154002-DR/183354" H 6400 4550 50  0001 C CNN "Digi-Key Link"
+F 5 "F1224TR-ND" H 6400 4550 50  0001 C CNN "Digi-Key PN"
 	1    6400 4550
 	0    1    1    0   
 $EndComp
@@ -33,12 +33,13 @@ I_SENSE-
 Text HLabel 10050 4550 2    50   Output ~ 0
 I_SENSE+
 $Comp
-L Device:D_ALT D?
+L Device:D_Filled D?
 U 1 1 5FE50BB4
 P 8200 4850
 AR Path="/5F511849/5FE50BB4" Ref="D?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50BB4" Ref="D701"  Part="1" 
-F 0 "D701" H 8150 5050 50  0000 L CNN
+AR Path="/5F511849/5FE469BC/5FE50BB4" Ref="D601"  Part="1" 
+AR Path="/5FE50BB4" Ref="D?"  Part="1" 
+F 0 "D601" H 8150 5050 50  0000 L CNN
 F 1 "1N4007" H 8050 4950 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 8200 4850 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8200 4850 50  0001 C CNN
@@ -48,12 +49,13 @@ F 5 "1655-1N4007FLCT-ND" H 8200 4850 50  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:D_ALT D?
+L Device:D_Filled D?
 U 1 1 5FE50BBA
 P 8800 4850
 AR Path="/5F511849/5FE50BBA" Ref="D?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50BBA" Ref="D702"  Part="1" 
-F 0 "D702" H 8750 5050 50  0000 L CNN
+AR Path="/5F511849/5FE469BC/5FE50BBA" Ref="D602"  Part="1" 
+AR Path="/5FE50BBA" Ref="D?"  Part="1" 
+F 0 "D602" H 8750 5050 50  0000 L CNN
 F 1 "1N4007" H 8650 4950 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 8800 4850 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8800 4850 50  0001 C CNN
@@ -63,12 +65,13 @@ F 5 "1655-1N4007FLCT-ND" H 8800 4850 50  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:D_ALT D?
+L Device:D_Filled D?
 U 1 1 5FE50BC0
 P 8800 5500
 AR Path="/5F511849/5FE50BC0" Ref="D?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50BC0" Ref="D704"  Part="1" 
-F 0 "D704" H 8750 5700 50  0000 L CNN
+AR Path="/5F511849/5FE469BC/5FE50BC0" Ref="D604"  Part="1" 
+AR Path="/5FE50BC0" Ref="D?"  Part="1" 
+F 0 "D604" H 8750 5700 50  0000 L CNN
 F 1 "1N4007" H 8650 5600 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 8800 5500 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8800 5500 50  0001 C CNN
@@ -78,12 +81,13 @@ F 5 "1655-1N4007FLCT-ND" H 8800 5500 50  0001 C CNN "Digi-Key PN"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:D_ALT D?
+L Device:D_Filled D?
 U 1 1 5FE50BC6
 P 8200 5500
 AR Path="/5F511849/5FE50BC6" Ref="D?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50BC6" Ref="D703"  Part="1" 
-F 0 "D703" H 8150 5700 50  0000 L CNN
+AR Path="/5F511849/5FE469BC/5FE50BC6" Ref="D603"  Part="1" 
+AR Path="/5FE50BC6" Ref="D?"  Part="1" 
+F 0 "D603" H 8150 5700 50  0000 L CNN
 F 1 "1N4007" H 8050 5600 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" H 8200 5500 50  0001 C CNN
 F 3 "http://www.smc-diodes.com/propdf/1N4001FL-1N4007FL%20N1646%20REV.A.pdf" H 8200 5500 50  0001 C CNN
@@ -162,8 +166,8 @@ U 1 1 5FE50B9C
 P 7150 5100
 AR Path="/5FE50B9C" Ref="R?"  Part="1" 
 AR Path="/5F511849/5FE50B9C" Ref="R?"  Part="1" 
-AR Path="/5F511849/5FE469BC/5FE50B9C" Ref="R701"  Part="1" 
-F 0 "R701" H 7200 5200 50  0000 L CNN
+AR Path="/5F511849/5FE469BC/5FE50B9C" Ref="R601"  Part="1" 
+F 0 "R601" H 7200 5200 50  0000 L CNN
 F 1 "0.1" H 7200 5100 50  0000 L CNN
 F 2 "Resistor_SMD:R_Shunt_Ohmite_LVK24" V 7190 5090 50  0001 C CNN
 F 3 "~" H 7150 5100 50  0001 C CNN

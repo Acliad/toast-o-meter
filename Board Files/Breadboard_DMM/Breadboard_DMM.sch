@@ -32,77 +32,78 @@ Connection ~ 1500 2450
 $Comp
 L power:GND #PWR0106
 U 1 1 5F3892FF
-P 8850 2550
-F 0 "#PWR0106" H 8850 2300 50  0001 C CNN
-F 1 "GND" H 8855 2377 50  0000 C CNN
-F 2 "" H 8850 2550 50  0001 C CNN
-F 3 "" H 8850 2550 50  0001 C CNN
-	1    8850 2550
+P 9600 2550
+F 0 "#PWR0106" H 9600 2300 50  0001 C CNN
+F 1 "GND" H 9605 2377 50  0000 C CNN
+F 2 "" H 9600 2550 50  0001 C CNN
+F 3 "" H 9600 2550 50  0001 C CNN
+	1    9600 2550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1500 2450 1600 2450
 Wire Wire Line
-	6900 2450 6900 2250
+	7800 2450 7800 2250
 Wire Wire Line
-	6900 2250 7100 2250
+	7800 2250 8000 2250
 Wire Wire Line
-	7100 2050 6900 2050
+	8000 2050 7800 2050
 Wire Wire Line
-	6900 2050 6900 1850
+	7800 2050 7800 1850
 Wire Wire Line
-	7900 2050 8150 2050
+	8800 2050 9050 2050
 Wire Wire Line
-	7900 2250 8150 2250
+	8800 2250 9050 2250
 Wire Wire Line
-	8850 2550 8850 2450
+	9600 2550 9600 2450
 Wire Wire Line
-	8150 2250 8150 2450
-Connection ~ 8850 2450
+	9050 2250 9050 2450
+Connection ~ 9600 2450
 Wire Wire Line
-	8850 2450 8850 2300
+	9600 2450 9600 2300
 $Comp
 L irex_Converter_DCDC:PDME1-S5-S5-S PS101
 U 1 1 5F3A5D77
-P 7500 2150
-F 0 "PS101" H 7500 2517 50  0000 C CNN
-F 1 "PDME1-S5-S5-S" H 7500 2426 50  0000 C CNN
-F 2 "irex_Converter_DCDC:CUI_DCDC-CONVERTER_PDME1-Sxx-S_1x4_P2.54mm_Drill1.0mm" H 6450 1900 50  0001 L CNN
-F 3 "https://www.cui.com/product/resource/pdme1-s.pdf" H 8550 1850 50  0001 L CNN
-F 4 "https://www.digikey.com/en/products/detail/cui-inc/PDME1-S5-D5-S/10229855" H 7500 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "102-6320-ND" H 7500 2150 50  0001 C CNN "Digi-Key PN"
-	1    7500 2150
+P 8400 2150
+F 0 "PS101" H 8400 2517 50  0000 C CNN
+F 1 "PDME1-S5-S5-S" H 8400 2426 50  0000 C CNN
+F 2 "irex_Converter_DCDC:CUI_DCDC-CONVERTER_PDME1-Sxx-S_1x4_P2.54mm_Drill1.0mm" H 7350 1900 50  0001 L CNN
+F 3 "https://www.cui.com/product/resource/pdme1-s.pdf" H 9450 1850 50  0001 L CNN
+F 4 "https://www.digikey.com/en/products/detail/cui-inc/PDME1-S5-D5-S/10229855" H 8400 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "102-6320-ND" H 8400 2150 50  0001 C CNN "Digi-Key PN"
+F 6 "PDME1-S5-S5-S" H 8400 2150 50  0001 C CNN "MPN"
+	1    8400 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8150 2050 8150 1850
+	9050 2050 9050 1850
 Wire Wire Line
-	10050 1700 10050 2000
+	11200 1700 11200 2000
 $Comp
-L power:GND #PWR0107
+L power:GND #PWR0108
 U 1 1 5F3AC1FB
-P 10050 2550
-F 0 "#PWR0107" H 10050 2300 50  0001 C CNN
-F 1 "GND" H 10055 2377 50  0000 C CNN
-F 2 "" H 10050 2550 50  0001 C CNN
-F 3 "" H 10050 2550 50  0001 C CNN
-	1    10050 2550
+P 11200 2550
+F 0 "#PWR0108" H 11200 2300 50  0001 C CNN
+F 1 "GND" H 11205 2377 50  0000 C CNN
+F 2 "" H 11200 2550 50  0001 C CNN
+F 3 "" H 11200 2550 50  0001 C CNN
+	1    11200 2550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5VA #PWR0103
 U 1 1 5F3ACC86
-P 10950 1500
-F 0 "#PWR0103" H 10950 1350 50  0001 C CNN
-F 1 "+5VA" H 10965 1673 50  0000 C CNN
-F 2 "" H 10950 1500 50  0001 C CNN
-F 3 "" H 10950 1500 50  0001 C CNN
-	1    10950 1500
+P 12100 1500
+F 0 "#PWR0103" H 12100 1350 50  0001 C CNN
+F 1 "+5VA" H 12115 1673 50  0000 C CNN
+F 2 "" H 12100 1500 50  0001 C CNN
+F 3 "" H 12100 1500 50  0001 C CNN
+	1    12100 1500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10050 1700 10800 1700
-Connection ~ 10050 1700
+	11200 1700 11950 1700
+Connection ~ 11200 1700
 $Sheet
 S 8300 7150 2250 950 
 U 5FDFAE85
@@ -157,7 +158,7 @@ AR Path="/5F3FD151/5FB4F10E" Ref="C?"  Part="1"
 AR Path="/5FB4F10E" Ref="C107"  Part="1" 
 F 0 "C107" H 13515 2346 50  0000 L CNN
 F 1 "1uF" H 13515 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 13438 2150 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 13438 2150 50  0001 C CNN
 F 3 "~" H 13400 2300 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B105MO8NNWC/5961008" H 13400 2300 50  0001 C CNN "Digi-Key Link"
 F 5 "1276-6524-1-ND" H 13400 2300 50  0001 C CNN "Digi-Key PN"
@@ -172,8 +173,8 @@ L power:GND #PWR?
 U 1 1 5FB4F116
 P 13400 2650
 AR Path="/5F3FD151/5FB4F116" Ref="#PWR?"  Part="1" 
-AR Path="/5FB4F116" Ref="#PWR0109"  Part="1" 
-F 0 "#PWR0109" H 13400 2400 50  0001 C CNN
+AR Path="/5FB4F116" Ref="#PWR0110"  Part="1" 
+F 0 "#PWR0110" H 13400 2400 50  0001 C CNN
 F 1 "GND" H 13405 2477 50  0000 C CNN
 F 2 "" H 13400 2650 50  0001 C CNN
 F 3 "" H 13400 2650 50  0001 C CNN
@@ -187,8 +188,8 @@ L power:GND #PWR?
 U 1 1 5FB4F11D
 P 14500 2650
 AR Path="/5F3FD151/5FB4F11D" Ref="#PWR?"  Part="1" 
-AR Path="/5FB4F11D" Ref="#PWR0110"  Part="1" 
-F 0 "#PWR0110" H 14500 2400 50  0001 C CNN
+AR Path="/5FB4F11D" Ref="#PWR0111"  Part="1" 
+F 0 "#PWR0111" H 14500 2400 50  0001 C CNN
 F 1 "GND" H 14505 2477 50  0000 C CNN
 F 2 "" H 14500 2650 50  0001 C CNN
 F 3 "" H 14500 2650 50  0001 C CNN
@@ -202,8 +203,8 @@ L power:GND #PWR?
 U 1 1 5FB4F124
 P 15450 2650
 AR Path="/5F3FD151/5FB4F124" Ref="#PWR?"  Part="1" 
-AR Path="/5FB4F124" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 15450 2400 50  0001 C CNN
+AR Path="/5FB4F124" Ref="#PWR0112"  Part="1" 
+F 0 "#PWR0112" H 15450 2400 50  0001 C CNN
 F 1 "GND" H 15455 2477 50  0000 C CNN
 F 2 "" H 15450 2650 50  0001 C CNN
 F 3 "" H 15450 2650 50  0001 C CNN
@@ -218,7 +219,7 @@ AR Path="/5F3FD151/5FB4F12A" Ref="C?"  Part="1"
 AR Path="/5FB4F12A" Ref="C108"  Part="1" 
 F 0 "C108" H 15565 2346 50  0000 L CNN
 F 1 "1uF" H 15565 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 15488 2150 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 15488 2150 50  0001 C CNN
 F 3 "~" H 15450 2300 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B105MO8NNWC/5961008" H 15450 2300 50  0001 C CNN "Digi-Key Link"
 F 5 "1276-6524-1-ND" H 15450 2300 50  0001 C CNN "Digi-Key PN"
@@ -254,19 +255,6 @@ Wire Wire Line
 Connection ~ 15450 2050
 Wire Wire Line
 	14900 2050 15450 2050
-$Comp
-L Connector_Generic:Conn_02x03_Odd_Even J101
-U 1 1 5F7B5874
-P 1500 2200
-F 0 "J101" V 1650 2550 50  0000 R CNN
-F 1 "Conn_02x03_Odd_Even" V 1505 2012 50  0001 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 1500 2200 50  0001 C CNN
-F 3 "~" H 1500 2200 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/adam-tech/PH2-06-UA/9830396" H 1500 2200 50  0001 C CNN "Digi-Key Link"
-F 5 "2057-PH2-06-UA-ND" H 1500 2200 50  0001 C CNN "Digi-Key PN"
-	1    1500 2200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1600 2400 1600 2450
 Wire Wire Line
@@ -274,46 +262,46 @@ Wire Wire Line
 $Comp
 L Device:C C104
 U 1 1 600AE3C4
-P 8850 2150
-F 0 "C104" H 8965 2196 50  0000 L CNN
-F 1 "4.7uF" H 8965 2105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8888 2000 50  0001 C CNN
-F 3 "~" H 8850 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 8850 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "1276-6462-1-ND" H 8850 2150 50  0001 C CNN "Digi-Key PN"
-	1    8850 2150
+P 9600 2150
+F 0 "C104" H 9715 2196 50  0000 L CNN
+F 1 "4.7uF" H 9715 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 9638 2000 50  0001 C CNN
+F 3 "~" H 9600 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 9600 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "1276-6462-1-ND" H 9600 2150 50  0001 C CNN "Digi-Key PN"
+	1    9600 2150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C105
 U 1 1 600AE831
-P 10050 2150
-F 0 "C105" H 10165 2196 50  0000 L CNN
-F 1 "4.7uF" H 10165 2105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10088 2000 50  0001 C CNN
-F 3 "~" H 10050 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 10050 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "1276-6462-1-ND" H 10050 2150 50  0001 C CNN "Digi-Key PN"
-	1    10050 2150
+P 11200 2150
+F 0 "C105" H 11315 2196 50  0000 L CNN
+F 1 "4.7uF" H 11315 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 11238 2000 50  0001 C CNN
+F 3 "~" H 11200 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 11200 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "1276-6462-1-ND" H 11200 2150 50  0001 C CNN "Digi-Key PN"
+	1    11200 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10800 2000 10800 1700
+	11950 2000 11950 1700
 Wire Wire Line
-	10050 2300 10050 2550
+	11200 2300 11200 2550
 $Comp
-L power:GND #PWR0108
+L power:GND #PWR0109
 U 1 1 600B5034
-P 10800 2550
-F 0 "#PWR0108" H 10800 2300 50  0001 C CNN
-F 1 "GND" H 10805 2377 50  0000 C CNN
-F 2 "" H 10800 2550 50  0001 C CNN
-F 3 "" H 10800 2550 50  0001 C CNN
-	1    10800 2550
+P 11950 2550
+F 0 "#PWR0109" H 11950 2300 50  0001 C CNN
+F 1 "GND" H 11955 2377 50  0000 C CNN
+F 2 "" H 11950 2550 50  0001 C CNN
+F 3 "" H 11950 2550 50  0001 C CNN
+	1    11950 2550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10800 2300 10800 2550
+	11950 2300 11950 2550
 Text Notes 650  850  0    100  ~ 20
 Input Voltage Isolator and Filter
 Wire Notes Line
@@ -397,46 +385,33 @@ Wire Wire Line
 Wire Wire Line
 	6250 6250 4600 6250
 $Comp
-L Connector_Generic:Conn_02x03_Odd_Even J102
-U 1 1 60203913
-P 1500 3200
-F 0 "J102" V 1650 3550 50  0000 R CNN
-F 1 "Conn_02x03_Odd_Even" V 1505 3012 50  0001 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 1500 3200 50  0001 C CNN
-F 3 "~" H 1500 3200 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/adam-tech/PH2-06-UA/9830396" H 1500 3200 50  0001 C CNN "Digi-Key Link"
-F 5 "2057-PH2-06-UA-ND" H 1500 3200 50  0001 C CNN "Digi-Key PN"
-	1    1500 3200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:CP C106
+L Device:C_Polarized C106
 U 1 1 602240EA
-P 10800 2150
-F 0 "C106" H 10918 2196 50  0000 L CNN
-F 1 "22uF" H 10918 2105 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.3" H 10838 2000 50  0001 C CNN
-F 3 "~" H 10800 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/würth-elektronik/865080542006/5728100" H 10800 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "732-8505-1-ND" H 10800 2150 50  0001 C CNN "Digi-Key PN"
-	1    10800 2150
+P 11950 2150
+F 0 "C106" H 12068 2196 50  0000 L CNN
+F 1 "22uF" H 12068 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.3" H 11988 2000 50  0001 C CNN
+F 3 "~" H 11950 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/würth-elektronik/865080542006/5728100" H 11950 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "732-8505-1-ND" H 11950 2150 50  0001 C CNN "Digi-Key PN"
+	1    11950 2150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:L L101
 U 1 1 5F78D87B
-P 9500 1700
-F 0 "L101" V 9600 1700 50  0000 C CNN
-F 1 "6.8uH" V 9400 1700 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9500 1700 50  0001 C CNN
-F 3 "~" H 9500 1700 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MLZ2012N6R8LT000/2523499" H 9500 1700 50  0001 C CNN "Digi-Key Link"
-F 5 "445-6761-1-ND" H 9500 1700 50  0001 C CNN "Digi-Key PN"
-	1    9500 1700
+P 10650 1700
+F 0 "L101" V 10750 1700 50  0000 C CNN
+F 1 "6.8uH" V 10550 1700 50  0000 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-30xx_HandSoldering" H 10650 1700 50  0001 C CNN
+F 3 "https://ds.yuden.co.jp/TYCOMPAS/ut/detail?pn=NRH3012T6R8MN%20%20&u=M" H 10650 1700 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/taiyo-yuden/NRH3012T6R8MN/2329093" H 10650 1700 50  0001 C CNN "Digi-Key Link"
+F 5 "587-2592-1-ND" H 10650 1700 50  0001 C CNN "Digi-Key PN"
+	1    10650 1700
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4500 1850 3950 1850
+	5400 1850 4850 1850
 NoConn ~ 1400 3400
 NoConn ~ 1500 3400
 NoConn ~ 1600 3400
@@ -446,219 +421,184 @@ NoConn ~ 1400 2900
 $Comp
 L dmm_power:+5VL #PWR0101
 U 1 1 5FA4AAE3
-P 3950 1500
-F 0 "#PWR0101" H 3950 1350 50  0001 C CNN
-F 1 "+5VL" H 3965 1673 50  0000 C CNN
-F 2 "" H 3950 1500 50  0001 C CNN
-F 3 "" H 3950 1500 50  0001 C CNN
-	1    3950 1500
+P 4850 1500
+F 0 "#PWR0101" H 4850 1350 50  0001 C CNN
+F 1 "+5VL" H 4865 1673 50  0000 C CNN
+F 2 "" H 4850 1500 50  0001 C CNN
+F 3 "" H 4850 1500 50  0001 C CNN
+	1    4850 1500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3950 1500 3950 1850
-Connection ~ 3950 1850
+	4850 1500 4850 1850
+Connection ~ 4850 1850
 Wire Wire Line
-	8150 1850 8850 1850
+	9050 1850 9600 1850
 Wire Wire Line
-	8150 2450 8850 2450
-Wire Wire Line
-	9650 1700 9800 1700
-Wire Wire Line
-	6250 1850 6900 1850
-Wire Wire Line
-	6250 2450 6900 2450
-$Comp
-L Device:L L102
-U 1 1 5F78CC57
-P 5000 1850
-F 0 "L102" V 5100 1850 50  0000 C CNN
-F 1 "6.8uH" V 4900 1850 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5000 1850 50  0001 C CNN
-F 3 "~" H 5000 1850 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MLZ2012N6R8LT000/2523499" H 5000 1850 50  0001 C CNN "Digi-Key Link"
-F 5 "445-6761-1-ND" H 5000 1850 50  0001 C CNN "Digi-Key PN"
-	1    5000 1850
-	0    -1   -1   0   
-$EndComp
-Connection ~ 6250 2450
-Wire Wire Line
-	6250 2300 6250 2450
-Wire Wire Line
-	6250 1850 5500 1850
-Connection ~ 6250 1850
-Wire Wire Line
-	6250 2000 6250 1850
-$Comp
-L Device:CP C103
-U 1 1 600BA354
-P 6250 2150
-F 0 "C103" H 6368 2196 50  0000 L CNN
-F 1 "22uF" H 6368 2105 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.3" H 6288 2000 50  0001 C CNN
-F 3 "~" H 6250 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/würth-elektronik/865080542006/5728100" H 6250 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "732-8505-1-ND" H 6250 2150 50  0001 C CNN "Digi-Key PN"
-	1    6250 2150
-	1    0    0    -1  
-$EndComp
-Connection ~ 5500 1850
-Connection ~ 5500 2450
-Wire Wire Line
-	5500 2450 6250 2450
-Wire Wire Line
-	4500 2450 5500 2450
-Wire Wire Line
-	5500 2450 5500 2300
-Wire Wire Line
-	5500 1850 5500 2000
-Wire Wire Line
-	5150 1850 5300 1850
-$Comp
-L Device:C C102
-U 1 1 5F38D051
-P 5500 2150
-F 0 "C102" H 5615 2196 50  0000 L CNN
-F 1 "4.7uF" H 5615 2105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5538 2000 50  0001 C CNN
-F 3 "~" H 5500 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 5500 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "1276-6462-1-ND" H 5500 2150 50  0001 C CNN "Digi-Key PN"
-	1    5500 2150
-	1    0    0    -1  
-$EndComp
-Connection ~ 4500 1850
-Connection ~ 4500 2450
-Wire Wire Line
-	4500 1850 4850 1850
-Wire Notes Line
-	16525 3650 475  3650
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 602C1EBA
-P 3550 1750
-F 0 "#FLG0101" H 3550 1825 50  0001 C CNN
-F 1 "PWR_FLAG" H 3550 1923 50  0000 C CNN
-F 2 "" H 3550 1750 50  0001 C CNN
-F 3 "~" H 3550 1750 50  0001 C CNN
-	1    3550 1750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0102
-U 1 1 602C5800
-P 3550 2350
-F 0 "#FLG0102" H 3550 2425 50  0001 C CNN
-F 1 "PWR_FLAG" H 3550 2523 50  0000 C CNN
-F 2 "" H 3550 2350 50  0001 C CNN
-F 3 "~" H 3550 2350 50  0001 C CNN
-	1    3550 2350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4500 2450 3550 2450
-Wire Wire Line
-	3550 2350 3550 2450
-Wire Wire Line
-	3550 1750 3550 1850
-Wire Wire Line
-	3550 1850 3950 1850
-$Sheet
-S 1950 1750 1150 800 
-U 5F7CCAA0
-F0 "Power Input Protection" 50
-F1 "Power_Input_Protection.sch" 50
-F2 "V_IN+" I L 1950 1850 50 
-F3 "V_IN-" I L 1950 2450 50 
-F4 "V_OUT+" O R 3100 1850 50 
-F5 "V_OUT-" O R 3100 2450 50 
-$EndSheet
-Wire Wire Line
-	1600 1850 1950 1850
-Connection ~ 1600 1850
-Wire Wire Line
-	1600 2450 1950 2450
-Connection ~ 1600 2450
-Wire Wire Line
-	3100 1850 3550 1850
-Connection ~ 3550 1850
-Wire Wire Line
-	3100 2450 3550 2450
-Connection ~ 3550 2450
-Wire Wire Line
-	4500 2300 4500 2450
-Wire Wire Line
-	4500 2000 4500 1850
-$Comp
-L Device:C C101
-U 1 1 5F38C6C5
-P 4500 2150
-F 0 "C101" H 4615 2196 50  0000 L CNN
-F 1 "4.7uF" H 4615 2105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4538 2000 50  0001 C CNN
-F 3 "~" H 4500 2150 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 4500 2150 50  0001 C CNN "Digi-Key Link"
-F 5 "1276-6462-1-ND" H 4500 2150 50  0001 C CNN "Digi-Key PN"
-	1    4500 2150
-	1    0    0    -1  
-$EndComp
+	9050 2450 9600 2450
 Wire Wire Line
 	10800 1700 10950 1700
 Wire Wire Line
-	10950 1700 10950 1500
-Connection ~ 10800 1700
-Connection ~ 8850 1850
+	7150 1850 7800 1850
 Wire Wire Line
-	8850 2000 8850 1850
+	7150 2450 7800 2450
+Connection ~ 7150 2450
 Wire Wire Line
-	9350 1700 8850 1700
+	7150 2300 7150 2450
 Wire Wire Line
-	8850 1700 8850 1850
-Connection ~ 8850 1700
+	7150 1850 6400 1850
+Connection ~ 7150 1850
 Wire Wire Line
-	8850 1700 8850 1500
+	7150 2000 7150 1850
+$Comp
+L Device:C_Polarized C103
+U 1 1 600BA354
+P 7150 2150
+F 0 "C103" H 7268 2196 50  0000 L CNN
+F 1 "22uF" H 7268 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.3" H 7188 2000 50  0001 C CNN
+F 3 "~" H 7150 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/würth-elektronik/865080542006/5728100" H 7150 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "732-8505-1-ND" H 7150 2150 50  0001 C CNN "Digi-Key PN"
+	1    7150 2150
+	1    0    0    -1  
+$EndComp
+Connection ~ 6400 1850
+Connection ~ 6400 2450
+Wire Wire Line
+	6400 2450 7150 2450
+Wire Wire Line
+	5400 2450 6400 2450
+Wire Wire Line
+	6400 2450 6400 2300
+Wire Wire Line
+	6400 1850 6400 2000
+Wire Wire Line
+	6050 1850 6200 1850
+$Comp
+L Device:C C102
+U 1 1 5F38D051
+P 6400 2150
+F 0 "C102" H 6515 2196 50  0000 L CNN
+F 1 "4.7uF" H 6515 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6438 2000 50  0001 C CNN
+F 3 "~" H 6400 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 6400 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "1276-6462-1-ND" H 6400 2150 50  0001 C CNN "Digi-Key PN"
+	1    6400 2150
+	1    0    0    -1  
+$EndComp
+Connection ~ 5400 1850
+Connection ~ 5400 2450
+Wire Wire Line
+	5400 1850 5750 1850
+Wire Notes Line
+	16525 3650 475  3650
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 602C1EBA
+P 4450 1750
+F 0 "#FLG0102" H 4450 1825 50  0001 C CNN
+F 1 "PWR_FLAG" H 4450 1923 50  0000 C CNN
+F 2 "" H 4450 1750 50  0001 C CNN
+F 3 "~" H 4450 1750 50  0001 C CNN
+	1    4450 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 1750 4450 1850
+Wire Wire Line
+	4450 1850 4850 1850
+$Sheet
+S 2850 1750 1150 800 
+U 5F7CCAA0
+F0 "Power Input Protection" 50
+F1 "Power_Input_Protection.sch" 50
+F2 "V_IN+" I L 2850 1850 50 
+F3 "V_IN-" I L 2850 2450 50 
+F4 "V_OUT+" O R 4000 1850 50 
+F5 "V_OUT-" O R 4000 2450 50 
+$EndSheet
+Connection ~ 1600 1850
+Connection ~ 1600 2450
+Wire Wire Line
+	4000 1850 4450 1850
+Connection ~ 4450 1850
+Wire Wire Line
+	5400 2300 5400 2450
+Wire Wire Line
+	5400 2000 5400 1850
+$Comp
+L Device:C C101
+U 1 1 5F38C6C5
+P 5400 2150
+F 0 "C101" H 5515 2196 50  0000 L CNN
+F 1 "4.7uF" H 5515 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5438 2000 50  0001 C CNN
+F 3 "~" H 5400 2150 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNG/3894439" H 5400 2150 50  0001 C CNN "Digi-Key Link"
+F 5 "1276-6462-1-ND" H 5400 2150 50  0001 C CNN "Digi-Key PN"
+	1    5400 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11950 1700 12100 1700
+Wire Wire Line
+	12100 1700 12100 1500
+Connection ~ 11950 1700
+Connection ~ 9600 1850
+Wire Wire Line
+	9600 2000 9600 1850
+Wire Wire Line
+	10500 1700 10200 1700
+Wire Wire Line
+	9600 1700 9600 1850
+Connection ~ 9600 1700
+Wire Wire Line
+	9600 1700 9600 1500
 $Comp
 L power:+5VD #PWR0102
 U 1 1 5F3ADF50
-P 8850 1500
-F 0 "#PWR0102" H 8850 1350 50  0001 C CNN
-F 1 "+5VD" H 8865 1673 50  0000 C CNN
-F 2 "" H 8850 1500 50  0001 C CNN
-F 3 "" H 8850 1500 50  0001 C CNN
-	1    8850 1500
+P 9600 1500
+F 0 "#PWR0102" H 9600 1350 50  0001 C CNN
+F 1 "+5VD" H 9615 1673 50  0000 C CNN
+F 2 "" H 9600 1500 50  0001 C CNN
+F 3 "" H 9600 1500 50  0001 C CNN
+	1    9600 1500
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0103
 U 1 1 603BA653
-P 5300 1750
-F 0 "#FLG0103" H 5300 1825 50  0001 C CNN
-F 1 "PWR_FLAG" H 5300 1923 50  0000 C CNN
-F 2 "" H 5300 1750 50  0001 C CNN
-F 3 "~" H 5300 1750 50  0001 C CNN
-	1    5300 1750
+P 6200 1750
+F 0 "#FLG0103" H 6200 1825 50  0001 C CNN
+F 1 "PWR_FLAG" H 6200 1923 50  0000 C CNN
+F 2 "" H 6200 1750 50  0001 C CNN
+F 3 "~" H 6200 1750 50  0001 C CNN
+	1    6200 1750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5300 1750 5300 1850
-Connection ~ 5300 1850
+	6200 1750 6200 1850
+Connection ~ 6200 1850
 Wire Wire Line
-	5300 1850 5500 1850
+	6200 1850 6400 1850
 $Comp
-L power:PWR_FLAG #FLG0104
+L power:PWR_FLAG #FLG0101
 U 1 1 603BFC7D
-P 9800 1600
-F 0 "#FLG0104" H 9800 1675 50  0001 C CNN
-F 1 "PWR_FLAG" H 9800 1773 50  0000 C CNN
-F 2 "" H 9800 1600 50  0001 C CNN
-F 3 "~" H 9800 1600 50  0001 C CNN
-	1    9800 1600
+P 10950 1600
+F 0 "#FLG0101" H 10950 1675 50  0001 C CNN
+F 1 "PWR_FLAG" H 10950 1773 50  0000 C CNN
+F 2 "" H 10950 1600 50  0001 C CNN
+F 3 "~" H 10950 1600 50  0001 C CNN
+	1    10950 1600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9800 1600 9800 1700
-Connection ~ 9800 1700
+	10950 1600 10950 1700
+Connection ~ 10950 1700
 Wire Wire Line
-	9800 1700 10050 1700
+	10950 1700 11200 1700
 Wire Wire Line
 	10850 6200 8950 6200
 Wire Wire Line
@@ -687,8 +627,167 @@ Text Notes 8350 5250 0    100  ~ 20
 Sheet 7
 Text Notes 9950 7100 0    100  ~ 20
 Sheet 2
-Text Notes 2500 1650 0    100  ~ 20
+Text Notes 3400 1650 0    100  ~ 20
 Sheet 8
 Text Notes 6850 7100 0    100  ~ 20
 Sheet 3
+Wire Wire Line
+	2650 1850 2850 1850
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J101
+U 1 1 5F96E3A4
+P 1400 2200
+F 0 "J101" V 1550 2650 50  0000 R CNN
+F 1 "Conn_02x05_Odd_Even" V 1405 1912 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" H 1400 2200 50  0001 C CNN
+F 3 "~" H 1400 2200 50  0001 C CNN
+F 4 "2057-PH2-10-UA-ND" H 1400 2200 50  0001 C CNN "Digi-Key PN"
+F 5 "https://www.digikey.com/en/products/detail/adam-tech/PH2-10-UA/9830654?s=N4IgTCBcDa4AwFYDsBaACgCTCgjHFAqgIIoByAIiALoC%2BQA" H 1400 2200 50  0001 C CNN "Digi-Key Link"
+	1    1400 2200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1200 2400 1200 2450
+Wire Wire Line
+	1200 2450 1300 2450
+Connection ~ 1400 2450
+Wire Wire Line
+	1300 2400 1300 2450
+Connection ~ 1300 2450
+Wire Wire Line
+	1300 2450 1400 2450
+Wire Wire Line
+	1200 1900 1200 1850
+Wire Wire Line
+	1200 1850 1300 1850
+Connection ~ 1400 1850
+Wire Wire Line
+	1300 1900 1300 1850
+Connection ~ 1300 1850
+Wire Wire Line
+	1300 1850 1400 1850
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J102
+U 1 1 5F980333
+P 1400 3200
+F 0 "J102" V 1550 3650 50  0000 R CNN
+F 1 "Conn_02x05_Odd_Even" V 1405 2912 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" H 1400 3200 50  0001 C CNN
+F 3 "~" H 1400 3200 50  0001 C CNN
+F 4 "2057-PH2-10-UA-ND" H 1400 3200 50  0001 C CNN "Digi-Key PN"
+F 5 "https://www.digikey.com/en/products/detail/adam-tech/PH2-10-UA/9830654?s=N4IgTCBcDa4AwFYDsBaACgCTCgjHFAqgIIoByAIiALoC%2BQA" H 1400 3200 50  0001 C CNN "Digi-Key Link"
+	1    1400 3200
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 1200 3400
+NoConn ~ 1300 3400
+NoConn ~ 1300 2900
+NoConn ~ 1200 2900
+$Comp
+L Device:LED_Filled D101
+U 1 1 5F9A2D2D
+P 10200 2250
+F 0 "D101" V 10193 2132 50  0000 R CNN
+F 1 "Pink" V 10238 2132 50  0001 R CNN
+F 2 "irex_LED_SMD:LED_Kingbright_AA3528V_3.5x2.8mm_handsolder" H 10200 2250 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/AA3528VRVCS-A.pdf" H 10200 2250 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/kingbright/AA3528VRVCS-A/2440555" H 10200 2250 50  0001 C CNN "Digi-Key Link"
+F 5 "754-1534-1-ND" H 10200 2250 50  0001 C CNN "Digi-Key PN"
+F 6 "AA3528VRVCS/A" H 10200 2250 50  0001 C CNN "MPN"
+	1    10200 2250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 1850 1950 1850
+Wire Wire Line
+	2650 1950 2650 1850
+Wire Wire Line
+	2350 1950 2650 1950
+$Comp
+L Switch:SW_SPDT SW101
+U 1 1 5F93C59B
+P 2150 1850
+F 0 "SW101" H 2150 2043 50  0000 C CNN
+F 1 "L102021ML04Q" H 2150 2044 50  0001 C CNN
+F 2 "irex_Button_Switch_THT:SW_CuK_L102021ML04Q_SPDT_Angled" H 2150 1850 50  0001 C CNN
+F 3 "https://www.ckswitches.com/media/1423/l.pdf" H 2150 1850 50  0001 C CNN
+F 4 "L102021ML04Q" H 2150 1850 50  0001 C CNN "MPN"
+F 5 "https://www.digikey.com/en/products/detail/c-k/L102021ML04Q/181454" H 2150 1850 50  0001 C CNN "Digi-Key Link"
+F 6 "CKC5102-ND" H 2150 1850 50  0001 C CNN "Digi-Key PN"
+	1    2150 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2450 2850 2450
+$Comp
+L Device:R_US R101
+U 1 1 5F9D01F1
+P 10200 1900
+AR Path="/5F9D01F1" Ref="R101"  Part="1" 
+AR Path="/5F511849/5F9D01F1" Ref="R?"  Part="1" 
+AR Path="/5F511849/5F4FBB9F/5F9D01F1" Ref="R?"  Part="1" 
+AR Path="/5F511849/5FFF3ED7/5F9D01F1" Ref="R?"  Part="1" 
+F 0 "R101" H 10150 1950 50  0000 R CNN
+F 1 "1k" H 10150 1850 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10240 1890 50  0001 C CNN
+F 3 "~" H 10200 1900 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/yageo/RC0603FR-0710KL/726880?s=N4IgTCBcDaIEoGEAMA2JBmAYnAtEg7AIxIDSAMiALoC%2BQA" H 10200 1900 50  0001 C CNN "Digi-Key Link"
+F 5 "311-10.0KHRCT-ND" H 10200 1900 50  0001 C CNN "Digi-Key PN"
+	1    10200 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10200 1750 10200 1700
+Connection ~ 10200 1700
+Wire Wire Line
+	10200 1700 9600 1700
+Wire Wire Line
+	10200 2050 10200 2100
+$Comp
+L power:GND #PWR0107
+U 1 1 5F9DC4D2
+P 10200 2550
+F 0 "#PWR0107" H 10200 2300 50  0001 C CNN
+F 1 "GND" H 10205 2377 50  0000 C CNN
+F 2 "" H 10200 2550 50  0001 C CNN
+F 3 "" H 10200 2550 50  0001 C CNN
+	1    10200 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10200 2400 10200 2550
+NoConn ~ 2350 1750
+Text Label 6550 1850 0    50   ~ 0
+V_IN_ISOLATOR
+$Comp
+L Device:L L102
+U 1 1 5FAC056E
+P 5900 1850
+F 0 "L102" V 6000 1850 50  0000 C CNN
+F 1 "6.8uH" V 5800 1850 50  0000 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-30xx_HandSoldering" H 5900 1850 50  0001 C CNN
+F 3 "https://ds.yuden.co.jp/TYCOMPAS/ut/detail?pn=NRH3012T6R8MN%20%20&u=M" H 5900 1850 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/taiyo-yuden/NRH3012T6R8MN/2329093" H 5900 1850 50  0001 C CNN "Digi-Key Link"
+F 5 "587-2592-1-ND" H 5900 1850 50  0001 C CNN "Digi-Key PN"
+	1    5900 1850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L dmm_power:GNDL #PWR0113
+U 1 1 5FE31292
+P 4450 2600
+F 0 "#PWR0113" H 4450 2350 50  0001 C CNN
+F 1 "GNDL" H 4455 2427 50  0000 C CNN
+F 2 "" H 4450 2600 50  0001 C CNN
+F 3 "" H 4450 2600 50  0001 C CNN
+	1    4450 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2450 4450 2450
+Wire Wire Line
+	4450 2600 4450 2450
+Connection ~ 4450 2450
+Wire Wire Line
+	4450 2450 5400 2450
 $EndSCHEMATC

@@ -1,0 +1,5 @@
+11-08 21:52:14 swap_units.action_swap_units 87:Plugin executed on: 'darwin'
+11-08 21:52:14 swap_units.action_swap_units 88:Plugin executed with python version: '2.7.16 (default, May 14 2020, 09:34:58) \n[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]'
+11-08 21:52:14 swap_units.action_swap_units 89:KiCad build version: (5.1.6-0-10_14)
+11-08 21:52:14 swap_units.action_swap_units 90:Swap units plugin version: 37 started
+11-08 21:52:16 swap_units.action_swap_units 106:Action plugin canceled as eeschema was not closed

@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name dmm_power)(type Legacy)(uri ${KIPRJMOD}/libraries/symbol/dmm_power.lib)(options "")(descr ""))
+  (lib (name Breadboard_DMM-rescue)(type Legacy)(uri ${KIPRJMOD}/Breadboard_DMM-rescue.lib)(options "")(descr ""))
 )
