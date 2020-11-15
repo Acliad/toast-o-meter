@@ -485,11 +485,11 @@ Text HLabel 3750 7850 0    50   Output ~ 0
 CALIBRATE_MUX_~B
 Text HLabel 3750 7750 0    50   Output ~ 0
 CALIBRATE_MUX_~A
-Text HLabel 6300 6850 2    50   Output ~ 0
+Text HLabel 6300 6950 2    50   Output ~ 0
 VREF_4.096V_~EN
 Wire Wire Line
 	6300 6850 5450 6850
-Text HLabel 6300 6950 2    50   Input ~ 0
+Text HLabel 6300 6850 2    50   Input ~ 0
 ADC_~DRDY
 Wire Wire Line
 	4250 8050 3850 8050
@@ -1387,9 +1387,9 @@ $Comp
 L Connector:TestPoint TP701
 U 1 1 5F94BDCF
 P 4000 7150
-F 0 "TP701" V 4000 7400 50  0000 C CNN
+F 0 "TP701" V 4000 7450 50  0000 C CNN
 F 1 "TestPoint" V 4104 7222 50  0001 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.5mm_Drill1.2mm" H 4200 7150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 4200 7150 50  0001 C CNN
 F 3 "~" H 4200 7150 50  0001 C CNN
 F 4 "2057-PH2-10-UA-ND" H 4000 7150 50  0001 C CNN "Digi-Key PN"
 F 5 "https://www.digikey.com/en/products/detail/adam-tech/PH2-10-UA/9830654?s=N4IgTCBcDa4AwFYDsBaACgCTCgjHFAqgIIoByAIiALoC%2BQA" H 4000 7150 50  0001 C CNN "Digi-Key Link"
@@ -1400,9 +1400,9 @@ $Comp
 L Connector:TestPoint TP702
 U 1 1 5F94C0A7
 P 4000 7250
-F 0 "TP702" V 4000 7500 50  0000 C CNN
+F 0 "TP702" V 4000 7550 50  0000 C CNN
 F 1 "TestPoint" V 4104 7322 50  0001 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.5mm_Drill1.2mm" H 4200 7250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 4200 7250 50  0001 C CNN
 F 3 "~" H 4200 7250 50  0001 C CNN
 F 4 "2057-PH2-10-UA-ND" H 4000 7250 50  0001 C CNN "Digi-Key PN"
 F 5 "https://www.digikey.com/en/products/detail/adam-tech/PH2-10-UA/9830654?s=N4IgTCBcDa4AwFYDsBaACgCTCgjHFAqgIIoByAIiALoC%2BQA" H 4000 7250 50  0001 C CNN "Digi-Key Link"
