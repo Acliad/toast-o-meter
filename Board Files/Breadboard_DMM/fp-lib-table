@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Breadboard_DMM_Aesthetic)(type KiCad)(uri ${KIPRJMOD}/libraries/footprint/Breadboard_DMM_Aesthetic.pretty)(options "")(descr ""))
+)

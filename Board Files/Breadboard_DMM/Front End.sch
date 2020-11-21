@@ -827,8 +827,8 @@ $Comp
 L Connector_Generic:Conn_01x02 J302
 U 1 1 5F91B0FE
 P 1450 5200
-F 0 "J302" H 1368 4875 50  0000 C CNN
-F 1 "I+" H 1368 4966 50  0000 C CNN
+F 0 "J302" H 1400 4950 50  0000 C CNN
+F 1 "Conn_01x02" H 1350 4950 50  0001 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1450 5200 50  0001 C CNN
 F 3 "~" H 1450 5200 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samtec-inc/SSW-102-01-T-S/1112303" H 1450 5200 50  0001 C CNN "Digi-Key Link"
@@ -871,8 +871,8 @@ $Comp
 L Connector_Generic:Conn_01x02 J301
 U 1 1 5F915A3B
 P 1450 2700
-F 0 "J301" H 1368 2375 50  0000 C CNN
-F 1 "V+" H 1368 2466 50  0000 C CNN
+F 0 "J301" H 1400 2450 50  0000 C CNN
+F 1 "Conn_01x02" H 1350 2450 50  0001 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1450 2700 50  0001 C CNN
 F 3 "~" H 1450 2700 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samtec-inc/SSW-102-01-T-S/1112303" H 1450 2700 50  0001 C CNN "Digi-Key Link"

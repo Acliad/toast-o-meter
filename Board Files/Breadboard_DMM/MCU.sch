@@ -351,10 +351,10 @@ Wire Wire Line
 Wire Wire Line
 	4850 6550 4850 5400
 $Comp
-L irex_MCU_ST_STM32G0:STM32G030Kx U703
+L irex_MCU_ST_STM32G0:STM32G030Kx U702
 U 1 1 5F3FD47F
 P 4850 7550
-F 0 "U703" H 4350 8600 50  0000 L CNN
+F 0 "U702" H 4350 8600 50  0000 L CNN
 F 1 "STM32G030Kx" H 4500 8500 50  0000 C CNN
 F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 5700 6500 50  0001 C CNN
 F 3 "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf" H 4850 8450 50  0001 C CNN
@@ -1430,14 +1430,14 @@ $EndComp
 Text Notes 12550 5300 0    118  ~ 24
 Display
 $Comp
-L Breadboard_DMM-rescue:LCD-Generic_3.2in_SPI_SD-irex_Display_Graphic U?
+L irex_Display_Graphic:LCD-Generic_3.2in_SPI_SD DS?
 U 1 1 5F4ADAFA
 P 14500 6800
-AR Path="/5F4ADAFA" Ref="U?"  Part="1" 
-AR Path="/5F3FD151/5F4ADAFA" Ref="U702"  Part="1" 
-F 0 "U702" H 14100 7650 50  0000 L CNN
+AR Path="/5F4ADAFA" Ref="DS?"  Part="1" 
+AR Path="/5F3FD151/5F4ADAFA" Ref="DS701"  Part="1" 
+F 0 "DS701" H 14100 7650 50  0000 L CNN
 F 1 "LCD-Generic_3.2in_SPI_SD" H 14400 7550 50  0000 R CNN
-F 2 "irex_Display:LCD-Generic-3.2in_89.30x55.04mm" H 15500 6000 50  0001 C CNN
+F 2 "irex_Display:LCD-Generic-3.2in_89.30x55.04mm_ReducedCourtyard" H 15500 6000 50  0001 C CNN
 F 3 "https://www.aliexpress.com/item/4001122632293.html?spm=a2g0o.productlist.0.0.626763a37DWpAR&algo_pvid=075ffa5b-9e24-45ec-b277-c66fde4fd636&algo_expid=075ffa5b-9e24-45ec-b277-c66fde4fd636-8&btsid=0be3746c15983696518323585e6542&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_" H 14400 7200 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samtec-inc/SLW-104-01-T-S/1104832 ; https://www.digikey.com/en/products/detail/samtec-inc/SLW-114-01-T-S/1104822" H 14500 6800 50  0001 C CNN "Digi-Key Link"
 F 5 "SAM1093-04-ND; SAM1093-14-ND" H 14500 6800 50  0001 C CNN "Digi-Key PN"
@@ -1575,8 +1575,8 @@ F 0 "R707" V 14455 4250 50  0000 C CNN
 F 1 "1k" V 14364 4250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 14290 4240 50  0001 C CNN
 F 3 "~" H 14250 4250 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100RL/726888" H 14250 4250 50  0001 C CNN "Digi-Key Link"
-F 5 "311-100HRCT-ND" H 14250 4250 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/yageo/RC0603FR-071KL/726843" H 14250 4250 50  0001 C CNN "Digi-Key Link"
+F 5 "311-1.00KHRCT-ND" H 14250 4250 50  0001 C CNN "Digi-Key PN"
 	1    14250 4250
 	0    -1   -1   0   
 $EndComp
