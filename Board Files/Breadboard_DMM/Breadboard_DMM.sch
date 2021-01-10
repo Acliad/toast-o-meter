@@ -69,7 +69,7 @@ F 0 "PS101" H 8400 2517 50  0000 C CNN
 F 1 "PDME1-S5-S5-S" H 8400 2426 50  0000 C CNN
 F 2 "irex_Converter_DCDC:CUI_DCDC-CONVERTER_PDME1-Sxx-S_1x4_P2.54mm_Drill1.0mm" H 7350 1900 50  0001 L CNN
 F 3 "https://www.cui.com/product/resource/pdme1-s.pdf" H 9450 1850 50  0001 L CNN
-F 4 "https://www.digikey.com/en/products/detail/cui-inc/PDME1-S5-D5-S/10229855" H 8400 2150 50  0001 C CNN "Digi-Key Link"
+F 4 "https://www.digikey.com/en/products/detail/cui-inc/PDME1-S5-S5-S/10229861?s=N4IgTCBcDaIAoBECyBRAjAWgMoFZt6xAF0BfIA" H 8400 2150 50  0001 C CNN "Digi-Key Link"
 F 5 "102-6320-ND" H 8400 2150 50  0001 C CNN "Digi-Key PN"
 F 6 "PDME1-S5-S5-S" H 8400 2150 50  0001 C CNN "MPN"
 	1    8400 2150
