@@ -28,8 +28,8 @@
 #define NAU7802_PUCTRL_CR_BIT    NAU7802_PUCTRL_CR(1)
 #define NAU7802_PUCTRL_OSCS(x)   ((x) << 6)
 #define NAU7802_PUCTRL_OSCS_BIT  NAU7802_PUCTRL_OSCS(1)
-#define NAU7802_PUCTRL_ACDSS(x)  ((x) << 7)
-#define NAU7802_PUCTRL_ACDSS_BIT NAU7802_PUCTRL_ACDSS(1)
+#define NAU7802_PUCTRL_AVDSS(x)  ((x) << 7)
+#define NAU7802_PUCTRL_AVDSS_BIT NAU7802_PUCTRL_AVDSS(1)
 
 #define NAU7802_INTERNAL_LDO 1
 #define NAU7802_EXTERNAL_LDO 0
@@ -219,7 +219,7 @@ HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source);
 HAL_StatusTypeDef nau7802_oscs_source(nau7802_t *adc, int source);
 HAL_StatusTypeDef nau7802_pwr_analog(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pwr_digital(nau7802_t *adc, int mode);
-HAL_StatusTypeDef nau7802_reg_reset(nau7802_t *adc, int sr);
+HAL_StatusTypeDef nau7802_reg_reset(nau7802_t *adc, int rst);
 HAL_StatusTypeDef nau7802_cready_polarity(nau7802_t *adc, int polarity);
 HAL_StatusTypeDef nau7802_drdy_function(nau7802_t *adc, int function);
 HAL_StatusTypeDef nau7802_vldo_volts(nau7802_t *adc, int vsetting);
@@ -253,7 +253,5 @@ HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *read
 HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading);
 
 
-HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, int val);
-HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, int *val);
-
-
+HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, uint8_t val);
+HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, uint8_t *val);

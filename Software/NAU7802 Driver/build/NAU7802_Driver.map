@@ -83,6 +83,95 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/main.o
  .data          0x0000000000000000        0x0 build/main.o
  .bss           0x0000000000000000        0x0 build/main.o
+ .text          0x0000000000000000        0x0 build/nau7802.o
+ .data          0x0000000000000000        0x0 build/nau7802.o
+ .bss           0x0000000000000000        0x0 build/nau7802.o
+ .text.nau7802_init
+                0x0000000000000000       0x10 build/nau7802.o
+ .text.nau7802_oscs_source
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pwr_analog
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pwr_digital
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_reg_reset
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_cready_polarity
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_drdy_function
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_vldo_volts
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pga_gain
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_ch_sel
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_samplerate
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_calibrate
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_crsd_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_fast_i2c_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_strong_i2c_pu_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_weak_i2c_pu_den
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_short_input
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_burnout_cs_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_temp_sense_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_bandgap_chop_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_extended_cm
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_ldomode
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pga_buff_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pga_inv_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_chop_den
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pga_cap_en
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_biase_curr
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_adc_curr
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_pga_curr
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_conversion_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_cready_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_puready_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_offset_cal_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_gain_cal_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_reg_write
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_reg_read
+                0x0000000000000000        0x4 build/nau7802.o
+ .text.nau7802_avdd_source
+                0x0000000000000000       0x3a build/nau7802.o
+ .debug_info    0x0000000000000000     0x135e build/nau7802.o
+ .debug_abbrev  0x0000000000000000      0x246 build/nau7802.o
+ .debug_loc     0x0000000000000000      0x5fb build/nau7802.o
+ .debug_aranges
+                0x0000000000000000      0x140 build/nau7802.o
+ .debug_ranges  0x0000000000000000      0x130 build/nau7802.o
+ .debug_line    0x0000000000000000      0x5b6 build/nau7802.o
+ .debug_str     0x0000000000000000      0xbe5 build/nau7802.o
+ .comment       0x0000000000000000       0x4d build/nau7802.o
+ .debug_frame   0x0000000000000000      0x270 build/nau7802.o
+ .ARM.attributes
+                0x0000000000000000       0x2c build/nau7802.o
  .text          0x0000000000000000        0x0 build/stm32g0xx_hal_msp.o
  .data          0x0000000000000000        0x0 build/stm32g0xx_hal_msp.o
  .bss           0x0000000000000000        0x0 build/stm32g0xx_hal_msp.o
@@ -1022,6 +1111,7 @@ LOAD /Applications/ARM/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-e
 LOAD build/gpio.o
 LOAD build/i2c.o
 LOAD build/main.o
+LOAD build/nau7802.o
 LOAD build/stm32g0xx_hal_msp.o
 LOAD build/stm32g0xx_it.o
 LOAD build/system_stm32g0xx.o
@@ -2264,6 +2354,43 @@ memset                                            /Applications/ARM/bin/../lib/g
                                                   build/i2c.o
                                                   build/gpio.o
                                                   /Applications/ARM/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
+nau7802_adc_curr                                  build/nau7802.o
+nau7802_avdd_source                               build/nau7802.o
+nau7802_bandgap_chop_en                           build/nau7802.o
+nau7802_biase_curr                                build/nau7802.o
+nau7802_burnout_cs_en                             build/nau7802.o
+nau7802_calibrate                                 build/nau7802.o
+nau7802_ch_sel                                    build/nau7802.o
+nau7802_chop_den                                  build/nau7802.o
+nau7802_conversion_read                           build/nau7802.o
+nau7802_cready_polarity                           build/nau7802.o
+nau7802_cready_read                               build/nau7802.o
+nau7802_crsd_en                                   build/nau7802.o
+nau7802_drdy_function                             build/nau7802.o
+nau7802_extended_cm                               build/nau7802.o
+nau7802_fast_i2c_en                               build/nau7802.o
+nau7802_gain_cal_read                             build/nau7802.o
+nau7802_init                                      build/nau7802.o
+nau7802_ldomode                                   build/nau7802.o
+nau7802_offset_cal_read                           build/nau7802.o
+nau7802_oscs_source                               build/nau7802.o
+nau7802_pga_buff_en                               build/nau7802.o
+nau7802_pga_cap_en                                build/nau7802.o
+nau7802_pga_curr                                  build/nau7802.o
+nau7802_pga_gain                                  build/nau7802.o
+nau7802_pga_inv_en                                build/nau7802.o
+nau7802_puready_read                              build/nau7802.o
+nau7802_pwr_analog                                build/nau7802.o
+nau7802_pwr_digital                               build/nau7802.o
+nau7802_reg_read                                  build/nau7802.o
+nau7802_reg_reset                                 build/nau7802.o
+nau7802_reg_write                                 build/nau7802.o
+nau7802_samplerate                                build/nau7802.o
+nau7802_short_input                               build/nau7802.o
+nau7802_strong_i2c_pu_en                          build/nau7802.o
+nau7802_temp_sense_en                             build/nau7802.o
+nau7802_vldo_volts                                build/nau7802.o
+nau7802_weak_i2c_pu_den                           build/nau7802.o
 pFlash                                            build/stm32g0xx_hal_flash.o
                                                   build/stm32g0xx_hal_flash_ex.o
 software_init_hook                                /Applications/ARM/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o

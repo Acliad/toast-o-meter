@@ -1,0 +1,1220 @@
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"nau7802.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.nau7802_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	nau7802_init
+  18              		.arch armv6s-m
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	nau7802_init:
+  25              	.LFB322:
+  26              		.file 1 "Core/Src/nau7802.c"
+   1:Core/Src/nau7802.c **** /**
+   2:Core/Src/nau7802.c ****  * @file nau7802.c
+   3:Core/Src/nau7802.c ****  * @author irex
+   4:Core/Src/nau7802.c ****  * @brief This driver provides support for the nuvoTon NAU7802 24-bit ADC.
+   5:Core/Src/nau7802.c ****  * @version 0.1
+   6:Core/Src/nau7802.c ****  * @date 2021-01-11
+   7:Core/Src/nau7802.c ****  *
+   8:Core/Src/nau7802.c ****  * @copyright Copyright (c) 2021
+   9:Core/Src/nau7802.c ****  *
+  10:Core/Src/nau7802.c ****  */
+  11:Core/Src/nau7802.c **** 
+  12:Core/Src/nau7802.c **** #include "nau7802.h"
+  13:Core/Src/nau7802.c **** 
+  14:Core/Src/nau7802.c **** /**
+  15:Core/Src/nau7802.c ****  * @brief Initializes and returns a point to the ADC instance
+  16:Core/Src/nau7802.c ****  *
+  17:Core/Src/nau7802.c ****  * @param i2c Handle to the I2C instance used for communication
+  18:Core/Src/nau7802.c ****  * @return nau7802_t* Pointer to new nau7802 instance
+  19:Core/Src/nau7802.c ****  */
+  20:Core/Src/nau7802.c **** nau7802_t *nau7802_init(I2C_HandleTypeDef i2c) { return 0; }
+  27              		.loc 1 20 48 view -0
+  28              		.cfi_startproc
+  29              		@ args = 76, pretend = 16, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 84B0     		sub	sp, sp, #16
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 16
+  35 0002 0090     		str	r0, [sp]
+  36 0004 0191     		str	r1, [sp, #4]
+  37 0006 0292     		str	r2, [sp, #8]
+  38 0008 0393     		str	r3, [sp, #12]
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 2
+
+
+  39              		.loc 1 20 50 view .LVU1
+  40              		.loc 1 20 60 is_stmt 0 view .LVU2
+  41 000a 0020     		movs	r0, #0
+  42              		@ sp needed
+  43 000c 04B0     		add	sp, sp, #16
+  44 000e 7047     		bx	lr
+  45              		.cfi_endproc
+  46              	.LFE322:
+  48              		.section	.text.nau7802_oscs_source,"ax",%progbits
+  49              		.align	1
+  50              		.global	nau7802_oscs_source
+  51              		.syntax unified
+  52              		.code	16
+  53              		.thumb_func
+  54              		.fpu softvfp
+  56              	nau7802_oscs_source:
+  57              	.LVL0:
+  58              	.LFB324:
+  21:Core/Src/nau7802.c **** 
+  22:Core/Src/nau7802.c **** /**
+  23:Core/Src/nau7802.c ****  * @brief Sets the source voltage for the internal AVDD rail, either internal LDO or external AVDD 
+  24:Core/Src/nau7802.c ****  *
+  25:Core/Src/nau7802.c ****  * @param adc adc instance
+  26:Core/Src/nau7802.c ****  * @param source 1 for internal LDO, 0 for AVDD pin
+  27:Core/Src/nau7802.c ****  * @return HAL_StatusTypeDef HAL I2C status message
+  28:Core/Src/nau7802.c ****  */
+  29:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source) {
+  30:Core/Src/nau7802.c ****     int               pureg;
+  31:Core/Src/nau7802.c ****     HAL_StatusTypeDef ret;
+  32:Core/Src/nau7802.c **** 
+  33:Core/Src/nau7802.c ****     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &pureg);
+  34:Core/Src/nau7802.c ****     if (ret != HAL_OK) {
+  35:Core/Src/nau7802.c ****         return ret;
+  36:Core/Src/nau7802.c ****     }
+  37:Core/Src/nau7802.c **** 
+  38:Core/Src/nau7802.c ****     if (source != 0) {
+  39:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg & (~NAU7802_PUCTRL_AVDSS_BIT));
+  40:Core/Src/nau7802.c ****     } else {
+  41:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg | NAU7802_PUCTRL_AVDSS_BIT);
+  42:Core/Src/nau7802.c ****     }
+  43:Core/Src/nau7802.c **** }
+  44:Core/Src/nau7802.c **** 
+  45:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_oscs_source(nau7802_t *adc, int source) { return 0; }
+  59              		.loc 1 45 67 is_stmt 1 view -0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  64              		.loc 1 45 69 view .LVU4
+  65              		.loc 1 45 79 is_stmt 0 view .LVU5
+  66 0000 0020     		movs	r0, #0
+  67              	.LVL1:
+  68              		.loc 1 45 79 view .LVU6
+  69              		@ sp needed
+  70 0002 7047     		bx	lr
+  71              		.cfi_endproc
+  72              	.LFE324:
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 3
+
+
+  74              		.section	.text.nau7802_pwr_analog,"ax",%progbits
+  75              		.align	1
+  76              		.global	nau7802_pwr_analog
+  77              		.syntax unified
+  78              		.code	16
+  79              		.thumb_func
+  80              		.fpu softvfp
+  82              	nau7802_pwr_analog:
+  83              	.LVL2:
+  84              	.LFB325:
+  46:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pwr_analog(nau7802_t *adc, int mode) { return 0; }
+  85              		.loc 1 46 64 is_stmt 1 view -0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89              		@ link register save eliminated.
+  90              		.loc 1 46 66 view .LVU8
+  91              		.loc 1 46 76 is_stmt 0 view .LVU9
+  92 0000 0020     		movs	r0, #0
+  93              	.LVL3:
+  94              		.loc 1 46 76 view .LVU10
+  95              		@ sp needed
+  96 0002 7047     		bx	lr
+  97              		.cfi_endproc
+  98              	.LFE325:
+ 100              		.section	.text.nau7802_pwr_digital,"ax",%progbits
+ 101              		.align	1
+ 102              		.global	nau7802_pwr_digital
+ 103              		.syntax unified
+ 104              		.code	16
+ 105              		.thumb_func
+ 106              		.fpu softvfp
+ 108              	nau7802_pwr_digital:
+ 109              	.LVL4:
+ 110              	.LFB326:
+  47:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pwr_digital(nau7802_t *adc, int mode) { return 0; }
+ 111              		.loc 1 47 65 is_stmt 1 view -0
+ 112              		.cfi_startproc
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115              		@ link register save eliminated.
+ 116              		.loc 1 47 67 view .LVU12
+ 117              		.loc 1 47 77 is_stmt 0 view .LVU13
+ 118 0000 0020     		movs	r0, #0
+ 119              	.LVL5:
+ 120              		.loc 1 47 77 view .LVU14
+ 121              		@ sp needed
+ 122 0002 7047     		bx	lr
+ 123              		.cfi_endproc
+ 124              	.LFE326:
+ 126              		.section	.text.nau7802_reg_reset,"ax",%progbits
+ 127              		.align	1
+ 128              		.global	nau7802_reg_reset
+ 129              		.syntax unified
+ 130              		.code	16
+ 131              		.thumb_func
+ 132              		.fpu softvfp
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 4
+
+
+ 134              	nau7802_reg_reset:
+ 135              	.LVL6:
+ 136              	.LFB327:
+  48:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_reg_reset(nau7802_t *adc, int sr) { return 0; }
+ 137              		.loc 1 48 61 is_stmt 1 view -0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141              		@ link register save eliminated.
+ 142              		.loc 1 48 63 view .LVU16
+ 143              		.loc 1 48 73 is_stmt 0 view .LVU17
+ 144 0000 0020     		movs	r0, #0
+ 145              	.LVL7:
+ 146              		.loc 1 48 73 view .LVU18
+ 147              		@ sp needed
+ 148 0002 7047     		bx	lr
+ 149              		.cfi_endproc
+ 150              	.LFE327:
+ 152              		.section	.text.nau7802_cready_polarity,"ax",%progbits
+ 153              		.align	1
+ 154              		.global	nau7802_cready_polarity
+ 155              		.syntax unified
+ 156              		.code	16
+ 157              		.thumb_func
+ 158              		.fpu softvfp
+ 160              	nau7802_cready_polarity:
+ 161              	.LVL8:
+ 162              	.LFB328:
+  49:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_cready_polarity(nau7802_t *adc, int polarity) { return 0; }
+ 163              		.loc 1 49 73 is_stmt 1 view -0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167              		@ link register save eliminated.
+ 168              		.loc 1 49 75 view .LVU20
+ 169              		.loc 1 49 85 is_stmt 0 view .LVU21
+ 170 0000 0020     		movs	r0, #0
+ 171              	.LVL9:
+ 172              		.loc 1 49 85 view .LVU22
+ 173              		@ sp needed
+ 174 0002 7047     		bx	lr
+ 175              		.cfi_endproc
+ 176              	.LFE328:
+ 178              		.section	.text.nau7802_drdy_function,"ax",%progbits
+ 179              		.align	1
+ 180              		.global	nau7802_drdy_function
+ 181              		.syntax unified
+ 182              		.code	16
+ 183              		.thumb_func
+ 184              		.fpu softvfp
+ 186              	nau7802_drdy_function:
+ 187              	.LVL10:
+ 188              	.LFB329:
+  50:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_drdy_function(nau7802_t *adc, int function) { return 0; }
+ 189              		.loc 1 50 71 is_stmt 1 view -0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 5
+
+
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              		@ link register save eliminated.
+ 194              		.loc 1 50 73 view .LVU24
+ 195              		.loc 1 50 83 is_stmt 0 view .LVU25
+ 196 0000 0020     		movs	r0, #0
+ 197              	.LVL11:
+ 198              		.loc 1 50 83 view .LVU26
+ 199              		@ sp needed
+ 200 0002 7047     		bx	lr
+ 201              		.cfi_endproc
+ 202              	.LFE329:
+ 204              		.section	.text.nau7802_vldo_volts,"ax",%progbits
+ 205              		.align	1
+ 206              		.global	nau7802_vldo_volts
+ 207              		.syntax unified
+ 208              		.code	16
+ 209              		.thumb_func
+ 210              		.fpu softvfp
+ 212              	nau7802_vldo_volts:
+ 213              	.LVL12:
+ 214              	.LFB330:
+  51:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_vldo_volts(nau7802_t *adc, int vsetting) { return 0; }
+ 215              		.loc 1 51 68 is_stmt 1 view -0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		@ link register save eliminated.
+ 220              		.loc 1 51 70 view .LVU28
+ 221              		.loc 1 51 80 is_stmt 0 view .LVU29
+ 222 0000 0020     		movs	r0, #0
+ 223              	.LVL13:
+ 224              		.loc 1 51 80 view .LVU30
+ 225              		@ sp needed
+ 226 0002 7047     		bx	lr
+ 227              		.cfi_endproc
+ 228              	.LFE330:
+ 230              		.section	.text.nau7802_pga_gain,"ax",%progbits
+ 231              		.align	1
+ 232              		.global	nau7802_pga_gain
+ 233              		.syntax unified
+ 234              		.code	16
+ 235              		.thumb_func
+ 236              		.fpu softvfp
+ 238              	nau7802_pga_gain:
+ 239              	.LVL14:
+ 240              	.LFB331:
+  52:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pga_gain(nau7802_t *adc, int gsetting) { return 0; }
+ 241              		.loc 1 52 66 is_stmt 1 view -0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              		@ link register save eliminated.
+ 246              		.loc 1 52 68 view .LVU32
+ 247              		.loc 1 52 78 is_stmt 0 view .LVU33
+ 248 0000 0020     		movs	r0, #0
+ 249              	.LVL15:
+ 250              		.loc 1 52 78 view .LVU34
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 6
+
+
+ 251              		@ sp needed
+ 252 0002 7047     		bx	lr
+ 253              		.cfi_endproc
+ 254              	.LFE331:
+ 256              		.section	.text.nau7802_ch_sel,"ax",%progbits
+ 257              		.align	1
+ 258              		.global	nau7802_ch_sel
+ 259              		.syntax unified
+ 260              		.code	16
+ 261              		.thumb_func
+ 262              		.fpu softvfp
+ 264              	nau7802_ch_sel:
+ 265              	.LVL16:
+ 266              	.LFB332:
+  53:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_ch_sel(nau7802_t *adc, int channel) { return 0; }
+ 267              		.loc 1 53 63 is_stmt 1 view -0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271              		@ link register save eliminated.
+ 272              		.loc 1 53 65 view .LVU36
+ 273              		.loc 1 53 75 is_stmt 0 view .LVU37
+ 274 0000 0020     		movs	r0, #0
+ 275              	.LVL17:
+ 276              		.loc 1 53 75 view .LVU38
+ 277              		@ sp needed
+ 278 0002 7047     		bx	lr
+ 279              		.cfi_endproc
+ 280              	.LFE332:
+ 282              		.section	.text.nau7802_samplerate,"ax",%progbits
+ 283              		.align	1
+ 284              		.global	nau7802_samplerate
+ 285              		.syntax unified
+ 286              		.code	16
+ 287              		.thumb_func
+ 288              		.fpu softvfp
+ 290              	nau7802_samplerate:
+ 291              	.LVL18:
+ 292              	.LFB333:
+  54:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_samplerate(nau7802_t *adc, int rsetting) { return 0; }
+ 293              		.loc 1 54 68 is_stmt 1 view -0
+ 294              		.cfi_startproc
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297              		@ link register save eliminated.
+ 298              		.loc 1 54 70 view .LVU40
+ 299              		.loc 1 54 80 is_stmt 0 view .LVU41
+ 300 0000 0020     		movs	r0, #0
+ 301              	.LVL19:
+ 302              		.loc 1 54 80 view .LVU42
+ 303              		@ sp needed
+ 304 0002 7047     		bx	lr
+ 305              		.cfi_endproc
+ 306              	.LFE333:
+ 308              		.section	.text.nau7802_calibrate,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	nau7802_calibrate
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 7
+
+
+ 311              		.syntax unified
+ 312              		.code	16
+ 313              		.thumb_func
+ 314              		.fpu softvfp
+ 316              	nau7802_calibrate:
+ 317              	.LVL20:
+ 318              	.LFB334:
+  55:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_calibrate(nau7802_t *adc, int mode) { return 0; }
+ 319              		.loc 1 55 63 is_stmt 1 view -0
+ 320              		.cfi_startproc
+ 321              		@ args = 0, pretend = 0, frame = 0
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+ 323              		@ link register save eliminated.
+ 324              		.loc 1 55 65 view .LVU44
+ 325              		.loc 1 55 75 is_stmt 0 view .LVU45
+ 326 0000 0020     		movs	r0, #0
+ 327              	.LVL21:
+ 328              		.loc 1 55 75 view .LVU46
+ 329              		@ sp needed
+ 330 0002 7047     		bx	lr
+ 331              		.cfi_endproc
+ 332              	.LFE334:
+ 334              		.section	.text.nau7802_crsd_en,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	nau7802_crsd_en
+ 337              		.syntax unified
+ 338              		.code	16
+ 339              		.thumb_func
+ 340              		.fpu softvfp
+ 342              	nau7802_crsd_en:
+ 343              	.LVL22:
+ 344              	.LFB335:
+  56:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_crsd_en(nau7802_t *adc, int mode) { return 0; }
+ 345              		.loc 1 56 61 is_stmt 1 view -0
+ 346              		.cfi_startproc
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349              		@ link register save eliminated.
+ 350              		.loc 1 56 63 view .LVU48
+ 351              		.loc 1 56 73 is_stmt 0 view .LVU49
+ 352 0000 0020     		movs	r0, #0
+ 353              	.LVL23:
+ 354              		.loc 1 56 73 view .LVU50
+ 355              		@ sp needed
+ 356 0002 7047     		bx	lr
+ 357              		.cfi_endproc
+ 358              	.LFE335:
+ 360              		.section	.text.nau7802_fast_i2c_en,"ax",%progbits
+ 361              		.align	1
+ 362              		.global	nau7802_fast_i2c_en
+ 363              		.syntax unified
+ 364              		.code	16
+ 365              		.thumb_func
+ 366              		.fpu softvfp
+ 368              	nau7802_fast_i2c_en:
+ 369              	.LVL24:
+ 370              	.LFB336:
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 8
+
+
+  57:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_fast_i2c_en(nau7802_t *adc, int mode) { return 0; }
+ 371              		.loc 1 57 65 is_stmt 1 view -0
+ 372              		.cfi_startproc
+ 373              		@ args = 0, pretend = 0, frame = 0
+ 374              		@ frame_needed = 0, uses_anonymous_args = 0
+ 375              		@ link register save eliminated.
+ 376              		.loc 1 57 67 view .LVU52
+ 377              		.loc 1 57 77 is_stmt 0 view .LVU53
+ 378 0000 0020     		movs	r0, #0
+ 379              	.LVL25:
+ 380              		.loc 1 57 77 view .LVU54
+ 381              		@ sp needed
+ 382 0002 7047     		bx	lr
+ 383              		.cfi_endproc
+ 384              	.LFE336:
+ 386              		.section	.text.nau7802_strong_i2c_pu_en,"ax",%progbits
+ 387              		.align	1
+ 388              		.global	nau7802_strong_i2c_pu_en
+ 389              		.syntax unified
+ 390              		.code	16
+ 391              		.thumb_func
+ 392              		.fpu softvfp
+ 394              	nau7802_strong_i2c_pu_en:
+ 395              	.LVL26:
+ 396              	.LFB337:
+  58:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_strong_i2c_pu_en(nau7802_t *adc, int mode) { return 0; }
+ 397              		.loc 1 58 70 is_stmt 1 view -0
+ 398              		.cfi_startproc
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 402              		.loc 1 58 72 view .LVU56
+ 403              		.loc 1 58 82 is_stmt 0 view .LVU57
+ 404 0000 0020     		movs	r0, #0
+ 405              	.LVL27:
+ 406              		.loc 1 58 82 view .LVU58
+ 407              		@ sp needed
+ 408 0002 7047     		bx	lr
+ 409              		.cfi_endproc
+ 410              	.LFE337:
+ 412              		.section	.text.nau7802_weak_i2c_pu_den,"ax",%progbits
+ 413              		.align	1
+ 414              		.global	nau7802_weak_i2c_pu_den
+ 415              		.syntax unified
+ 416              		.code	16
+ 417              		.thumb_func
+ 418              		.fpu softvfp
+ 420              	nau7802_weak_i2c_pu_den:
+ 421              	.LVL28:
+ 422              	.LFB338:
+  59:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_weak_i2c_pu_den(nau7802_t *adc, int mode) { return 0; }
+ 423              		.loc 1 59 69 is_stmt 1 view -0
+ 424              		.cfi_startproc
+ 425              		@ args = 0, pretend = 0, frame = 0
+ 426              		@ frame_needed = 0, uses_anonymous_args = 0
+ 427              		@ link register save eliminated.
+ 428              		.loc 1 59 71 view .LVU60
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 9
+
+
+ 429              		.loc 1 59 81 is_stmt 0 view .LVU61
+ 430 0000 0020     		movs	r0, #0
+ 431              	.LVL29:
+ 432              		.loc 1 59 81 view .LVU62
+ 433              		@ sp needed
+ 434 0002 7047     		bx	lr
+ 435              		.cfi_endproc
+ 436              	.LFE338:
+ 438              		.section	.text.nau7802_short_input,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	nau7802_short_input
+ 441              		.syntax unified
+ 442              		.code	16
+ 443              		.thumb_func
+ 444              		.fpu softvfp
+ 446              	nau7802_short_input:
+ 447              	.LVL30:
+ 448              	.LFB339:
+  60:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_short_input(nau7802_t *adc, int mode) { return 0; }
+ 449              		.loc 1 60 65 is_stmt 1 view -0
+ 450              		.cfi_startproc
+ 451              		@ args = 0, pretend = 0, frame = 0
+ 452              		@ frame_needed = 0, uses_anonymous_args = 0
+ 453              		@ link register save eliminated.
+ 454              		.loc 1 60 67 view .LVU64
+ 455              		.loc 1 60 77 is_stmt 0 view .LVU65
+ 456 0000 0020     		movs	r0, #0
+ 457              	.LVL31:
+ 458              		.loc 1 60 77 view .LVU66
+ 459              		@ sp needed
+ 460 0002 7047     		bx	lr
+ 461              		.cfi_endproc
+ 462              	.LFE339:
+ 464              		.section	.text.nau7802_burnout_cs_en,"ax",%progbits
+ 465              		.align	1
+ 466              		.global	nau7802_burnout_cs_en
+ 467              		.syntax unified
+ 468              		.code	16
+ 469              		.thumb_func
+ 470              		.fpu softvfp
+ 472              	nau7802_burnout_cs_en:
+ 473              	.LVL32:
+ 474              	.LFB340:
+  61:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_burnout_cs_en(nau7802_t *adc, int mode) { return 0; }
+ 475              		.loc 1 61 67 is_stmt 1 view -0
+ 476              		.cfi_startproc
+ 477              		@ args = 0, pretend = 0, frame = 0
+ 478              		@ frame_needed = 0, uses_anonymous_args = 0
+ 479              		@ link register save eliminated.
+ 480              		.loc 1 61 69 view .LVU68
+ 481              		.loc 1 61 79 is_stmt 0 view .LVU69
+ 482 0000 0020     		movs	r0, #0
+ 483              	.LVL33:
+ 484              		.loc 1 61 79 view .LVU70
+ 485              		@ sp needed
+ 486 0002 7047     		bx	lr
+ 487              		.cfi_endproc
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 10
+
+
+ 488              	.LFE340:
+ 490              		.section	.text.nau7802_temp_sense_en,"ax",%progbits
+ 491              		.align	1
+ 492              		.global	nau7802_temp_sense_en
+ 493              		.syntax unified
+ 494              		.code	16
+ 495              		.thumb_func
+ 496              		.fpu softvfp
+ 498              	nau7802_temp_sense_en:
+ 499              	.LVL34:
+ 500              	.LFB341:
+  62:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_temp_sense_en(nau7802_t *adc, int mode) { return 0; }
+ 501              		.loc 1 62 67 is_stmt 1 view -0
+ 502              		.cfi_startproc
+ 503              		@ args = 0, pretend = 0, frame = 0
+ 504              		@ frame_needed = 0, uses_anonymous_args = 0
+ 505              		@ link register save eliminated.
+ 506              		.loc 1 62 69 view .LVU72
+ 507              		.loc 1 62 79 is_stmt 0 view .LVU73
+ 508 0000 0020     		movs	r0, #0
+ 509              	.LVL35:
+ 510              		.loc 1 62 79 view .LVU74
+ 511              		@ sp needed
+ 512 0002 7047     		bx	lr
+ 513              		.cfi_endproc
+ 514              	.LFE341:
+ 516              		.section	.text.nau7802_bandgap_chop_en,"ax",%progbits
+ 517              		.align	1
+ 518              		.global	nau7802_bandgap_chop_en
+ 519              		.syntax unified
+ 520              		.code	16
+ 521              		.thumb_func
+ 522              		.fpu softvfp
+ 524              	nau7802_bandgap_chop_en:
+ 525              	.LVL36:
+ 526              	.LFB342:
+  63:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_bandgap_chop_en(nau7802_t *adc, int mode) { return 0; }
+ 527              		.loc 1 63 69 is_stmt 1 view -0
+ 528              		.cfi_startproc
+ 529              		@ args = 0, pretend = 0, frame = 0
+ 530              		@ frame_needed = 0, uses_anonymous_args = 0
+ 531              		@ link register save eliminated.
+ 532              		.loc 1 63 71 view .LVU76
+ 533              		.loc 1 63 81 is_stmt 0 view .LVU77
+ 534 0000 0020     		movs	r0, #0
+ 535              	.LVL37:
+ 536              		.loc 1 63 81 view .LVU78
+ 537              		@ sp needed
+ 538 0002 7047     		bx	lr
+ 539              		.cfi_endproc
+ 540              	.LFE342:
+ 542              		.section	.text.nau7802_extended_cm,"ax",%progbits
+ 543              		.align	1
+ 544              		.global	nau7802_extended_cm
+ 545              		.syntax unified
+ 546              		.code	16
+ 547              		.thumb_func
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 11
+
+
+ 548              		.fpu softvfp
+ 550              	nau7802_extended_cm:
+ 551              	.LVL38:
+ 552              	.LFB343:
+  64:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_extended_cm(nau7802_t *adc, int mode) { return 0; }
+ 553              		.loc 1 64 65 is_stmt 1 view -0
+ 554              		.cfi_startproc
+ 555              		@ args = 0, pretend = 0, frame = 0
+ 556              		@ frame_needed = 0, uses_anonymous_args = 0
+ 557              		@ link register save eliminated.
+ 558              		.loc 1 64 67 view .LVU80
+ 559              		.loc 1 64 77 is_stmt 0 view .LVU81
+ 560 0000 0020     		movs	r0, #0
+ 561              	.LVL39:
+ 562              		.loc 1 64 77 view .LVU82
+ 563              		@ sp needed
+ 564 0002 7047     		bx	lr
+ 565              		.cfi_endproc
+ 566              	.LFE343:
+ 568              		.section	.text.nau7802_ldomode,"ax",%progbits
+ 569              		.align	1
+ 570              		.global	nau7802_ldomode
+ 571              		.syntax unified
+ 572              		.code	16
+ 573              		.thumb_func
+ 574              		.fpu softvfp
+ 576              	nau7802_ldomode:
+ 577              	.LVL40:
+ 578              	.LFB344:
+  65:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_ldomode(nau7802_t *adc, int mode) { return 0; }
+ 579              		.loc 1 65 61 is_stmt 1 view -0
+ 580              		.cfi_startproc
+ 581              		@ args = 0, pretend = 0, frame = 0
+ 582              		@ frame_needed = 0, uses_anonymous_args = 0
+ 583              		@ link register save eliminated.
+ 584              		.loc 1 65 63 view .LVU84
+ 585              		.loc 1 65 73 is_stmt 0 view .LVU85
+ 586 0000 0020     		movs	r0, #0
+ 587              	.LVL41:
+ 588              		.loc 1 65 73 view .LVU86
+ 589              		@ sp needed
+ 590 0002 7047     		bx	lr
+ 591              		.cfi_endproc
+ 592              	.LFE344:
+ 594              		.section	.text.nau7802_pga_buff_en,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	nau7802_pga_buff_en
+ 597              		.syntax unified
+ 598              		.code	16
+ 599              		.thumb_func
+ 600              		.fpu softvfp
+ 602              	nau7802_pga_buff_en:
+ 603              	.LVL42:
+ 604              	.LFB345:
+  66:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pga_buff_en(nau7802_t *adc, int mode) { return 0; }
+ 605              		.loc 1 66 65 is_stmt 1 view -0
+ 606              		.cfi_startproc
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 12
+
+
+ 607              		@ args = 0, pretend = 0, frame = 0
+ 608              		@ frame_needed = 0, uses_anonymous_args = 0
+ 609              		@ link register save eliminated.
+ 610              		.loc 1 66 67 view .LVU88
+ 611              		.loc 1 66 77 is_stmt 0 view .LVU89
+ 612 0000 0020     		movs	r0, #0
+ 613              	.LVL43:
+ 614              		.loc 1 66 77 view .LVU90
+ 615              		@ sp needed
+ 616 0002 7047     		bx	lr
+ 617              		.cfi_endproc
+ 618              	.LFE345:
+ 620              		.section	.text.nau7802_pga_inv_en,"ax",%progbits
+ 621              		.align	1
+ 622              		.global	nau7802_pga_inv_en
+ 623              		.syntax unified
+ 624              		.code	16
+ 625              		.thumb_func
+ 626              		.fpu softvfp
+ 628              	nau7802_pga_inv_en:
+ 629              	.LVL44:
+ 630              	.LFB346:
+  67:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pga_inv_en(nau7802_t *adc, int mode) { return 0; }
+ 631              		.loc 1 67 64 is_stmt 1 view -0
+ 632              		.cfi_startproc
+ 633              		@ args = 0, pretend = 0, frame = 0
+ 634              		@ frame_needed = 0, uses_anonymous_args = 0
+ 635              		@ link register save eliminated.
+ 636              		.loc 1 67 66 view .LVU92
+ 637              		.loc 1 67 76 is_stmt 0 view .LVU93
+ 638 0000 0020     		movs	r0, #0
+ 639              	.LVL45:
+ 640              		.loc 1 67 76 view .LVU94
+ 641              		@ sp needed
+ 642 0002 7047     		bx	lr
+ 643              		.cfi_endproc
+ 644              	.LFE346:
+ 646              		.section	.text.nau7802_chop_den,"ax",%progbits
+ 647              		.align	1
+ 648              		.global	nau7802_chop_den
+ 649              		.syntax unified
+ 650              		.code	16
+ 651              		.thumb_func
+ 652              		.fpu softvfp
+ 654              	nau7802_chop_den:
+ 655              	.LVL46:
+ 656              	.LFB347:
+  68:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_chop_den(nau7802_t *adc, int mode) { return 0; }
+ 657              		.loc 1 68 62 is_stmt 1 view -0
+ 658              		.cfi_startproc
+ 659              		@ args = 0, pretend = 0, frame = 0
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 661              		@ link register save eliminated.
+ 662              		.loc 1 68 64 view .LVU96
+ 663              		.loc 1 68 74 is_stmt 0 view .LVU97
+ 664 0000 0020     		movs	r0, #0
+ 665              	.LVL47:
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 13
+
+
+ 666              		.loc 1 68 74 view .LVU98
+ 667              		@ sp needed
+ 668 0002 7047     		bx	lr
+ 669              		.cfi_endproc
+ 670              	.LFE347:
+ 672              		.section	.text.nau7802_pga_cap_en,"ax",%progbits
+ 673              		.align	1
+ 674              		.global	nau7802_pga_cap_en
+ 675              		.syntax unified
+ 676              		.code	16
+ 677              		.thumb_func
+ 678              		.fpu softvfp
+ 680              	nau7802_pga_cap_en:
+ 681              	.LVL48:
+ 682              	.LFB348:
+  69:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pga_cap_en(nau7802_t *adc, int mode) { return 0; }
+ 683              		.loc 1 69 64 is_stmt 1 view -0
+ 684              		.cfi_startproc
+ 685              		@ args = 0, pretend = 0, frame = 0
+ 686              		@ frame_needed = 0, uses_anonymous_args = 0
+ 687              		@ link register save eliminated.
+ 688              		.loc 1 69 66 view .LVU100
+ 689              		.loc 1 69 76 is_stmt 0 view .LVU101
+ 690 0000 0020     		movs	r0, #0
+ 691              	.LVL49:
+ 692              		.loc 1 69 76 view .LVU102
+ 693              		@ sp needed
+ 694 0002 7047     		bx	lr
+ 695              		.cfi_endproc
+ 696              	.LFE348:
+ 698              		.section	.text.nau7802_biase_curr,"ax",%progbits
+ 699              		.align	1
+ 700              		.global	nau7802_biase_curr
+ 701              		.syntax unified
+ 702              		.code	16
+ 703              		.thumb_func
+ 704              		.fpu softvfp
+ 706              	nau7802_biase_curr:
+ 707              	.LVL50:
+ 708              	.LFB349:
+  70:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_biase_curr(nau7802_t *adc, int mode) { return 0; }
+ 709              		.loc 1 70 64 is_stmt 1 view -0
+ 710              		.cfi_startproc
+ 711              		@ args = 0, pretend = 0, frame = 0
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713              		@ link register save eliminated.
+ 714              		.loc 1 70 66 view .LVU104
+ 715              		.loc 1 70 76 is_stmt 0 view .LVU105
+ 716 0000 0020     		movs	r0, #0
+ 717              	.LVL51:
+ 718              		.loc 1 70 76 view .LVU106
+ 719              		@ sp needed
+ 720 0002 7047     		bx	lr
+ 721              		.cfi_endproc
+ 722              	.LFE349:
+ 724              		.section	.text.nau7802_adc_curr,"ax",%progbits
+ 725              		.align	1
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 14
+
+
+ 726              		.global	nau7802_adc_curr
+ 727              		.syntax unified
+ 728              		.code	16
+ 729              		.thumb_func
+ 730              		.fpu softvfp
+ 732              	nau7802_adc_curr:
+ 733              	.LVL52:
+ 734              	.LFB350:
+  71:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_adc_curr(nau7802_t *adc, int mode) { return 0; }
+ 735              		.loc 1 71 62 is_stmt 1 view -0
+ 736              		.cfi_startproc
+ 737              		@ args = 0, pretend = 0, frame = 0
+ 738              		@ frame_needed = 0, uses_anonymous_args = 0
+ 739              		@ link register save eliminated.
+ 740              		.loc 1 71 64 view .LVU108
+ 741              		.loc 1 71 74 is_stmt 0 view .LVU109
+ 742 0000 0020     		movs	r0, #0
+ 743              	.LVL53:
+ 744              		.loc 1 71 74 view .LVU110
+ 745              		@ sp needed
+ 746 0002 7047     		bx	lr
+ 747              		.cfi_endproc
+ 748              	.LFE350:
+ 750              		.section	.text.nau7802_pga_curr,"ax",%progbits
+ 751              		.align	1
+ 752              		.global	nau7802_pga_curr
+ 753              		.syntax unified
+ 754              		.code	16
+ 755              		.thumb_func
+ 756              		.fpu softvfp
+ 758              	nau7802_pga_curr:
+ 759              	.LVL54:
+ 760              	.LFB351:
+  72:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_pga_curr(nau7802_t *adc, int mode) { return 0; }
+ 761              		.loc 1 72 62 is_stmt 1 view -0
+ 762              		.cfi_startproc
+ 763              		@ args = 0, pretend = 0, frame = 0
+ 764              		@ frame_needed = 0, uses_anonymous_args = 0
+ 765              		@ link register save eliminated.
+ 766              		.loc 1 72 64 view .LVU112
+ 767              		.loc 1 72 74 is_stmt 0 view .LVU113
+ 768 0000 0020     		movs	r0, #0
+ 769              	.LVL55:
+ 770              		.loc 1 72 74 view .LVU114
+ 771              		@ sp needed
+ 772 0002 7047     		bx	lr
+ 773              		.cfi_endproc
+ 774              	.LFE351:
+ 776              		.section	.text.nau7802_conversion_read,"ax",%progbits
+ 777              		.align	1
+ 778              		.global	nau7802_conversion_read
+ 779              		.syntax unified
+ 780              		.code	16
+ 781              		.thumb_func
+ 782              		.fpu softvfp
+ 784              	nau7802_conversion_read:
+ 785              	.LVL56:
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 15
+
+
+ 786              	.LFB352:
+  73:Core/Src/nau7802.c **** 
+  74:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc) { return 0; }
+ 787              		.loc 1 74 59 is_stmt 1 view -0
+ 788              		.cfi_startproc
+ 789              		@ args = 0, pretend = 0, frame = 0
+ 790              		@ frame_needed = 0, uses_anonymous_args = 0
+ 791              		@ link register save eliminated.
+ 792              		.loc 1 74 61 view .LVU116
+ 793              		.loc 1 74 71 is_stmt 0 view .LVU117
+ 794 0000 0020     		movs	r0, #0
+ 795              	.LVL57:
+ 796              		.loc 1 74 71 view .LVU118
+ 797              		@ sp needed
+ 798 0002 7047     		bx	lr
+ 799              		.cfi_endproc
+ 800              	.LFE352:
+ 802              		.section	.text.nau7802_cready_read,"ax",%progbits
+ 803              		.align	1
+ 804              		.global	nau7802_cready_read
+ 805              		.syntax unified
+ 806              		.code	16
+ 807              		.thumb_func
+ 808              		.fpu softvfp
+ 810              	nau7802_cready_read:
+ 811              	.LVL58:
+ 812              	.LFB353:
+  75:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_cready_read(nau7802_t *adc) { return 0; }
+ 813              		.loc 1 75 55 is_stmt 1 view -0
+ 814              		.cfi_startproc
+ 815              		@ args = 0, pretend = 0, frame = 0
+ 816              		@ frame_needed = 0, uses_anonymous_args = 0
+ 817              		@ link register save eliminated.
+ 818              		.loc 1 75 57 view .LVU120
+ 819              		.loc 1 75 67 is_stmt 0 view .LVU121
+ 820 0000 0020     		movs	r0, #0
+ 821              	.LVL59:
+ 822              		.loc 1 75 67 view .LVU122
+ 823              		@ sp needed
+ 824 0002 7047     		bx	lr
+ 825              		.cfi_endproc
+ 826              	.LFE353:
+ 828              		.section	.text.nau7802_puready_read,"ax",%progbits
+ 829              		.align	1
+ 830              		.global	nau7802_puready_read
+ 831              		.syntax unified
+ 832              		.code	16
+ 833              		.thumb_func
+ 834              		.fpu softvfp
+ 836              	nau7802_puready_read:
+ 837              	.LVL60:
+ 838              	.LFB354:
+  76:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc) { return 0; }
+ 839              		.loc 1 76 56 is_stmt 1 view -0
+ 840              		.cfi_startproc
+ 841              		@ args = 0, pretend = 0, frame = 0
+ 842              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 16
+
+
+ 843              		@ link register save eliminated.
+ 844              		.loc 1 76 58 view .LVU124
+ 845              		.loc 1 76 68 is_stmt 0 view .LVU125
+ 846 0000 0020     		movs	r0, #0
+ 847              	.LVL61:
+ 848              		.loc 1 76 68 view .LVU126
+ 849              		@ sp needed
+ 850 0002 7047     		bx	lr
+ 851              		.cfi_endproc
+ 852              	.LFE354:
+ 854              		.section	.text.nau7802_offset_cal_read,"ax",%progbits
+ 855              		.align	1
+ 856              		.global	nau7802_offset_cal_read
+ 857              		.syntax unified
+ 858              		.code	16
+ 859              		.thumb_func
+ 860              		.fpu softvfp
+ 862              	nau7802_offset_cal_read:
+ 863              	.LVL62:
+ 864              	.LFB355:
+  77:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading) { return 0; }
+ 865              		.loc 1 77 86 is_stmt 1 view -0
+ 866              		.cfi_startproc
+ 867              		@ args = 0, pretend = 0, frame = 0
+ 868              		@ frame_needed = 0, uses_anonymous_args = 0
+ 869              		@ link register save eliminated.
+ 870              		.loc 1 77 88 view .LVU128
+ 871              		.loc 1 77 98 is_stmt 0 view .LVU129
+ 872 0000 0020     		movs	r0, #0
+ 873              	.LVL63:
+ 874              		.loc 1 77 98 view .LVU130
+ 875              		@ sp needed
+ 876 0002 7047     		bx	lr
+ 877              		.cfi_endproc
+ 878              	.LFE355:
+ 880              		.section	.text.nau7802_gain_cal_read,"ax",%progbits
+ 881              		.align	1
+ 882              		.global	nau7802_gain_cal_read
+ 883              		.syntax unified
+ 884              		.code	16
+ 885              		.thumb_func
+ 886              		.fpu softvfp
+ 888              	nau7802_gain_cal_read:
+ 889              	.LVL64:
+ 890              	.LFB356:
+  78:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading) { return 0; }
+ 891              		.loc 1 78 84 is_stmt 1 view -0
+ 892              		.cfi_startproc
+ 893              		@ args = 0, pretend = 0, frame = 0
+ 894              		@ frame_needed = 0, uses_anonymous_args = 0
+ 895              		@ link register save eliminated.
+ 896              		.loc 1 78 86 view .LVU132
+ 897              		.loc 1 78 96 is_stmt 0 view .LVU133
+ 898 0000 0020     		movs	r0, #0
+ 899              	.LVL65:
+ 900              		.loc 1 78 96 view .LVU134
+ 901              		@ sp needed
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 17
+
+
+ 902 0002 7047     		bx	lr
+ 903              		.cfi_endproc
+ 904              	.LFE356:
+ 906              		.section	.text.nau7802_reg_write,"ax",%progbits
+ 907              		.align	1
+ 908              		.global	nau7802_reg_write
+ 909              		.syntax unified
+ 910              		.code	16
+ 911              		.thumb_func
+ 912              		.fpu softvfp
+ 914              	nau7802_reg_write:
+ 915              	.LVL66:
+ 916              	.LFB357:
+  79:Core/Src/nau7802.c **** 
+  80:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, int val) { return 0; }
+ 917              		.loc 1 80 71 is_stmt 1 view -0
+ 918              		.cfi_startproc
+ 919              		@ args = 0, pretend = 0, frame = 0
+ 920              		@ frame_needed = 0, uses_anonymous_args = 0
+ 921              		@ link register save eliminated.
+ 922              		.loc 1 80 73 view .LVU136
+ 923              		.loc 1 80 83 is_stmt 0 view .LVU137
+ 924 0000 0020     		movs	r0, #0
+ 925              	.LVL67:
+ 926              		.loc 1 80 83 view .LVU138
+ 927              		@ sp needed
+ 928 0002 7047     		bx	lr
+ 929              		.cfi_endproc
+ 930              	.LFE357:
+ 932              		.section	.text.nau7802_reg_read,"ax",%progbits
+ 933              		.align	1
+ 934              		.global	nau7802_reg_read
+ 935              		.syntax unified
+ 936              		.code	16
+ 937              		.thumb_func
+ 938              		.fpu softvfp
+ 940              	nau7802_reg_read:
+ 941              	.LVL68:
+ 942              	.LFB358:
+  81:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, int *val) { return 0; }...
+ 943              		.loc 1 81 71 is_stmt 1 view -0
+ 944              		.cfi_startproc
+ 945              		@ args = 0, pretend = 0, frame = 0
+ 946              		@ frame_needed = 0, uses_anonymous_args = 0
+ 947              		@ link register save eliminated.
+ 948              		.loc 1 81 73 view .LVU140
+ 949              		.loc 1 81 83 is_stmt 0 view .LVU141
+ 950 0000 0020     		movs	r0, #0
+ 951              	.LVL69:
+ 952              		.loc 1 81 83 view .LVU142
+ 953              		@ sp needed
+ 954 0002 7047     		bx	lr
+ 955              		.cfi_endproc
+ 956              	.LFE358:
+ 958              		.section	.text.nau7802_avdd_source,"ax",%progbits
+ 959              		.align	1
+ 960              		.global	nau7802_avdd_source
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 18
+
+
+ 961              		.syntax unified
+ 962              		.code	16
+ 963              		.thumb_func
+ 964              		.fpu softvfp
+ 966              	nau7802_avdd_source:
+ 967              	.LVL70:
+ 968              	.LFB323:
+  29:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source) {
+ 969              		.loc 1 29 67 is_stmt 1 view -0
+ 970              		.cfi_startproc
+ 971              		@ args = 0, pretend = 0, frame = 8
+ 972              		@ frame_needed = 0, uses_anonymous_args = 0
+  29:Core/Src/nau7802.c **** HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source) {
+ 973              		.loc 1 29 67 is_stmt 0 view .LVU144
+ 974 0000 30B5     		push	{r4, r5, lr}
+ 975              	.LCFI1:
+ 976              		.cfi_def_cfa_offset 12
+ 977              		.cfi_offset 4, -12
+ 978              		.cfi_offset 5, -8
+ 979              		.cfi_offset 14, -4
+ 980 0002 83B0     		sub	sp, sp, #12
+ 981              	.LCFI2:
+ 982              		.cfi_def_cfa_offset 24
+ 983 0004 0400     		movs	r4, r0
+ 984 0006 0D00     		movs	r5, r1
+  30:Core/Src/nau7802.c ****     int               pureg;
+ 985              		.loc 1 30 5 is_stmt 1 view .LVU145
+  31:Core/Src/nau7802.c ****     HAL_StatusTypeDef ret;
+ 986              		.loc 1 31 5 view .LVU146
+  33:Core/Src/nau7802.c ****     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &pureg);
+ 987              		.loc 1 33 5 view .LVU147
+  33:Core/Src/nau7802.c ****     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &pureg);
+ 988              		.loc 1 33 11 is_stmt 0 view .LVU148
+ 989 0008 01AA     		add	r2, sp, #4
+ 990 000a 0021     		movs	r1, #0
+ 991              	.LVL71:
+  33:Core/Src/nau7802.c ****     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &pureg);
+ 992              		.loc 1 33 11 view .LVU149
+ 993 000c FFF7FEFF 		bl	nau7802_reg_read
+ 994              	.LVL72:
+  34:Core/Src/nau7802.c ****     if (ret != HAL_OK) {
+ 995              		.loc 1 34 5 is_stmt 1 view .LVU150
+  34:Core/Src/nau7802.c ****     if (ret != HAL_OK) {
+ 996              		.loc 1 34 8 is_stmt 0 view .LVU151
+ 997 0010 0028     		cmp	r0, #0
+ 998 0012 08D1     		bne	.L38
+  38:Core/Src/nau7802.c ****     if (source != 0) {
+ 999              		.loc 1 38 5 is_stmt 1 view .LVU152
+  38:Core/Src/nau7802.c ****     if (source != 0) {
+ 1000              		.loc 1 38 8 is_stmt 0 view .LVU153
+ 1001 0014 002D     		cmp	r5, #0
+ 1002 0016 08D0     		beq	.L39
+  39:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg & (~NAU7802_PUCTRL_AVDSS_BIT));
+ 1003              		.loc 1 39 9 is_stmt 1 view .LVU154
+  39:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg & (~NAU7802_PUCTRL_AVDSS_BIT));
+ 1004              		.loc 1 39 16 is_stmt 0 view .LVU155
+ 1005 0018 8023     		movs	r3, #128
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 19
+
+
+ 1006 001a 019A     		ldr	r2, [sp, #4]
+ 1007 001c 9A43     		bics	r2, r3
+ 1008 001e 0021     		movs	r1, #0
+ 1009 0020 2000     		movs	r0, r4
+ 1010              	.LVL73:
+  39:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg & (~NAU7802_PUCTRL_AVDSS_BIT));
+ 1011              		.loc 1 39 16 view .LVU156
+ 1012 0022 FFF7FEFF 		bl	nau7802_reg_write
+ 1013              	.LVL74:
+ 1014              	.L38:
+  43:Core/Src/nau7802.c **** }
+ 1015              		.loc 1 43 1 view .LVU157
+ 1016 0026 03B0     		add	sp, sp, #12
+ 1017              		@ sp needed
+ 1018              	.LVL75:
+ 1019              	.LVL76:
+  43:Core/Src/nau7802.c **** }
+ 1020              		.loc 1 43 1 view .LVU158
+ 1021 0028 30BD     		pop	{r4, r5, pc}
+ 1022              	.LVL77:
+ 1023              	.L39:
+  41:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg | NAU7802_PUCTRL_AVDSS_BIT);
+ 1024              		.loc 1 41 9 is_stmt 1 view .LVU159
+  41:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg | NAU7802_PUCTRL_AVDSS_BIT);
+ 1025              		.loc 1 41 16 is_stmt 0 view .LVU160
+ 1026 002a 8022     		movs	r2, #128
+ 1027 002c 019B     		ldr	r3, [sp, #4]
+ 1028 002e 1A43     		orrs	r2, r3
+ 1029 0030 0021     		movs	r1, #0
+ 1030 0032 2000     		movs	r0, r4
+ 1031              	.LVL78:
+  41:Core/Src/nau7802.c ****         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, pureg | NAU7802_PUCTRL_AVDSS_BIT);
+ 1032              		.loc 1 41 16 view .LVU161
+ 1033 0034 FFF7FEFF 		bl	nau7802_reg_write
+ 1034              	.LVL79:
+ 1035 0038 F5E7     		b	.L38
+ 1036              		.cfi_endproc
+ 1037              	.LFE323:
+ 1039              		.text
+ 1040              	.Letext0:
+ 1041              		.file 2 "/Applications/ARM/arm-none-eabi/include/machine/_default_types.h"
+ 1042              		.file 3 "/Applications/ARM/arm-none-eabi/include/sys/_stdint.h"
+ 1043              		.file 4 "Drivers/CMSIS/Device/ST/STM32G0xx/Include/system_stm32g0xx.h"
+ 1044              		.file 5 "Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g071xx.h"
+ 1045              		.file 6 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h"
+ 1046              		.file 7 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma.h"
+ 1047              		.file 8 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash.h"
+ 1048              		.file 9 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_i2c.h"
+ 1049              		.file 10 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h"
+ 1050              		.file 11 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h"
+ 1051              		.file 12 "Core/Inc/i2c.h"
+ 1052              		.file 13 "Core/Inc/nau7802.h"
+ 1053              		.file 14 "Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dma.h"
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 nau7802.c
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:16     .text.nau7802_init:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:24     .text.nau7802_init:0000000000000000 nau7802_init
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:49     .text.nau7802_oscs_source:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:56     .text.nau7802_oscs_source:0000000000000000 nau7802_oscs_source
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:75     .text.nau7802_pwr_analog:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:82     .text.nau7802_pwr_analog:0000000000000000 nau7802_pwr_analog
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:101    .text.nau7802_pwr_digital:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:108    .text.nau7802_pwr_digital:0000000000000000 nau7802_pwr_digital
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:127    .text.nau7802_reg_reset:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:134    .text.nau7802_reg_reset:0000000000000000 nau7802_reg_reset
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:153    .text.nau7802_cready_polarity:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:160    .text.nau7802_cready_polarity:0000000000000000 nau7802_cready_polarity
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:179    .text.nau7802_drdy_function:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:186    .text.nau7802_drdy_function:0000000000000000 nau7802_drdy_function
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:205    .text.nau7802_vldo_volts:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:212    .text.nau7802_vldo_volts:0000000000000000 nau7802_vldo_volts
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:231    .text.nau7802_pga_gain:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:238    .text.nau7802_pga_gain:0000000000000000 nau7802_pga_gain
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:257    .text.nau7802_ch_sel:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:264    .text.nau7802_ch_sel:0000000000000000 nau7802_ch_sel
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:283    .text.nau7802_samplerate:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:290    .text.nau7802_samplerate:0000000000000000 nau7802_samplerate
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:309    .text.nau7802_calibrate:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:316    .text.nau7802_calibrate:0000000000000000 nau7802_calibrate
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:335    .text.nau7802_crsd_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:342    .text.nau7802_crsd_en:0000000000000000 nau7802_crsd_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:361    .text.nau7802_fast_i2c_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:368    .text.nau7802_fast_i2c_en:0000000000000000 nau7802_fast_i2c_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:387    .text.nau7802_strong_i2c_pu_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:394    .text.nau7802_strong_i2c_pu_en:0000000000000000 nau7802_strong_i2c_pu_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:413    .text.nau7802_weak_i2c_pu_den:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:420    .text.nau7802_weak_i2c_pu_den:0000000000000000 nau7802_weak_i2c_pu_den
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:439    .text.nau7802_short_input:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:446    .text.nau7802_short_input:0000000000000000 nau7802_short_input
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:465    .text.nau7802_burnout_cs_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:472    .text.nau7802_burnout_cs_en:0000000000000000 nau7802_burnout_cs_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:491    .text.nau7802_temp_sense_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:498    .text.nau7802_temp_sense_en:0000000000000000 nau7802_temp_sense_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:517    .text.nau7802_bandgap_chop_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:524    .text.nau7802_bandgap_chop_en:0000000000000000 nau7802_bandgap_chop_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:543    .text.nau7802_extended_cm:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:550    .text.nau7802_extended_cm:0000000000000000 nau7802_extended_cm
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:569    .text.nau7802_ldomode:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:576    .text.nau7802_ldomode:0000000000000000 nau7802_ldomode
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:595    .text.nau7802_pga_buff_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:602    .text.nau7802_pga_buff_en:0000000000000000 nau7802_pga_buff_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:621    .text.nau7802_pga_inv_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:628    .text.nau7802_pga_inv_en:0000000000000000 nau7802_pga_inv_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:647    .text.nau7802_chop_den:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:654    .text.nau7802_chop_den:0000000000000000 nau7802_chop_den
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:673    .text.nau7802_pga_cap_en:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:680    .text.nau7802_pga_cap_en:0000000000000000 nau7802_pga_cap_en
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:699    .text.nau7802_biase_curr:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:706    .text.nau7802_biase_curr:0000000000000000 nau7802_biase_curr
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:725    .text.nau7802_adc_curr:0000000000000000 $t
+ARM GAS  /var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s 			page 21
+
+
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:732    .text.nau7802_adc_curr:0000000000000000 nau7802_adc_curr
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:751    .text.nau7802_pga_curr:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:758    .text.nau7802_pga_curr:0000000000000000 nau7802_pga_curr
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:777    .text.nau7802_conversion_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:784    .text.nau7802_conversion_read:0000000000000000 nau7802_conversion_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:803    .text.nau7802_cready_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:810    .text.nau7802_cready_read:0000000000000000 nau7802_cready_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:829    .text.nau7802_puready_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:836    .text.nau7802_puready_read:0000000000000000 nau7802_puready_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:855    .text.nau7802_offset_cal_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:862    .text.nau7802_offset_cal_read:0000000000000000 nau7802_offset_cal_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:881    .text.nau7802_gain_cal_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:888    .text.nau7802_gain_cal_read:0000000000000000 nau7802_gain_cal_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:907    .text.nau7802_reg_write:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:914    .text.nau7802_reg_write:0000000000000000 nau7802_reg_write
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:933    .text.nau7802_reg_read:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:940    .text.nau7802_reg_read:0000000000000000 nau7802_reg_read
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:959    .text.nau7802_avdd_source:0000000000000000 $t
+/var/folders/b6/_lrwbzzx5qg46wbggw31g5280000gn/T//ccqjaUHd.s:966    .text.nau7802_avdd_source:0000000000000000 nau7802_avdd_source
+
+NO UNDEFINED SYMBOLS

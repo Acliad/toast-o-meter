@@ -39,6 +39,7 @@ C_SOURCES =  \
 Core/Src/gpio.c \
 Core/Src/i2c.c \
 Core/Src/main.c \
+Core/Src/nau7802.c \
 Core/Src/stm32g0xx_hal_msp.c \
 Core/Src/stm32g0xx_it.c \
 Core/Src/system_stm32g0xx.c \
