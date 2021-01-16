@@ -12,6 +12,9 @@
 #include "i2c.h"
 #include <stdint.h>
 
+// NAU7802 I2C Base Address
+#define NAU7802_I2C_BASEADDR 0x2A
+
 // PU_CTRL: Powerup Control Register
 #define NAU7802_REG_PUCTRL       0x00
 #define NAU7802_PUCTRL_RR(x)     (x)
@@ -147,6 +150,13 @@
 #define NAU7802_REG_ADCO_B1 0x13
 #define NAU7802_REG_ADCO_B0 0x14
 
+// ADC: ADC settings register, shared with OTP
+#define NAU7802_REG_ADC         0x15
+#define NAU7802_ADC_ADC_VCM(x)  ((x) << 2)
+#define NAU7802_ADC_VCM_DISABLE 0
+#define NAU7802_ADC_VCM_REFN    2
+#define NAU7802_ADC_VCM_REFP    3
+
 // OTP:
 #define NAU7802_REG_OTP_B1 0x15
 #define NAU7802_REG_OTP_B0 0x16
@@ -195,15 +205,16 @@
 // REV: Revision Register
 #define NAU7802_REG_REV 0x1F
 
-#define NAU7802_CH1 0x00
-#define NAU7802_CH2 0x01
+#define NAU7802_CH1            0x00
+#define NAU7802_CH2            0x01
+#define NAU7802_I2C_TIMEOUT_MS 50
 
 typedef struct nau7802 {
-    I2C_HandleTypeDef i2c;
-    uint32_t          conversion;
-    uint8_t           cready; // Cycle ready flag
-    uint8_t           puready; // Power up ready flag
-    uint8_t           cal_err; // Calibration error flag
+    I2C_HandleTypeDef *i2c;        // I2C instance pointer
+    int32_t            conversion; // 24-bit conversion reading
+    uint8_t            cready;     // Cycle ready flag
+    uint8_t            puready;    // Power up ready flag
+    uint8_t            cal_err;    // Calibration error flag
 
 } nau7802_t;
 
@@ -238,6 +249,7 @@ HAL_StatusTypeDef nau7802_bandgap_chop_en(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_extended_cm(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_ldomode(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pga_buff_en(nau7802_t *adc, int mode);
+HAL_StatusTypeDef nau7802_pga_bypass_en(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pga_inv_en(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_chop_den(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pga_cap_en(nau7802_t *adc, int mode);
@@ -245,13 +257,11 @@ HAL_StatusTypeDef nau7802_biase_curr(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_adc_curr(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pga_curr(nau7802_t *adc, int mode);
 
-
 HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_cready_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading);
 HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading);
-
 
 HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, uint8_t val);
 HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, uint8_t *val);
