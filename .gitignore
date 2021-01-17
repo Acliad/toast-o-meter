@@ -94,3 +94,6 @@ fp-info-cache
 
 # Vscode
 .vscode/*
+
+# Build directory
+**/build

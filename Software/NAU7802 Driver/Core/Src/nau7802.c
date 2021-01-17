@@ -6,19 +6,30 @@
  * @date 2021-01-11
  *
  * @copyright Copyright (c) 2021
+ * TODO: Add lisence
  *
  */
 
 #include "nau7802.h"
 
 /**
- * @brief Initializes and returns a point to the ADC instance.
+ * @brief Initializes and returns a point to the ADC instance. All fields are set to 0 except i2c, which is set to the
+ * passed pointer.
  * TODO: Test
  *
  * @param i2c Handle to the I2C instance used for communication
  * @return nau7802_t* Pointer to new nau7802 instance
  */
-nau7802_t *nau7802_init(I2C_HandleTypeDef i2c) { return 0; }
+nau7802_t *nau7802_init(I2C_HandleTypeDef *i2c) {
+    nau7802_t *ret = (nau7802_t *)malloc(sizeof(nau7802_t));
+    ret->i2c = i2c;
+    ret->conversion = 0;
+    ret->cready = 0;
+    ret->puready = 0;
+    ret->cal_err = 0;
+
+    return ret;
+}
 
 /**
  * @brief Sets the source voltage for the internal AVDD rail, either internal LDO or external AVDD pin.
@@ -317,7 +328,7 @@ HAL_StatusTypeDef nau7802_samplerate(nau7802_t *adc, int rsetting) {
     }
 
     reg_state &= ~NAU7802_CTRL1_CRP(0x07); // Clear current setting
-    return au7802_reg_write(adc, NAU7802_REG_CTRL2, reg_state | NAU7802_CTRL2_CRS(rsetting));
+    return nau7802_reg_write(adc, NAU7802_REG_CTRL2, reg_state | NAU7802_CTRL2_CRS(rsetting));
 }
 
 /**
@@ -369,7 +380,7 @@ HAL_StatusTypeDef nau7802_calibrate(nau7802_t *adc, int mode) {
     }
 
     // Wait for calibration to finish
-    int cals; // CALS == 1 indicates the chip is still calibrating
+    int cals = 1; // CALS == 1 indicates the chip is still calibrating
     while (cals != 0) {
         HAL_Delay(5);
         ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
@@ -856,7 +867,7 @@ HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc) {
     uint8_t           reading[3]; // Holds each of the 8 bit register reads
     HAL_StatusTypeDef ret;
 
-    ret = HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR << 1, NAU7802_REG_ADCO_B2, 1, &reading, 3,
+    ret = HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR << 1, NAU7802_REG_ADCO_B2, 1, reading, 3,
                            NAU7802_I2C_TIMEOUT_MS);
     // Need to shift MSB of 24-bit all the way to MSB of 32-bit type then shift back because result is signed. This will
     // maintain the signedness
@@ -916,7 +927,7 @@ HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *read
     uint8_t           reg_state;
     uint8_t           chan_n_regs[3];
     HAL_StatusTypeDef ret;
-    uint32_t          call_offset = 0;
+    int32_t          call_offset = 0;
 
     switch (channel) {
     case NAU7802_CH1:
@@ -966,7 +977,7 @@ HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *readin
     uint8_t           reg_state;
     uint8_t           chan_n_regs[3];
     HAL_StatusTypeDef ret;
-    uint32_t          call_offset = 0;
+    int32_t          call_offset = 0;
 
     switch (channel) {
     case NAU7802_CH1:
@@ -1004,25 +1015,25 @@ HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *readin
 /**
  * @brief Writes the value given by val to the address at reg.
  * TODO: Test
- * 
+ *
  * @param adc adc instance
  * @param reg adc register to write to
  * @param val value to write to reg
  * @return HAL_StatusTypeDef HAL I2C status message
  */
-HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, int8_t val){
+HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, uint8_t val) {
     return HAL_I2C_Mem_Write(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, &val, 1, NAU7802_I2C_TIMEOUT_MS);
 }
 
 /**
  * @brief Reads the value at address reg and stores it at variable pointed to by val.
  * TODO: Test
- * 
+ *
  * @param adc adc instance
  * @param reg adc register to read from
  * @param val pointer to variable to store the reading
  * @return HAL_StatusTypeDef HAL I2C status message
  */
-HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, int8_t *val) {
+HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, uint8_t *val) {
     return HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, val, 1, NAU7802_I2C_TIMEOUT_MS);
 }

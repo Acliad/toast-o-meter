@@ -6,10 +6,12 @@
  * @date 2021-01-10
  *
  * @copyright Copyright (c) 2021
+ * TODO: Add lisence
  *
  */
 
 #include "i2c.h"
+#include <stdlib.h>
 #include <stdint.h>
 
 // NAU7802 I2C Base Address
@@ -77,9 +79,9 @@
 #define NAU7802_REG_CTRL2         0x02
 #define NAU7802_CTRL2_CALMOD(x)   (x)
 #define NAU7802_CTRL2_CALS(x)     ((x) << 2)
-#define NAU7802_CTRL2_CALS_BIT    NAU7802_CTRL2_CALMOD_CALS(1)
+#define NAU7802_CTRL2_CALS_BIT    NAU7802_CTRL2_CALS(1)
 #define NAU7802_CTRL2_CAL_ERR(x)  ((x) << 3)
-#define NAU7802_CTRL2_CAL_ERR_BIT NAU7802_CTRL2_CALMOD_CAL_ERR(1)
+#define NAU7802_CTRL2_CAL_ERR_BIT NAU7802_CTRL2_CAL_ERR(1)
 #define NAU7802_CTRL2_CRS(x)      ((x) << 4)
 #define NAU7802_CTRL2_CHS(x)      ((x) << 7)
 #define NAU7802_CTRL2_CHS_BIT     NAU7802_CTRL2_CHS(1)
@@ -218,13 +220,7 @@ typedef struct nau7802 {
 
 } nau7802_t;
 
-/**
- * @brief Initializes and returns a point to the ADC instance
- *
- * @param i2c Handle to the I2C instance used for communication
- * @return nau7802_t* Pointer to new nau7802 instance
- */
-nau7802_t *nau7802_init(I2C_HandleTypeDef i2c);
+nau7802_t* nau7802_init(I2C_HandleTypeDef *i2c);
 
 HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source);
 HAL_StatusTypeDef nau7802_oscs_source(nau7802_t *adc, int source);
@@ -264,5 +260,5 @@ HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading);
 HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading);
 
-HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, int8_t val);
-HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, int8_t *val);
+HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, uint8_t val);
+HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, uint8_t *val);
