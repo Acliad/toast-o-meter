@@ -847,6 +847,7 @@ HAL_StatusTypeDef nau7802_pga_curr(nau7802_t *adc, int mode) {
  * @brief Reads the most recent complete conversion from the ADC. Stores the 24-bit result in the conversion field of
  * the adc instance. Data is read using "I2C Burst Read 3 byte" mode. The CS bit is not set by this function and the CR
  * bit is not checked. This results in reading the conversion last latched by the ADC.
+ * TODO: Test
  *
  * @param adc adc instance
  * @return HAL_StatusTypeDef HAL I2C status message
@@ -859,7 +860,7 @@ HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc) {
                            NAU7802_I2C_TIMEOUT_MS);
     // Need to shift MSB of 24-bit all the way to MSB of 32-bit type then shift back because result is signed. This will
     // maintain the signedness
-    adc->conversion = ((reading[0] << 24) | (reading[1] << 15) | (reading[2] << 8)) >> 8;
+    adc->conversion = ((reading[0] << 24) | (reading[1] << 16) | (reading[2] << 8)) >> 8;
 
     return ret;
 }
@@ -867,6 +868,7 @@ HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc) {
 /**
  * @brief Reads the CR (conversion ready) bit and stores the result in the cready field of the adc instance. A 1
  * indicates a new data conversion is ready to be read.
+ * TODO: Test
  *
  * @param adc adc instance
  * @return HAL_StatusTypeDef HAL I2C status message
@@ -881,10 +883,146 @@ HAL_StatusTypeDef nau7802_cready_read(nau7802_t *adc) {
     return ret;
 }
 
+/**
+ * @brief Reads the PUR (Power up ready) bit and stores the result in the puready field of the adc instance. A 1
+ * indicates powered up and read.
+ * TODO: Test
+ *
+ * @param adc adc instance
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc) {
+    uint8_t           reg_state;
+    HAL_StatusTypeDef ret;
 
-HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc) { return 0; }
-HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading) { return 0; }
-HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading) { return 0; }
+    ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
+    adc->puready = (reg_state & NAU7802_PUCTRL_PUR_BIT) > 0;
 
-HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, uint8_t val) { return 0; }
-HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, uint8_t *val) { return 0; }
+    return ret;
+}
+
+/**
+ * @brief Reads 24-bit the offset calibration number and stores it at location pointed to by *reading. Each channel has
+ * its own calibration registers, specify either channel 1 or channel 2. If specified channel is not either 1 or 2,
+ * returns without updating *reading.
+ * TODO: Test, not sure if B0 is MSB or LSB
+ *
+ * @param adc adc instance
+ * @param channel channel for calibration
+ * @param reading pointer to variable to update with offset value
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading) {
+    uint8_t           reg_state;
+    uint8_t           chan_n_regs[3];
+    HAL_StatusTypeDef ret;
+    uint32_t          call_offset = 0;
+
+    switch (channel) {
+    case NAU7802_CH1:
+        chan_n_regs[0] = NAU7802_REG_OCAL1_B0;
+        chan_n_regs[1] = NAU7802_REG_OCAL1_B1;
+        chan_n_regs[2] = NAU7802_REG_OCAL1_B2;
+        break;
+
+    case NAU7802_CH2:
+        chan_n_regs[0] = NAU7802_REG_OCAL2_B0;
+        chan_n_regs[1] = NAU7802_REG_OCAL2_B1;
+        chan_n_regs[2] = NAU7802_REG_OCAL2_B2;
+        break;
+
+    default:
+        return HAL_OK;
+    }
+
+    // Read each register (returning if an error occurs)
+    int i;
+    for (i = 0; i < 3; i++) {
+        ret = nau7802_reg_read(adc, chan_n_regs[i], &reg_state);
+        if (ret != HAL_OK) {
+            return ret;
+        }
+        call_offset |= reg_state << (8 * (i + 1));
+    }
+
+    // We put the 24-bit value in the MSBs of the call_offset variable to preserve signedness. Shift them back to the
+    // lower bytes here
+    *reading = call_offset >> 8;
+    return ret;
+}
+
+/**
+ * @brief Reads the 24-bit gain calibration number and stores it at location pointed to by *reading. Each channel has
+ * its own calibration registers, specify either channel 1 or channel 2. If specified channel is not either 1 or 2,
+ * returns without updating *reading.
+ * TODO: Test, not sure if B0 is MSB or LSB
+ *
+ * @param adc adc instance
+ * @param channel channel for calibration
+ * @param reading pointer to variable to update with offset value
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading) {
+    uint8_t           reg_state;
+    uint8_t           chan_n_regs[3];
+    HAL_StatusTypeDef ret;
+    uint32_t          call_offset = 0;
+
+    switch (channel) {
+    case NAU7802_CH1:
+        chan_n_regs[0] = NAU7802_REG_GCAL1_B0;
+        chan_n_regs[1] = NAU7802_REG_GCAL1_B1;
+        chan_n_regs[2] = NAU7802_REG_GCAL1_B2;
+        break;
+
+    case NAU7802_CH2:
+        chan_n_regs[0] = NAU7802_REG_GCAL2_B0;
+        chan_n_regs[1] = NAU7802_REG_GCAL2_B1;
+        chan_n_regs[2] = NAU7802_REG_GCAL2_B2;
+        break;
+
+    default:
+        return HAL_OK;
+    }
+
+    // Read each register (returning if an error occurs)
+    int i;
+    for (i = 0; i < 3; i++) {
+        ret = nau7802_reg_read(adc, chan_n_regs[i], &reg_state);
+        if (ret != HAL_OK) {
+            return ret;
+        }
+        call_offset |= reg_state << (8 * (i + 1));
+    }
+
+    // We put the 24-bit value in the MSBs of the call_offset variable to preserve signedness. Shift them back to the
+    // lower bytes here
+    *reading = call_offset >> 8;
+    return ret;
+}
+
+/**
+ * @brief Writes the value given by val to the address at reg.
+ * TODO: Test
+ * 
+ * @param adc adc instance
+ * @param reg adc register to write to
+ * @param val value to write to reg
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, int8_t val){
+    return HAL_I2C_Mem_Write(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, &val, 1, NAU7802_I2C_TIMEOUT_MS);
+}
+
+/**
+ * @brief Reads the value at address reg and stores it at variable pointed to by val.
+ * TODO: Test
+ * 
+ * @param adc adc instance
+ * @param reg adc register to read from
+ * @param val pointer to variable to store the reading
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, int8_t *val) {
+    return HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, val, 1, NAU7802_I2C_TIMEOUT_MS);
+}

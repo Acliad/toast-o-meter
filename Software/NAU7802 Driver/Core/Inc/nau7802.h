@@ -107,7 +107,7 @@
 #define NAU7802_REG_GCAL1_B0 0x09
 
 // OCAL2: Channel 2 Offset Calibration Register
-#define NAU7802_REG_OCAL2_B1 0x0A
+#define NAU7802_REG_OCAL2_B2 0x0A
 #define NAU7802_REG_OCAL2_B1 0x0B
 #define NAU7802_REG_OCAL2_B0 0x0C
 
@@ -256,6 +256,7 @@ HAL_StatusTypeDef nau7802_pga_cap_en(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_biase_curr(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_adc_curr(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pga_curr(nau7802_t *adc, int mode);
+// TODO: Add a calibration write function?
 
 HAL_StatusTypeDef nau7802_conversion_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_cready_read(nau7802_t *adc);
@@ -263,5 +264,5 @@ HAL_StatusTypeDef nau7802_puready_read(nau7802_t *adc);
 HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *reading);
 HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *reading);
 
-HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, int reg, uint8_t val);
-HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, int reg, uint8_t *val);
+HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, int8_t val);
+HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, int8_t *val);
