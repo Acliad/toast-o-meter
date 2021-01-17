@@ -14,10 +14,11 @@
 
 /**
  * @brief Initializes and returns a point to the ADC instance. All fields are set to 0 except i2c, which is set to the
- * passed pointer.
+ * passed pointer. After initializing, call nau7802_powerup_sequence to run through the entire power up sequence.
  * TODO: Test
  *
  * @param i2c Handle to the I2C instance used for communication
+ * @param start flag to go through the power up sequence. See discription for more details.
  * @return nau7802_t* Pointer to new nau7802 instance
  */
 nau7802_t *nau7802_init(I2C_HandleTypeDef *i2c) {
@@ -27,6 +28,39 @@ nau7802_t *nau7802_init(I2C_HandleTypeDef *i2c) {
     ret->cready = 0;
     ret->puready = 0;
     ret->cal_err = 0;
+
+    return ret;
+}
+
+/**
+ * @brief Go through the power-on sequence described in the datasheet:
+ *
+ * 1. Set RR bit to 1 (reset bit)
+ * 2. Set RR bit to 0 (clear reset)
+ * 3. Set PUD bit to 1 (power up digital)
+ * 4. Wait for PWRUP bit to be a 1 (indicates power good)
+ * 5. Set CS bit to 1 (cycle start)
+ *
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_powerup_sequence(nau7802_t *adc) {
+    HAL_StatusTypeDef ret;
+    uint8_t           pwrup = 0;
+
+    ret = nau7802_reg_reset(adc, 1);
+    RETURN_IF_NOT_OK(ret);
+    ret = nau7802_reg_reset(adc, 0);
+    RETURN_IF_NOT_OK(ret);
+    ret = nau7802_pwr_digital(adc, 1);
+    RETURN_IF_NOT_OK(ret);
+    while (!pwrup) {
+        ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &pwrup);
+        RETURN_IF_NOT_OK(ret)
+    }
+
+    ret = nau7802_pwr_analog(adc, 1);
+    RETURN_IF_NOT_OK(ret);
+    ret = nau7802_cstart(adc, 1);
 
     return ret;
 }
@@ -44,9 +78,7 @@ HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (source != 0) { // Set to AVDD pin
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_AVDSS_BIT);
@@ -68,14 +100,34 @@ HAL_StatusTypeDef nau7802_oscs_source(nau7802_t *adc, int source) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (source != 0) { // Set external oscillator
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_OSCS_BIT);
     } else { // Set internal oscillator
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state & (~NAU7802_PUCTRL_OSCS_BIT));
+    }
+}
+
+/**
+ * @brief Sets the CS (Cycle start) bit to the given value. Conversions are synchronized to the rising edge of this bit.
+ * TODO: Figure out how the heck this works
+ *
+ * @param adc adc instance
+ * @param mode 1 or 0, conversions synchronized to the rising edge
+ * @return HAL_StatusTypeDef HAL I2C status message
+ */
+HAL_StatusTypeDef nau7802_cstart(nau7802_t *adc, int mode) {
+    uint8_t           reg_state;
+    HAL_StatusTypeDef ret;
+
+    ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
+    RETURN_IF_NOT_OK(ret);
+
+    if (mode != 0) { // Set bit
+        return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_CS_BIT);
+    } else { // Reset bit
+        return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state & (~NAU7802_PUCTRL_CS_BIT));
     }
 }
 
@@ -92,9 +144,7 @@ HAL_StatusTypeDef nau7802_pwr_analog(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Power up
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_PUA_BIT);
@@ -116,9 +166,7 @@ HAL_StatusTypeDef nau7802_pwr_digital(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Power up
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_PUD_BIT);
@@ -142,9 +190,7 @@ HAL_StatusTypeDef nau7802_reg_reset(nau7802_t *adc, int rst) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PUCTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (rst != 0) { // Reset
         return nau7802_reg_write(adc, NAU7802_REG_PUCTRL, reg_state | NAU7802_PUCTRL_RR_BIT);
@@ -166,9 +212,7 @@ HAL_StatusTypeDef nau7802_cready_polarity(nau7802_t *adc, int polarity) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL1, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (polarity != 0) { // Active low
         return nau7802_reg_write(adc, NAU7802_REG_CTRL1, reg_state | NAU7802_CTRL1_CRP_BIT);
@@ -191,9 +235,7 @@ HAL_StatusTypeDef nau7802_drdy_function(nau7802_t *adc, int function) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL1, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (function != 0) { // Clock output
         return nau7802_reg_write(adc, NAU7802_REG_CTRL1, reg_state | NAU7802_CTRL1_DRDY_SEL_BIT);
@@ -275,9 +317,7 @@ HAL_StatusTypeDef nau7802_ch_sel(nau7802_t *adc, int channel) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
     if (channel == NAU7802_CH1) {
         return nau7802_reg_write(adc, NAU7802_REG_CTRL2, ret & (~NAU7802_CTRL2_CHS_BIT));
     } else if (channel == NAU7802_CH2) {
@@ -308,9 +348,7 @@ HAL_StatusTypeDef nau7802_samplerate(nau7802_t *adc, int rsetting) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     switch (rsetting) { // Check that given rate is valid
     case NAU7802_CRS_320:
@@ -350,9 +388,7 @@ HAL_StatusTypeDef nau7802_calibrate(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     switch (mode) { // Check that given mode is valid
     case NAU7802_CALMOD_GAIN_SYS:
@@ -368,33 +404,25 @@ HAL_StatusTypeDef nau7802_calibrate(nau7802_t *adc, int mode) {
     // Set the calibration mode
     reg_state &= ~NAU7802_CTRL2_CALMOD(0x03); // Clear current setting
     ret = nau7802_reg_write(adc, NAU7802_REG_CTRL2, reg_state | NAU7802_CTRL2_CALMOD(mode));
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     // Start calibration
     nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
     ret = nau7802_reg_write(adc, NAU7802_REG_CTRL2, reg_state | NAU7802_CTRL2_CALS_BIT);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     // Wait for calibration to finish
     int cals = 1; // CALS == 1 indicates the chip is still calibrating
     while (cals != 0) {
         HAL_Delay(5);
         ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
-        if (ret != HAL_OK) {
-            return ret;
-        }
+        RETURN_IF_NOT_OK(ret);
         cals = reg_state & NAU7802_CTRL2_CALS_BIT;
     }
 
     // Get cal_err status
     ret = nau7802_reg_read(adc, NAU7802_REG_CTRL2, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     adc->cal_err = reg_state & NAU7802_CTRL2_CAL_ERR_BIT;
     return ret;
@@ -414,9 +442,7 @@ HAL_StatusTypeDef nau7802_crsd_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_CRSD_BIT);
@@ -439,9 +465,7 @@ HAL_StatusTypeDef nau7802_fast_i2c_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_FRD_BIT);
@@ -464,9 +488,7 @@ HAL_StatusTypeDef nau7802_strong_i2c_pu_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_SPE_BIT);
@@ -489,9 +511,7 @@ HAL_StatusTypeDef nau7802_weak_i2c_pu_den(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Disable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_SPE_BIT);
@@ -514,9 +534,7 @@ HAL_StatusTypeDef nau7802_short_input(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Short
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_WPD_BIT);
@@ -539,9 +557,7 @@ HAL_StatusTypeDef nau7802_burnout_cs_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_SI_BIT);
@@ -564,9 +580,7 @@ HAL_StatusTypeDef nau7802_temp_sense_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_TS_BIT);
@@ -589,9 +603,7 @@ HAL_StatusTypeDef nau7802_bandgap_chop_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_I2C_CNTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Disable
         return nau7802_reg_write(adc, NAU7802_REG_I2C_CNTRL, reg_state | NAU7802_REG_BGPCP_BIT);
@@ -638,9 +650,7 @@ HAL_StatusTypeDef nau7802_ldomode(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PGA, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Improved stability
         return nau7802_reg_write(adc, NAU7802_REG_PGA, reg_state | NAU7802_REG_BGPCP_BIT);
@@ -663,9 +673,7 @@ HAL_StatusTypeDef nau7802_pga_buff_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PGA, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_PGA, reg_state | NAU7802_PGA_BUFF_EN_BIT);
@@ -687,9 +695,7 @@ HAL_StatusTypeDef nau7802_pga_bypass_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PGA, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_PGA, reg_state | NAU7802_PGA_BYPASS_EN_BIT);
@@ -712,9 +718,7 @@ HAL_StatusTypeDef nau7802_pga_inv_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PGA, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_PGA, reg_state | NAU7802_PGA_PGAINV_BIT);
@@ -737,9 +741,7 @@ HAL_StatusTypeDef nau7802_chop_den(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PGA, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Disable
         return nau7802_reg_write(adc, NAU7802_REG_PGA, reg_state | NAU7802_PGA_PGAINV_BIT);
@@ -762,9 +764,7 @@ HAL_StatusTypeDef nau7802_pga_cap_en(nau7802_t *adc, int mode) {
     HAL_StatusTypeDef ret;
 
     ret = nau7802_reg_read(adc, NAU7802_REG_PWR_CTRL, &reg_state);
-    if (ret != HAL_OK) {
-        return ret;
-    }
+    RETURN_IF_NOT_OK(ret);
 
     if (mode != 0) { // Enable
         return nau7802_reg_write(adc, NAU7802_REG_PWR_CTRL, reg_state | NAU7802_PWR_CTRL_PGA_CAP_EN_BIT);
@@ -927,7 +927,7 @@ HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *read
     uint8_t           reg_state;
     uint8_t           chan_n_regs[3];
     HAL_StatusTypeDef ret;
-    int32_t          call_offset = 0;
+    int32_t           call_offset = 0;
 
     switch (channel) {
     case NAU7802_CH1:
@@ -950,9 +950,7 @@ HAL_StatusTypeDef nau7802_offset_cal_read(nau7802_t *adc, int channel, int *read
     int i;
     for (i = 0; i < 3; i++) {
         ret = nau7802_reg_read(adc, chan_n_regs[i], &reg_state);
-        if (ret != HAL_OK) {
-            return ret;
-        }
+        RETURN_IF_NOT_OK(ret)
         call_offset |= reg_state << (8 * (i + 1));
     }
 
@@ -977,7 +975,7 @@ HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *readin
     uint8_t           reg_state;
     uint8_t           chan_n_regs[3];
     HAL_StatusTypeDef ret;
-    int32_t          call_offset = 0;
+    int32_t           call_offset = 0;
 
     switch (channel) {
     case NAU7802_CH1:
@@ -1000,9 +998,7 @@ HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *readin
     int i;
     for (i = 0; i < 3; i++) {
         ret = nau7802_reg_read(adc, chan_n_regs[i], &reg_state);
-        if (ret != HAL_OK) {
-            return ret;
-        }
+        RETURN_IF_NOT_OK(ret)
         call_offset |= reg_state << (8 * (i + 1));
     }
 
@@ -1022,7 +1018,7 @@ HAL_StatusTypeDef nau7802_gain_cal_read(nau7802_t *adc, int channel, int *readin
  * @return HAL_StatusTypeDef HAL I2C status message
  */
 HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, uint8_t val) {
-    return HAL_I2C_Mem_Write(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, &val, 1, NAU7802_I2C_TIMEOUT_MS);
+    return HAL_I2C_Mem_Write(adc->i2c, NAU7802_I2C_BASEADDR << 1, reg, 1, &val, 1, NAU7802_I2C_TIMEOUT_MS);
 }
 
 /**
@@ -1035,5 +1031,5 @@ HAL_StatusTypeDef nau7802_reg_write(nau7802_t *adc, uint8_t reg, uint8_t val) {
  * @return HAL_StatusTypeDef HAL I2C status message
  */
 HAL_StatusTypeDef nau7802_reg_read(nau7802_t *adc, uint8_t reg, uint8_t *val) {
-    return HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR, reg, 1, val, 1, NAU7802_I2C_TIMEOUT_MS);
+    return HAL_I2C_Mem_Read(adc->i2c, NAU7802_I2C_BASEADDR << 1, reg, 1, val, 1, NAU7802_I2C_TIMEOUT_MS);
 }

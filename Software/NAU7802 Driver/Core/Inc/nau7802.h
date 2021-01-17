@@ -207,9 +207,13 @@
 // REV: Revision Register
 #define NAU7802_REG_REV 0x1F
 
+// Basic definitions
 #define NAU7802_CH1            0x00
 #define NAU7802_CH2            0x01
 #define NAU7802_I2C_TIMEOUT_MS 50
+
+// Macros
+#define RETURN_IF_NOT_OK(ret) if (ret != HAL_OK) return ret;
 
 typedef struct nau7802 {
     I2C_HandleTypeDef *i2c;        // I2C instance pointer
@@ -221,9 +225,11 @@ typedef struct nau7802 {
 } nau7802_t;
 
 nau7802_t* nau7802_init(I2C_HandleTypeDef *i2c);
+HAL_StatusTypeDef nau7802_powerup_sequence(nau7802_t *adc);
 
 HAL_StatusTypeDef nau7802_avdd_source(nau7802_t *adc, int source);
 HAL_StatusTypeDef nau7802_oscs_source(nau7802_t *adc, int source);
+HAL_StatusTypeDef nau7802_cstart(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pwr_analog(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_pwr_digital(nau7802_t *adc, int mode);
 HAL_StatusTypeDef nau7802_reg_reset(nau7802_t *adc, int rst);

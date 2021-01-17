@@ -93,7 +93,11 @@ fp-info-cache
 #*.csv
 
 # Vscode
-.vscode/*
+**/.vscode/*
+.stm32ignore
+
+# MX Files
+.mxproject
 
 # Build directory
 **/build
