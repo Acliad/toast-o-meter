@@ -114,17 +114,17 @@ Wire Wire Line
 Wire Wire Line
 	8350 5700 8850 5700
 $Comp
-L irex_Reference_Voltage:TL432LI U801
+L irex_Reference_Voltage:TL431LI U801
 U 1 1 5F7E207E
 P 8950 5700
 AR Path="/5F7CCAA0/5F7E207E" Ref="U801"  Part="1" 
 AR Path="/602C5383/5F7E207E" Ref="U?"  Part="1" 
 F 0 "U801" V 8996 5630 50  0000 R CNN
-F 1 "TL432LI" V 8905 5630 50  0000 R CNN
+F 1 "TL431LI" V 8905 5630 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 8950 5550 50  0001 C CIN
 F 3 "https://www.ti.com/lit/ds/symlink/tl431li.pdf?HQS=TI-null-null-digikeymode-df-pf-null-wwe&ts=1601074554367" H 8950 5700 50  0001 C CIN
-F 4 "https://www.digikey.com/en/products/detail/texas-instruments/TL432LIACDBZR/9860322" H 8950 5700 50  0001 C CNN "Digi-Key Link"
-F 5 "296-53244-1-ND" H 8950 5700 50  0001 C CNN "Digi-Key PN"
+F 4 "https://www.digikey.com/en/products/detail/texas-instruments/TL431LIACDBZR/9861498" H 8950 5700 50  0001 C CNN "Digi-Key Link"
+F 5 "296-53238-1-ND" H 8950 5700 50  0001 C CNN "Digi-Key PN"
 F 6 "TL432LI" H 8950 5700 50  0001 C CNN "MPN"
 	1    8950 5700
 	0    -1   -1   0   

@@ -407,20 +407,6 @@ F 3 "" H 9400 4400 50  0001 C CNN
 	1    9400 4400
 	1    0    0    -1  
 $EndComp
-$Comp
-L irex_Analog_ADC:NAU7802 U201
-U 1 1 5FDFB960
-P 9500 6150
-F 0 "U201" H 8950 6900 50  0000 L CNN
-F 1 "NAU7802" H 9300 6800 50  0000 R CNN
-F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 9700 5250 50  0001 L CNN
-F 3 "https://www.nuvoton.com/export/resource-files/NAU7802%20Data%20Sheet%20V1.7.pdf" H 9550 7050 50  0001 C CNN
-F 4 "NAU7802" H 9700 5350 50  0001 L CNN "MPN"
-F 5 "https://www.digikey.com/en/products/detail/nuvoton-technology-corporation-of-america/NAU7802SGI/2769782" H 9500 6150 50  0001 C CNN "Digi-Key Link"
-F 6 "NAU7802SGI-ND" H 9500 6150 50  0001 C CNN "Digi-Key PN"
-	1    9500 6150
-	1    0    0    -1  
-$EndComp
 Text HLabel 1650 1450 0    50   Input ~ 0
 V+_INPUT
 Text Label 3950 1450 2    50   ~ 0
@@ -798,6 +784,20 @@ F 3 "~" H 5050 6800 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KA8NNNC/3886664" H 5050 6800 50  0001 C CNN "Digi-Key Link"
 F 5 "1276-1006-1-ND" H 5050 6800 50  0001 C CNN "Digi-Key PN"
 	1    5050 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L irex_Analog_ADC:NAU7802 U201
+U 1 1 5FDFB960
+P 9500 6150
+F 0 "U201" H 8950 6900 50  0000 L CNN
+F 1 "NAU7802" H 9300 6800 50  0000 R CNN
+F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 9700 5250 50  0001 L CNN
+F 3 "https://www.nuvoton.com/export/resource-files/NAU7802%20Data%20Sheet%20V1.7.pdf" H 9550 7050 50  0001 C CNN
+F 4 "NAU7802" H 9700 5350 50  0001 L CNN "MPN"
+F 5 "https://www.digikey.com/en/products/detail/nuvoton-technology-corporation-of-america/NAU7802SGI/2769782" H 9500 6150 50  0001 C CNN "Digi-Key Link"
+F 6 "NAU7802SGI-ND" H 9500 6150 50  0001 C CNN "Digi-Key PN"
+	1    9500 6150
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -714,11 +714,11 @@ X Vdd 6 0 300 100 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# irex_Reference_Voltage_TL432LI
+# irex_Reference_Voltage_TL431LI
 #
-DEF irex_Reference_Voltage_TL432LI U 0 20 N N 1 F N
+DEF irex_Reference_Voltage_TL431LI U 0 20 N N 1 F N
 F0 "U" -100 100 50 H V C CNN
-F1 "irex_Reference_Voltage_TL432LI" 0 -100 50 H V C CNN
+F1 "irex_Reference_Voltage_TL431LI" 0 -100 50 H V C CNN
 F2 "Package_TO_SOT_SMD:SOT-23" 0 -150 50 H I C CIN
 F3 "" 0 0 50 H I C CIN
 $FPLIST
